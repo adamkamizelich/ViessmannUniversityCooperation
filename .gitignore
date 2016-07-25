@@ -1,0 +1,14 @@
+*.suo
+/Source/Estrella.sln.DotSettings.user
+/Source/TestResults
+obj/
+bin/
+BuildOutput/
+MsDeploy/PublishedEndpoints
+MsDeploy/*.log
+/Logs/diag.log
+StyleCop.Cache
+*.csproj.user
+*.dotsettings.user
+.vs
+Source/_ReSharper.Caches/

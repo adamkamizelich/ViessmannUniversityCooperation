@@ -1,0 +1,59 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25420.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.VitoControlApi", "Source\UniversityIot.VitoControlApi\UniversityIot.VitoControlApi.csproj", "{7BB10CC4-C5C0-4863-8909-9E79079164E8}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Tests", "Tests", "{857CC5BA-9A35-4E4F-BC84-FC724081B820}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.VitoControlApi.Tests", "Source\UniversityIot.VitoControlApi.Tests\UniversityIot.VitoControlApi.Tests.csproj", "{DA23C6D3-2615-4822-AB8A-79523799DF15}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersService", "Source\UniversityIot.UsersService\UniversityIot.UsersService.csproj", "{2334E836-1F38-4B9B-B047-2C5BE4E72370}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysService", "Source\UniversityIot.GatewaysService\UniversityIot.GatewaysService.csproj", "{E72F9E4D-D0EB-42B9-9803-632C45B51B03}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersService.Tests", "Source\UniversityIot.UsersService.Tests\UniversityIot.UsersService.Tests.csproj", "{10A2CBE1-EA8C-4A49-98F6-9843CBE94725}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysService.Tests", "Source\UniversityIot.GatewaysService.Tests\UniversityIot.GatewaysService.Tests.csproj", "{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{7BB10CC4-C5C0-4863-8909-9E79079164E8}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7BB10CC4-C5C0-4863-8909-9E79079164E8}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7BB10CC4-C5C0-4863-8909-9E79079164E8}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7BB10CC4-C5C0-4863-8909-9E79079164E8}.Release|Any CPU.Build.0 = Release|Any CPU
+		{DA23C6D3-2615-4822-AB8A-79523799DF15}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{DA23C6D3-2615-4822-AB8A-79523799DF15}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{DA23C6D3-2615-4822-AB8A-79523799DF15}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{DA23C6D3-2615-4822-AB8A-79523799DF15}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2334E836-1F38-4B9B-B047-2C5BE4E72370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2334E836-1F38-4B9B-B047-2C5BE4E72370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2334E836-1F38-4B9B-B047-2C5BE4E72370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2334E836-1F38-4B9B-B047-2C5BE4E72370}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E72F9E4D-D0EB-42B9-9803-632C45B51B03}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E72F9E4D-D0EB-42B9-9803-632C45B51B03}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E72F9E4D-D0EB-42B9-9803-632C45B51B03}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E72F9E4D-D0EB-42B9-9803-632C45B51B03}.Release|Any CPU.Build.0 = Release|Any CPU
+		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{DA23C6D3-2615-4822-AB8A-79523799DF15} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+	EndGlobalSection
+EndGlobal
