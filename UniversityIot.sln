@@ -17,9 +17,9 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersService.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysService.Tests", "Source\UniversityIot.GatewaysService.Tests\UniversityIot.GatewaysService.Tests.csproj", "{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.ConfigFiles", "UniversityIot.ConfigFiles\UniversityIot.ConfigFiles.csproj", "{651F3B74-5341-46E8-9D85-6F14FC23619C}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.ConfigFiles", "Source\UniversityIot.ConfigFiles\UniversityIot.ConfigFiles.csproj", "{651F3B74-5341-46E8-9D85-6F14FC23619C}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Configuration", "UniversityIot.Configuration\UniversityIot.Configuration.csproj", "{10D1B876-CE0F-428B-97ED-0BCA80BF97FC}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Configuration", "Source\UniversityIot.Configuration\UniversityIot.Configuration.csproj", "{10D1B876-CE0F-428B-97ED-0BCA80BF97FC}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

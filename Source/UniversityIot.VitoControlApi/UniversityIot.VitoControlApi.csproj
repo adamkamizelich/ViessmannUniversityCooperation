@@ -86,11 +86,11 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\..\UniversityIot.ConfigFiles\UniversityIot.ConfigFiles.csproj">
+    <ProjectReference Include="..\UniversityIot.ConfigFiles\UniversityIot.ConfigFiles.csproj">
       <Project>{651f3b74-5341-46e8-9d85-6f14fc23619c}</Project>
       <Name>UniversityIot.ConfigFiles</Name>
     </ProjectReference>
-    <ProjectReference Include="..\..\UniversityIot.Configuration\UniversityIot.Configuration.csproj">
+    <ProjectReference Include="..\UniversityIot.Configuration\UniversityIot.Configuration.csproj">
       <Project>{10d1b876-ce0f-428b-97ed-0bca80bf97fc}</Project>
       <Name>UniversityIot.Configuration</Name>
     </ProjectReference>
@@ -153,6 +153,6 @@
   </Target>
   -->
   <Target Name="AfterBuild">
-    <Copy SourceFiles="$(SolutionDir)UniversityIot.ConfigFiles\bin\$(ConfigurationName)\commonAppSettings.config" DestinationFolder="$(TargetDir)" ContinueOnError="false" />
+    <Copy SourceFiles="$(SolutionDir)\Source\UniversityIot.ConfigFiles\bin\$(ConfigurationName)\commonAppSettings.config" DestinationFolder="$(TargetDir)" ContinueOnError="false" />
   </Target>
 </Project>
