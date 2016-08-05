@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.VitoControlApi", "Source\UniversityIot.VitoControlApi\UniversityIot.VitoControlApi.csproj", "{7BB10CC4-C5C0-4863-8909-9E79079164E8}"
 EndProject
@@ -22,6 +22,18 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Configuration", "Source\UniversityIot.Configuration\UniversityIot.Configuration.csproj", "{10D1B876-CE0F-428B-97ED-0BCA80BF97FC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Extensions", "Source\UniversityIot.Extensions\UniversityIot.Extensions.csproj", "{9ED8A37C-F8D9-45F4-9D53-AF83358E802D}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataService", "Source\UniversityIot.GatewaysDataService\UniversityIot.GatewaysDataService.csproj", "{47327331-667D-4937-874A-23D7D3FD7512}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersDataService", "Source\UniversityIot.UsersDataService\UniversityIot.UsersDataService.csproj", "{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersDataService.Tests", "Source\UniversityIot.UsersDataService.Tests\UniversityIot.UsersDataService.Tests.csproj", "{F8024FCD-9FAE-431A-A965-481C7EC838C1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataService.Tests", "Source\UniversityIot.GatewaysDataService.Tests\UniversityIot.GatewaysDataService.Tests.csproj", "{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersDataAccess", "Source\UniversityIot.UsersDataAccess\UniversityIot.UsersDataAccess.csproj", "{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataAccess", "Source\UniversityIot.GatewaysDataAccess\UniversityIot.GatewaysDataAccess.csproj", "{22CB9CDB-5C3C-4070-B490-C86D854CA07F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -103,6 +115,54 @@ Global
 		{9ED8A37C-F8D9-45F4-9D53-AF83358E802D}.Release|Any CPU.Build.0 = Release|Any CPU
 		{9ED8A37C-F8D9-45F4-9D53-AF83358E802D}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{9ED8A37C-F8D9-45F4-9D53-AF83358E802D}.Staging|Any CPU.Build.0 = Staging|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Production|Any CPU.Build.0 = Release|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Release|Any CPU.Build.0 = Release|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{47327331-667D-4937-874A-23D7D3FD7512}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Production|Any CPU.Build.0 = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Production|Any CPU.Build.0 = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Production|Any CPU.Build.0 = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Production|Any CPU.Build.0 = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Release|Any CPU.Build.0 = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{F1EA76AB-536B-4EB1-ABBE-851D1FFDD582}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Production|Any CPU.Build.0 = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{22CB9CDB-5C3C-4070-B490-C86D854CA07F}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -111,5 +171,7 @@ Global
 		{DA23C6D3-2615-4822-AB8A-79523799DF15} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{10A2CBE1-EA8C-4A49-98F6-9843CBE94725} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+		{F8024FCD-9FAE-431A-A965-481C7EC838C1} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 	EndGlobalSection
 EndGlobal
