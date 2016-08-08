@@ -11,5 +11,7 @@
         Task SaveUser(User user);
 
         Task<IEnumerable<User>> GetAllUsers();
+
+        Task<IEnumerable<int>> GetUsersInstallations(int userId);
     }
 }

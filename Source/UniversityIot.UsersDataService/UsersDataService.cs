@@ -31,5 +31,10 @@
         {
             throw new System.NotImplementedException();
         }
+
+        public Task<IEnumerable<int>> GetUsersInstallations(int userId)
+        {
+            throw new System.NotImplementedException();
+        }
     }
 }
