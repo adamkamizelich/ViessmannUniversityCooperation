@@ -35,7 +35,7 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UsersDataAcce
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataAccess", "Source\UniversityIot.GatewaysDataAccess\UniversityIot.GatewaysDataAccess.csproj", "{22CB9CDB-5C3C-4070-B490-C86D854CA07F}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI", "UI", "{BB66CC2F-D5D5-4237-8EE9-07D1328DAEFC}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "UI.Xamarin", "UI.Xamarin", "{BB66CC2F-D5D5-4237-8EE9-07D1328DAEFC}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.UI.Droid", "Source\UniversityIot.UI\UniversityIot.UI.Droid\UniversityIot.UI.Droid.csproj", "{389EBB3F-92AD-4EF7-AA31-8BEFDACE0F28}"
 EndProject
