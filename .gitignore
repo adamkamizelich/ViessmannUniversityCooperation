@@ -12,3 +12,4 @@ StyleCop.Cache
 *.dotsettings.user
 .vs
 Source/_ReSharper.Caches/
+packages/
