@@ -34,13 +34,13 @@
         /// <returns>
         /// List of users
         /// </returns>
-        [Route("")]
-        public async Task<IHttpActionResult> Get()
-        {
-            var users = await this.usersDataService.GetAllUsers();
-            var mappedUsers = Mapper.Map<IEnumerable<Messages.User>>(users);
-            return Ok(mappedUsers);
-        }
+        //[Route("")]
+        //public async Task<IHttpActionResult> Get()
+        //{
+        //    //var users = await this.usersDataService.GetAllUsers();
+        //    //var mappedUsers = Mapper.Map<IEnumerable<Messages.User>>(users);
+        //    //return Ok(mappedUsers);
+        //}
 
         /// <summary>
         /// Gets the user
@@ -52,7 +52,7 @@
         [Route("{id}")]
         public async Task<IHttpActionResult> Get(int id)
         {
-            var user = await this.usersDataService.GetUser(id);
+            var user = await this.usersDataService.GetUserAsync(id);
             if (user == null)
             {
                 return NotFound();
@@ -72,7 +72,7 @@
         [Route("{id}/installations")]
         public async Task<IHttpActionResult> GetInstallations(int id)
         {
-            var installations = await this.usersDataService.GetUsersInstallations(id);
+            var installations = await this.usersDataService.GetUsersInstallationsAsync(id);
             if (installations == null)
             {
                 return NotFound();

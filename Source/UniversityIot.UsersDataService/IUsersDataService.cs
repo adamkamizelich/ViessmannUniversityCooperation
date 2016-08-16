@@ -2,16 +2,16 @@
 {
     using System.Collections.Generic;
     using System.Threading.Tasks;
-    using UniversityIot.UsersDataService.Models;
+    using UniversityIot.UsersDataAccess.Models;
 
     public interface IUsersDataService
     {
-        Task<User> GetUser(int id);
+        Task<User> GetUserAsync(int id);
 
-        Task SaveUser(User user);
+        Task<User> GetUserAsync(string name);
+        
+        Task<IEnumerable<int>> GetUsersInstallationsAsync(int userId);
 
-        Task<IEnumerable<User>> GetAllUsers();
-
-        Task<IEnumerable<int>> GetUsersInstallations(int userId);
+        Task<bool> ValidateUserAsync(string name, string password);
     }
 }

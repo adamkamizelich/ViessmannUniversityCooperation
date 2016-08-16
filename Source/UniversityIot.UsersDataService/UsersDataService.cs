@@ -1,41 +1,53 @@
 ﻿namespace UniversityIot.UsersDataService
 {
     using System.Collections.Generic;
-    using System.Linq;
     using System.Threading.Tasks;
+    using System;
+    using System.Data.Entity;
+    using System.Linq;
+    using System.Linq.Expressions;
     using UniversityIot.UsersDataAccess;
-    using Entity = UniversityIot.UsersDataAccess.Models;
-    using UniversityIot.UsersDataService.Models;
+    using UniversityIot.UsersDataAccess.Models;
 
     public class UsersDataService : IUsersDataService
     {
-        public Task<User> GetUser(int id)
+        public async Task<User> GetUserAsync(string name)
         {
-            throw new System.NotImplementedException();
+            var user = await GetUserAsync(u => u.Name == name);
+            return user;
         }
 
-        public async Task SaveUser(User user)
+        public async Task<User> GetUserAsync(int id)
+        {
+            var user = await GetUserAsync(u => u.Id == id);
+            return user;
+        }
+
+        public async Task<IEnumerable<int>> GetUsersInstallationsAsync(int userId)
         {
             using (var context = new UsersContext())
             {
-                var userToSave = new Entity.User
-                {
-                    CustomerNumber = user.CustomerNumber,
-                    Name = user.Name
-                };
-                context.Users.Add(userToSave);
-                await context.SaveChangesAsync();
+                var installationIds = await context.Users
+                    .Where(u => u.Id == userId)
+                    .SelectMany(u => u.InstallationIds, (user1, installation) => installation.Id)
+                    .ToListAsync();
+
+                return installationIds;
             }
         }
 
-        public Task<IEnumerable<User>> GetAllUsers()
+        public Task<bool> ValidateUserAsync(string name, string password)
         {
-            throw new System.NotImplementedException();
+            throw new NotImplementedException();
         }
 
-        public Task<IEnumerable<int>> GetUsersInstallations(int userId)
+        private static async Task<User> GetUserAsync(Expression<Func<User, bool>> predicate)
         {
-            throw new System.NotImplementedException();
+            using (var context = new UsersContext())
+            {
+                var user = await context.Users.FirstOrDefaultAsync(predicate);
+                return user;
+            }
         }
     }
 }

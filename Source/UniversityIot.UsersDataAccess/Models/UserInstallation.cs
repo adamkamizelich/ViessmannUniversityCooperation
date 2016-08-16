@@ -1,21 +1,14 @@
 ﻿namespace UniversityIot.UsersDataAccess.Models
 {
-    using System.Collections.Generic;
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
-    public class User
+    public class UserInstallation
     {
         [Key]
         [DatabaseGenerated(DatabaseGeneratedOption.Identity)]
         public int Id { get; set; }
 
-        public string Name { get; set; }
-
-        public string CustomerNumber { get; set; }
-
-        public string Password { get; set; }
-
-        public ICollection<UserInstallation> InstallationIds { get; set; }
+        public int InstallationId { get; set; }
     }
 }

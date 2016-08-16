@@ -83,13 +83,19 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="UsersDataServiceTests\SaveUserTests.cs" />
+    <Compile Include="UsersDataServiceTests\GetUsersInstallationsAsyncTests.cs" />
+    <Compile Include="UsersDataServiceTests\GetUserByNameTests.cs" />
+    <Compile Include="UsersDataServiceTests\GetUserByIdTests.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UniversityIot.UsersDataAccess\UniversityIot.UsersDataAccess.csproj">
+      <Project>{f1ea76ab-536b-4eb1-abbe-851d1ffdd582}</Project>
+      <Name>UniversityIot.UsersDataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniversityIot.UsersDataService\UniversityIot.UsersDataService.csproj">
       <Project>{93379f4e-b43f-4faf-9e37-3cbc40b029bf}</Project>
       <Name>UniversityIot.UsersDataService</Name>

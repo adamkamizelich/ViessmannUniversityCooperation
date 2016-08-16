@@ -1,7 +1,7 @@
 ﻿namespace UniversityIot.UsersService.Mapping.Profiles
 {
     using AutoMapper;
-    using UniversityIot.UsersDataService.Models;
+    using UniversityIot.UsersDataAccess.Models;
 
     public class UsersServiceProfile : Profile
     {

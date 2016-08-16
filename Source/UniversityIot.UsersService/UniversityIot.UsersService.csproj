@@ -156,6 +156,10 @@
       <Project>{a83c0d44-ae75-422d-ab45-431fc6c350b6}</Project>
       <Name>UniversityIot.Messages</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UniversityIot.UsersDataAccess\UniversityIot.UsersDataAccess.csproj">
+      <Project>{f1ea76ab-536b-4eb1-abbe-851d1ffdd582}</Project>
+      <Name>UniversityIot.UsersDataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniversityIot.UsersDataService\UniversityIot.UsersDataService.csproj">
       <Project>{93379F4E-B43F-4FAF-9E37-3CBC40B029BF}</Project>
       <Name>UniversityIot.UsersDataService</Name>
