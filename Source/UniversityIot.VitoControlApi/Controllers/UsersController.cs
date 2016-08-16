@@ -29,7 +29,25 @@
         /// <returns>
         /// User model
         /// </returns>
-        [Route("{id}")]
+        [Route("me")]
+        public async Task<IHttpActionResult> GetMe([FromUri]GetUserRequest user)
+        {
+            var userRequest = new GetUserRequest
+            {
+                Id = "1"
+            };
+
+            return await this.Get(userRequest);
+        }
+
+        /// <summary>
+        /// Gets the user
+        /// </summary>
+        /// <param name="user">The identifier.</param>
+        /// <returns>
+        /// User model
+        /// </returns>
+        [Route("{id:int}")]
         public async Task<IHttpActionResult> Get([FromUri]GetUserRequest user)
         {
             GetUserResponse responseModel = await this.HandleRequestAsync<GetUserRequest, GetUserResponse>(user);

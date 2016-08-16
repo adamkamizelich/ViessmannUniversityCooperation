@@ -1,7 +1,5 @@
 namespace UniversityIot.VitoControlApi.Models.DataObjects
 {
-    using System.Collections.Generic;
-
     /// <summary>
     /// User model
     /// </summary>
@@ -13,46 +11,22 @@ namespace UniversityIot.VitoControlApi.Models.DataObjects
         /// <value>
         /// The identifier.
         /// </value>
-        public string Id { get; set; }
+        public int Id { get; set; }
 
         /// <summary>
-        /// Gets or sets the first name.
+        /// Gets or sets the name.
         /// </summary>
         /// <value>
-        /// The first name.
+        /// The name.
         /// </value>
-        public string FirstName { get; set; }
+        public string Name { get; set; }
 
         /// <summary>
-        /// Gets or sets the last name.
+        /// Gets or sets the customer number.
         /// </summary>
         /// <value>
-        /// The last name.
+        /// The customer number.
         /// </value>
-        public string LastName { get; set; }
-
-        /// <summary>
-        /// Gets or sets the email.
-        /// </summary>
-        /// <value>
-        /// The email.
-        /// </value>
-        public string Email { get; set; }
-
-        /// <summary>
-        /// Gets or sets the created at.
-        /// </summary>
-        /// <value>
-        /// The created at.
-        /// </value>
-        public string CreatedAt { get; set; }
-
-        /// <summary>
-        /// Gets or sets the edited at.
-        /// </summary>
-        /// <value>
-        /// The edited at.
-        /// </value>
-        public string EditedAt { get; set; }
+        public string CustomerNumber { get; set; }
     }
 }

@@ -5,6 +5,7 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using UniversityIot.UsersService.Mapping;
     using UniversityIot.VitoControlApi.Controllers;
 
     /// <summary>
@@ -23,6 +24,8 @@
             {
                 throw new ArgumentNullException(nameof(container));
             }
+
+            ExternalServiceMapper.Register();
 
             container.Register(Classes.FromThisAssembly()
              .BasedOn<ApiControllerBase>()

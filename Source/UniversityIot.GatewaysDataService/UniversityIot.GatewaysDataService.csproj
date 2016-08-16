@@ -71,6 +71,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="FakeGatewaysDataService.cs" />
     <Compile Include="GatewaysDataService.cs" />
     <Compile Include="IGatewaysDataService.cs" />
     <Compile Include="Models\Gateway.cs" />

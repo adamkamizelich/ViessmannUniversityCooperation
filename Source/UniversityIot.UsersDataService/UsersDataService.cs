@@ -1,6 +1,7 @@
 ﻿namespace UniversityIot.UsersDataService
 {
     using System.Collections.Generic;
+    using System.Linq;
     using System.Threading.Tasks;
     using UniversityIot.UsersDataAccess;
     using Entity = UniversityIot.UsersDataAccess.Models;
