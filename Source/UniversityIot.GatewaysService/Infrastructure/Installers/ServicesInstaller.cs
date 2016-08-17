@@ -24,7 +24,7 @@
             GatewayServiceMapper.Register();
 
             container.Register(
-                Component.For<IGatewaysDataService>().ImplementedBy<FakeGatewaysDataService>());
+                Component.For<IGatewaysDataService>().ImplementedBy<GatewaysDataService>());
         }
     }
 }

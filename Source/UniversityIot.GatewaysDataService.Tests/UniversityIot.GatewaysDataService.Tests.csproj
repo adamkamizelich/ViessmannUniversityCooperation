@@ -82,7 +82,9 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GatewaysDataServiceTests\SaveGatewayTests.cs" />
+    <Compile Include="GatewaysDataServiceTests\GatewaysDataServiceTestsBase.cs" />
+    <Compile Include="GatewaysDataServiceTests\GetGatewayTests.cs" />
+    <Compile Include="GatewaysDataServiceTests\GetSettingsTests.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -90,9 +92,21 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UniversityIot.Enums\UniversityIot.Enums.csproj">
+      <Project>{82AA9BFC-B58E-49CA-9416-8296073E96EB}</Project>
+      <Name>UniversityIot.Enums</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniversityIot.GatewaysDataAccess\UniversityIot.GatewaysDataAccess.csproj">
+      <Project>{22cb9cdb-5c3c-4070-b490-c86d854ca07f}</Project>
+      <Name>UniversityIot.GatewaysDataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniversityIot.GatewaysDataService\UniversityIot.GatewaysDataService.csproj">
       <Project>{47327331-667d-4937-874a-23d7d3fd7512}</Project>
       <Name>UniversityIot.GatewaysDataService</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniversityIot.Tests.Common\UniversityIot.Tests.Common.csproj">
+      <Project>{0c4d29e1-0cee-44a8-8406-e5f5fffbefd1}</Project>
+      <Name>UniversityIot.Tests.Common</Name>
     </ProjectReference>
   </ItemGroup>
   <Choose>

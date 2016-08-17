@@ -106,6 +106,10 @@
       <Project>{1DBB3426-1DAF-4D59-A8A3-91A7140672B5}</Project>
       <Name>UniversityIot.Components</Name>
     </ProjectReference>
+    <ProjectReference Include="..\UniversityIot.Enums\UniversityIot.Enums.csproj">
+      <Project>{82aa9bfc-b58e-49ca-9416-8296073e96eb}</Project>
+      <Name>UniversityIot.Enums</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniversityIot.Tests.Common\UniversityIot.Tests.Common.csproj">
       <Project>{0c4d29e1-0cee-44a8-8406-e5f5fffbefd1}</Project>
       <Name>UniversityIot.Tests.Common</Name>

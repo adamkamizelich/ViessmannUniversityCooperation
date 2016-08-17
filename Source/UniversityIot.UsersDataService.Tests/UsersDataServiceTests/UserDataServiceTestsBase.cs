@@ -21,6 +21,7 @@
         {
             var user = new User
             {
+                Id = 1,
                 CustomerNumber = "Fake number",
                 Name = "Fake name",
                 Password = "Fake password"

@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DataAccessMocks\GatewaysContextMock.cs" />
     <Compile Include="DataAccessMocks\UserContextMock.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
@@ -58,6 +59,10 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
+    <ProjectReference Include="..\UniversityIot.GatewaysDataAccess\UniversityIot.GatewaysDataAccess.csproj">
+      <Project>{22cb9cdb-5c3c-4070-b490-c86d854ca07f}</Project>
+      <Name>UniversityIot.GatewaysDataAccess</Name>
+    </ProjectReference>
     <ProjectReference Include="..\UniversityIot.UsersDataAccess\UniversityIot.UsersDataAccess.csproj">
       <Project>{f1ea76ab-536b-4eb1-abbe-851d1ffdd582}</Project>
       <Name>UniversityIot.UsersDataAccess</Name>
