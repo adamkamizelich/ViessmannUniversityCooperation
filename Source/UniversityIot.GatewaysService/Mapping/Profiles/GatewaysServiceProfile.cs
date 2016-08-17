@@ -1,7 +1,7 @@
 ﻿namespace UniversityIot.GatewaysService.Mapping.Profiles
 {
     using AutoMapper;
-    using UniversityIot.GatewaysDataService.Models;
+    using UniversityIot.Messages;
 
     public class GatewaysServiceProfile : Profile
     {

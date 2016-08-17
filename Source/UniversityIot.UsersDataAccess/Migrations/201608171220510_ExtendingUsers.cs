@@ -1,16 +1,28 @@
 namespace UniversityIot.UsersDataAccess.Migrations
 {
+    using System;
     using System.Data.Entity.Migrations;
     
-    public partial class ExtendingUser : DbMigration
+    public partial class ExtendingUsers : DbMigration
     {
         public override void Up()
         {
             CreateTable(
+                "dbo.Users",
+                c => new
+                    {
+                        Id = c.Int(nullable: false),
+                        Name = c.String(),
+                        CustomerNumber = c.String(),
+                        Password = c.String(),
+                    })
+                .PrimaryKey(t => t.Id);
+            
+            CreateTable(
                 "dbo.UserInstallations",
                 c => new
                     {
-                        Id = c.Int(nullable: false, identity: true),
+                        Id = c.Int(nullable: false),
                         InstallationId = c.Int(nullable: false),
                         User_Id = c.Int(),
                     })
@@ -18,15 +30,14 @@ namespace UniversityIot.UsersDataAccess.Migrations
                 .ForeignKey("dbo.Users", t => t.User_Id)
                 .Index(t => t.User_Id);
             
-            AddColumn("dbo.Users", "Password", c => c.String());
         }
         
         public override void Down()
         {
             DropForeignKey("dbo.UserInstallations", "User_Id", "dbo.Users");
             DropIndex("dbo.UserInstallations", new[] { "User_Id" });
-            DropColumn("dbo.Users", "Password");
             DropTable("dbo.UserInstallations");
+            DropTable("dbo.Users");
         }
     }
 }

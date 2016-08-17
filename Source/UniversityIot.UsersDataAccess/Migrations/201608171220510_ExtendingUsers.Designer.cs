@@ -7,13 +7,13 @@ namespace UniversityIot.UsersDataAccess.Migrations
     using System.Resources;
     
     [GeneratedCode("EntityFramework.Migrations", "6.1.3-40302")]
-    public sealed partial class ExtendingUser : IMigrationMetadata
+    public sealed partial class ExtendingUsers : IMigrationMetadata
     {
-        private readonly ResourceManager Resources = new ResourceManager(typeof(ExtendingUser));
+        private readonly ResourceManager Resources = new ResourceManager(typeof(ExtendingUsers));
         
         string IMigrationMetadata.Id
         {
-            get { return "201608161339521_ExtendingUser"; }
+            get { return "201608171220510_ExtendingUsers"; }
         }
         
         string IMigrationMetadata.Source

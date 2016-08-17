@@ -4,7 +4,7 @@ namespace UniversityIot.UsersDataAccess.Migrations
     using System.Data.Entity.Migrations;
     using UniversityIot.UsersDataAccess.Models;
 
-    internal sealed class Configuration : DbMigrationsConfiguration<UniversityIot.UsersDataAccess.UsersContext>
+    internal sealed class Configuration : DbMigrationsConfiguration<UsersContext>
     {
         public Configuration()
         {
@@ -16,7 +16,8 @@ namespace UniversityIot.UsersDataAccess.Migrations
         {
             return new UserInstallation
             {
-                InstallationId = installationId,
+                Id = installationId,
+                InstallationId = installationId
             };
         }
 
@@ -24,6 +25,7 @@ namespace UniversityIot.UsersDataAccess.Migrations
         {
             var userWithOneInstallation = new User
             {
+                Id = 1,
                 CustomerNumber = "210299",
                 InstallationIds = new List<UserInstallation> { InstallationLink(1) },
                 Name = "john.doe@viessmann.com",
@@ -33,6 +35,7 @@ namespace UniversityIot.UsersDataAccess.Migrations
 
             var userWithTwoInstallations = new User
             {
+                Id = 2,
                 CustomerNumber = "651902",
                 InstallationIds = new List<UserInstallation> { InstallationLink(2), InstallationLink(3) },
                 Name = "jan.kowalski@viessmann.com",
@@ -41,15 +44,16 @@ namespace UniversityIot.UsersDataAccess.Migrations
 
             var userWithThreeInstallations = new User
             {
-                CustomerNumber = "651902",
+                Id = 3,
+                CustomerNumber = "109439",
                 InstallationIds = new List<UserInstallation> { InstallationLink(4), InstallationLink(5), InstallationLink(6) },
                 Name = "hans.schmitt@viessmann.com",
                 Password = "1ca988de20343b73124c5c15387259bd" // ViessmannHS
             };
 
-            context.Users.Add(userWithOneInstallation);
-            context.Users.Add(userWithTwoInstallations);
-            context.Users.Add(userWithThreeInstallations);
+            context.Users.AddOrUpdate(userWithOneInstallation);
+            context.Users.AddOrUpdate(userWithTwoInstallations);
+            context.Users.AddOrUpdate(userWithThreeInstallations);
         }
     }
 }

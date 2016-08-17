@@ -7,8 +7,8 @@
     <ProjectGuid>{1DBB3426-1DAF-4D59-A8A3-91A7140672B5}</ProjectGuid>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
-    <RootNamespace>UniversityIot.Components</RootNamespace>
-    <AssemblyName>UniversityIot.Components</AssemblyName>
+    <RootNamespace>UniversityIot.Common</RootNamespace>
+    <AssemblyName>UniversityIot.Common</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <TargetFrameworkProfile />

@@ -70,13 +70,9 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Migrations\201608051239373_InitialCreate.cs" />
-    <Compile Include="Migrations\201608051239373_InitialCreate.Designer.cs">
-      <DependentUpon>201608051239373_InitialCreate.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Migrations\201608161339521_ExtendingUser.cs" />
-    <Compile Include="Migrations\201608161339521_ExtendingUser.Designer.cs">
-      <DependentUpon>201608161339521_ExtendingUser.cs</DependentUpon>
+    <Compile Include="Migrations\201608171220510_ExtendingUsers.cs" />
+    <Compile Include="Migrations\201608171220510_ExtendingUsers.Designer.cs">
+      <DependentUpon>201608171220510_ExtendingUsers.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\User.cs" />
@@ -89,11 +85,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201608051239373_InitialCreate.resx">
-      <DependentUpon>201608051239373_InitialCreate.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Migrations\201608161339521_ExtendingUser.resx">
-      <DependentUpon>201608161339521_ExtendingUser.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201608171220510_ExtendingUsers.resx">
+      <DependentUpon>201608171220510_ExtendingUsers.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

@@ -10,6 +10,11 @@
         {
         }
 
+        public GatewaysContext(string connectionName)
+            : base(connectionName)
+        {
+        }
+
         public IDbSet<Gateway> Gateways { get; set; }
 
         public IDbSet<GatewaySetting> GatewaySettings { get; set; }

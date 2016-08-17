@@ -71,6 +71,11 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="GatewaysContext.cs" />
+    <Compile Include="Migrations\201608171212413_ExtendingGatewaySettings.cs" />
+    <Compile Include="Migrations\201608171212413_ExtendingGatewaySettings.Designer.cs">
+      <DependentUpon>201608171212413_ExtendingGatewaySettings.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Gateway.cs" />
     <Compile Include="Models\GatewaySetting.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -78,6 +83,17 @@
   <ItemGroup>
     <None Include="App.config" />
     <None Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\UniversityIot.Enums\UniversityIot.Enums.csproj">
+      <Project>{82aa9bfc-b58e-49ca-9416-8296073e96eb}</Project>
+      <Name>UniversityIot.Enums</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201608171212413_ExtendingGatewaySettings.resx">
+      <DependentUpon>201608171212413_ExtendingGatewaySettings.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Visual-StyleCop.MSBuild.4.7.59.0\build\Visual-StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\Visual-StyleCop.MSBuild.4.7.59.0\build\Visual-StyleCop.MSBuild.Targets') And '$(Configuration)' == 'Debug'" />

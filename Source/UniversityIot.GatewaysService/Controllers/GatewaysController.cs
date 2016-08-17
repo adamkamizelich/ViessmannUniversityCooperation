@@ -29,18 +29,6 @@
         }
 
         /// <summary>
-        /// Gets this instance.
-        /// </summary>
-        /// <returns>List of gateways</returns>
-        [Route("")]
-        public async Task<IHttpActionResult> Get()
-        {
-            var gateways = await this.gatewaysDataService.GetAllGateways();
-            var mappedGateways = Mapper.Map<IEnumerable<Messages.Gateway>>(gateways);
-            return Ok(mappedGateways);
-        }
-
-        /// <summary>
         /// Gets the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
