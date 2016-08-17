@@ -6,6 +6,7 @@
     using System.Data.Entity;
     using System.Linq;
     using System.Linq.Expressions;
+    using UniversityIot.Components;
     using UniversityIot.UsersDataAccess;
     using UniversityIot.UsersDataAccess.Models;
 
@@ -13,20 +14,23 @@
     {
         private readonly Func<UsersContext> contextLocator;
 
-        public UsersDataService(Func<UsersContext> contextLocator)
+        private readonly IPasswordEncoder passwordEncoder;
+
+        public UsersDataService(Func<UsersContext> contextLocator, IPasswordEncoder passwordEncoder)
         {
             this.contextLocator = contextLocator;
+            this.passwordEncoder = passwordEncoder;
         }
 
         public async Task<User> GetUserAsync(string name)
         {
-            var user = await GetUserAsync(u => u.Name == name);
+            var user = await this.GetUserAsync(u => u.Name == name);
             return user;
         }
 
         public async Task<User> GetUserAsync(int id)
         {
-            var user = await GetUserAsync(u => u.Id == id);
+            var user = await this.GetUserAsync(u => u.Id == id);
             return user;
         }
 
@@ -43,11 +47,18 @@
             }
         }
 
-        public Task<bool> ValidateUserAsync(string name, string password)
+        public async Task<bool> ValidateUserAsync(string name, string password)
         {
-            throw new NotImplementedException();
-        }
+            var user = await this.GetUserAsync(name);
+            if (user == null)
+            {
+                return false;
+            }
 
+            var compareHashesResult = this.passwordEncoder.Verify(password, user.Password);
+            return compareHashesResult;
+        }
+        
         private async Task<User> GetUserAsync(Expression<Func<User, bool>> predicate)
         {
             using (var context = this.contextLocator())
