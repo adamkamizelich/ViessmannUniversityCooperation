@@ -2,11 +2,9 @@
 {
     using System.Threading.Tasks;
     using NUnit.Framework;
-    using UniversityIot.UsersDataAccess;
-    using UniversityIot.UsersDataAccess.Models;
 
     [TestFixture]
-    public class GetUserByIdTests
+    public class GetUserByIdTests : UserDataServiceTestsBase
     {
         [Test]
         public async Task WhenUserIsInDb_ShouldGetItFromDb()
@@ -37,32 +35,5 @@
             // assert
             Assert.IsNull(result);
         }
-
-        #region Test setup
-
-        private static async Task<User> CreateFakeUser()
-        {
-            var user = new User
-            {
-                CustomerNumber = "Fake number",
-                Name = "Fake name",
-                Password = "Fake password"
-            };
-
-            using (var context = new UsersContext())
-            {
-                context.Users.Add(user);
-                await context.SaveChangesAsync();
-            }
-            return user;
-        }
-
-        private static UsersDataService GetService()
-        {
-            var service = new UsersDataService();
-            return service;
-        }
-
-        #endregion
     }
 }

@@ -11,6 +11,13 @@
 
     public class UsersDataService : IUsersDataService
     {
+        private readonly Func<UsersContext> contextLocator;
+
+        public UsersDataService(Func<UsersContext> contextLocator)
+        {
+            this.contextLocator = contextLocator;
+        }
+
         public async Task<User> GetUserAsync(string name)
         {
             var user = await GetUserAsync(u => u.Name == name);
@@ -25,7 +32,7 @@
 
         public async Task<IEnumerable<int>> GetUsersInstallationsAsync(int userId)
         {
-            using (var context = new UsersContext())
+            using (var context = this.contextLocator())
             {
                 var installationIds = await context.Users
                     .Where(u => u.Id == userId)
@@ -41,9 +48,9 @@
             throw new NotImplementedException();
         }
 
-        private static async Task<User> GetUserAsync(Expression<Func<User, bool>> predicate)
+        private async Task<User> GetUserAsync(Expression<Func<User, bool>> predicate)
         {
-            using (var context = new UsersContext())
+            using (var context = this.contextLocator())
             {
                 var user = await context.Users.FirstOrDefaultAsync(predicate);
                 return user;

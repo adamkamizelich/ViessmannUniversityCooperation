@@ -4,11 +4,10 @@
     using System.Linq;
     using System.Threading.Tasks;
     using NUnit.Framework;
-    using UniversityIot.UsersDataAccess;
     using UniversityIot.UsersDataAccess.Models;
 
     [TestFixture]
-    public class GetUsersInstallationsAsyncTests
+    public class GetUsersInstallationsAsyncTests : UserDataServiceTestsBase
     {
         [Test]
         public async Task WhenUserHasNoInstallations_ShouldReturnEmptyList()
@@ -45,31 +44,14 @@
 
         #region Test setup
 
-        private static async Task<User> CreateFakeUser()
-        {
-            var user = new User
-            {
-                CustomerNumber = "Fake number",
-                Name = "Fake name",
-                Password = "Fake password"
-            };
-
-            using (var context = new UsersContext())
-            {
-                context.Users.Add(user);
-                await context.SaveChangesAsync();
-            }
-            return user;
-        }
-
-        private static async Task<UserInstallation> CreateFakeInstallation(int userId)
+        private async Task<UserInstallation> CreateFakeInstallation(int userId)
         {
             var userInstallation = new UserInstallation
             {
                InstallationId = 1
             };
 
-            using (var context = new UsersContext())
+            using (var context = this.CreateContext())
             {
                 var user = context.Users.Find(userId);
 
@@ -78,13 +60,7 @@
                 await context.SaveChangesAsync();
             }
             return userInstallation;
-        }
-
-        private static UsersDataService GetService()
-        {
-            var service = new UsersDataService();
-            return service;
-        }
+        } 
 
         #endregion
     }

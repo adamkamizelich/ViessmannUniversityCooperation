@@ -10,6 +10,11 @@
         {
         }
 
+        public UsersContext(string connectionName)
+            : base(connectionName)
+        {
+        }
+
         public IDbSet<User> Users { get; set; }
     }
 }

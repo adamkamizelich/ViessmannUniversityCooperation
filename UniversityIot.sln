@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25420.1
+VisualStudioVersion = 14.0.24720.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.VitoControlApi", "Source\UniversityIot.VitoControlApi\UniversityIot.VitoControlApi.csproj", "{7BB10CC4-C5C0-4863-8909-9E79079164E8}"
 EndProject
@@ -36,6 +36,8 @@ EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataAccess", "Source\UniversityIot.GatewaysDataAccess\UniversityIot.GatewaysDataAccess.csproj", "{22CB9CDB-5C3C-4070-B490-C86D854CA07F}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Messages", "UniversityIot.Messages\UniversityIot.Messages.csproj", "{A83C0D44-AE75-422D-AB45-431FC6C350B6}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Tests.Common", "Source\UniversityIot.Tests.Common\UniversityIot.Tests.Common.csproj", "{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -173,6 +175,14 @@ Global
 		{A83C0D44-AE75-422D-AB45-431FC6C350B6}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A83C0D44-AE75-422D-AB45-431FC6C350B6}.Staging|Any CPU.ActiveCfg = Release|Any CPU
 		{A83C0D44-AE75-422D-AB45-431FC6C350B6}.Staging|Any CPU.Build.0 = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Production|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Production|Any CPU.Build.0 = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Staging|Any CPU.ActiveCfg = Release|Any CPU
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -183,5 +193,6 @@ Global
 		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{F8024FCD-9FAE-431A-A965-481C7EC838C1} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
+		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 	EndGlobalSection
 EndGlobal
