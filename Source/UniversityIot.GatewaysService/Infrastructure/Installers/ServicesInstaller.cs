@@ -4,6 +4,7 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using UniversityIot.GatewaysDataAccess;
     using UniversityIot.GatewaysDataService;
     using UniversityIot.UsersService.Mapping;
 
@@ -20,11 +21,20 @@
             {
                 throw new ArgumentNullException(nameof(container));
             }
-
+            
             GatewayServiceMapper.Register();
 
+            const string GatewaysContextLocatorName = "GatewaysContextLocator";
+
+            const string ContextLocatorFieldName = "contextLocator";
+
             container.Register(
-                Component.For<IGatewaysDataService>().ImplementedBy<GatewaysDataService>());
+                Component.For<Func<GatewaysContext>>().Instance(() => new GatewaysContext())
+                .Named(GatewaysContextLocatorName));
+
+            container.Register(
+                Component.For<IGatewaysDataService>().ImplementedBy<GatewaysDataService>()
+                .DependsOn(ServiceOverride.ForKey(ContextLocatorFieldName).Eq(GatewaysContextLocatorName)));
         }
     }
 }
