@@ -4,6 +4,8 @@
     using Castle.MicroKernel.Registration;
     using Castle.MicroKernel.SubSystems.Configuration;
     using Castle.Windsor;
+    using UniversityIot.Components;
+    using UniversityIot.UsersDataAccess;
     using UniversityIot.UsersDataService;
     using UniversityIot.UsersService.Mapping;
 
@@ -24,7 +26,19 @@
             UserServiceMapper.Register();
 
             container.Register(
-                Component.For<IUsersDataService>().ImplementedBy<FakeUsersDataService>());
+                Component.For<IPasswordEncoder>().ImplementedBy<PasswordEncoder>());
+            
+            const string UsersContextLocatorName = "UsersContextLocator";
+
+            const string ContextLocatorFieldName = "contextLocator";
+
+            container.Register(
+                Component.For<Func<UsersContext>>().Instance(() => new UsersContext())
+                .Named(UsersContextLocatorName));
+
+            container.Register(
+                Component.For<IUsersDataService>().ImplementedBy<UsersDataService>()
+                .DependsOn(ServiceOverride.ForKey(ContextLocatorFieldName).Eq(UsersContextLocatorName)));
         }
     }
 }
