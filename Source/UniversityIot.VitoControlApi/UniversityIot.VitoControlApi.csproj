@@ -157,6 +157,7 @@
     <Compile Include="Handlers\Gateways\GetDatapointsHandler.cs" />
     <Compile Include="Handlers\Gateways\PostDatapointHandler.cs" />
     <Compile Include="Handlers\Users\GetByIdHandler.cs" />
+    <Compile Include="Handlers\Users\GetGatewaysHandler.cs" />
     <Compile Include="Http\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Http\Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Http\Attributes\BasicAuthenticationHeaderValue.cs" />
@@ -196,6 +197,8 @@
     <Compile Include="Models\GetGatewayResponse.cs" />
     <Compile Include="Models\GetGatewayDatapointsRequest.cs" />
     <Compile Include="Models\GetGatewayDatapointsResponse.cs" />
+    <Compile Include="Models\GetUserGatewaysRequest.cs" />
+    <Compile Include="Models\GetUserGatewaysResponse.cs" />
     <Compile Include="Models\GetUserRequest.cs" />
     <Compile Include="Models\GetUserResponse.cs" />
     <Compile Include="Models\IdAsyncRequestBase.cs" />

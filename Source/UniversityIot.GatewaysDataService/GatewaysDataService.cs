@@ -3,6 +3,7 @@
     using System;
     using System.Collections.Generic;
     using System.Data.Entity;
+    using System.Linq;
     using System.Threading.Tasks;
     using UniversityIot.GatewaysDataAccess;
     using UniversityIot.GatewaysDataAccess.Models;
@@ -14,6 +15,22 @@
         public GatewaysDataService(Func<GatewaysContext> contextLocator)
         {
             this.contextLocator = contextLocator;
+        }
+
+        public async Task<IEnumerable<Gateway>> GetGateways(IEnumerable<int> ids)
+        {
+            using (var context = this.contextLocator())
+            {
+                var gatewaysQuery = context.Gateways.AsQueryable();
+                if (ids != null)
+                {
+                    gatewaysQuery = gatewaysQuery.Where(x => ids.Contains(x.Id));
+                }
+                
+
+                var gateways = await gatewaysQuery.ToArrayAsync();
+                return gateways;
+            }
         }
 
         public async Task<Gateway> GetGateway(int id)

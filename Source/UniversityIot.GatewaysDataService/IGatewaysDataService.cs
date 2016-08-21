@@ -8,6 +8,8 @@
     {
         Task<Gateway> GetGateway(int id);
 
+        Task<IEnumerable<Gateway>> GetGateways(IEnumerable<int> ids);
+
         Task<IEnumerable<GatewaySetting>> GetSettings();
     }
 }

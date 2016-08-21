@@ -29,6 +29,20 @@
         }
 
         /// <summary>
+        /// Gets the specified ids.
+        /// </summary>
+        /// <param name="ids">The ids.</param>
+        /// <returns>List of gateways</returns>
+        [Route("")]
+        public async Task<IHttpActionResult> Get([FromUri] int[] ids)
+        {
+            var gateways = await this.gatewaysDataService.GetGateways(ids);
+
+            var mappedGateways = Mapper.Map<List<Messages.Gateway>>(gateways);
+            return Ok(mappedGateways);
+        }
+
+        /// <summary>
         /// Gets the specified identifier.
         /// </summary>
         /// <param name="id">The identifier.</param>
