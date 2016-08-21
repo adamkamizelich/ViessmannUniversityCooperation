@@ -157,12 +157,16 @@
     <Compile Include="Handlers\Gateways\GetDatapointsHandler.cs" />
     <Compile Include="Handlers\Gateways\PostDatapointHandler.cs" />
     <Compile Include="Handlers\Users\GetByIdHandler.cs" />
+    <Compile Include="Http\AddChallengeOnUnauthorizedResult.cs" />
+    <Compile Include="Http\Attributes\BasicAuthenticationAttribute.cs" />
+    <Compile Include="Http\Attributes\BasicAuthenticationHeaderValue.cs" />
     <Compile Include="Http\Attributes\IgnoreQueryBindingAttribute.cs" />
     <Compile Include="Http\Binders\CustomModelBinder.cs" />
     <Compile Include="Http\ExceptionsHandling\CustomExceptionHandler.cs" />
     <Compile Include="Http\ExceptionsHandling\CustomExceptionLogger.cs" />
     <Compile Include="Http\ExceptionsHandling\HttpException.cs" />
     <Compile Include="Http\Formatters\CustomFormatter.cs" />
+    <Compile Include="Http\IdPrincipal.cs" />
     <Compile Include="Http\Results\ErrorResult.cs" />
     <Compile Include="Http\Results\RequestResultBase.cs" />
     <Compile Include="Http\Routing\CustomActionSelector.cs" />

@@ -4,12 +4,15 @@
     using System.Threading.Tasks;
     using System.Web.Http;
     using MediatR;
+    using UniversityIot.VitoControlApi.Http;
+    using UniversityIot.VitoControlApi.Http.Attributes;
     using UniversityIot.VitoControlApi.Models;
 
     /// <summary>
     /// Users controller
     /// </summary>
     [RoutePrefix("users")]
+    [BasicAuthentication]
     public class UsersController : ApiControllerBase
     {
         /// <summary>
@@ -32,9 +35,10 @@
         [Route("me")]
         public async Task<IHttpActionResult> GetMe([FromUri]GetUserRequest user)
         {
+            var idPrincipal = this.RequestContext.Principal as IdPrincipal;
             var userRequest = new GetUserRequest
             {
-                Id = "1"
+                Id = idPrincipal.UserId.ToString()
             };
 
             return await this.Get(userRequest);

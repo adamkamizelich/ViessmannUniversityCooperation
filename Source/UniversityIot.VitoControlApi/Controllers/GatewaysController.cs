@@ -4,10 +4,12 @@
     using System.Threading.Tasks;
     using System.Web.Http;
     using MediatR;
+    using UniversityIot.VitoControlApi.Http.Attributes;
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
 
     [RoutePrefix("gateways")]
+    [BasicAuthentication]
     public class GatewaysController : ApiControllerBase
     {
         /// <summary>

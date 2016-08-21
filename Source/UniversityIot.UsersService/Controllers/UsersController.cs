@@ -4,6 +4,7 @@
     using System.Threading.Tasks;
     using System.Web.Http;
     using AutoMapper;
+    using UniversityIot.Messages;
     using UniversityIot.UsersDataService;
     using UniversityIot.UsersService.Http.Attributes;
 
@@ -28,19 +29,19 @@
             this.usersDataService = usersDataService;
         }
 
-        /// <summary>
-        /// Gets the user
-        /// </summary>
-        /// <returns>
-        /// List of users
-        /// </returns>
-        //[Route("")]
-        //public async Task<IHttpActionResult> Get()
-        //{
-        //    //var users = await this.usersDataService.GetAllUsers();
-        //    //var mappedUsers = Mapper.Map<IEnumerable<Messages.User>>(users);
-        //    //return Ok(mappedUsers);
-        //}
+        [Route("verify")]
+        public async Task<IHttpActionResult> Post([FromBody] VerifyUser message)
+        {
+            var isAuthorized = await this.usersDataService.ValidateUserAsync(message.Username, message.Password);
+            if (isAuthorized)
+            {
+                var user = await this.usersDataService.GetUserAsync(message.Username);
+                var mappedUser = Mapper.Map<Messages.User>(user);
+                return Ok(mappedUser);
+            }
+
+            return Unauthorized();
+        }
 
         /// <summary>
         /// Gets the user
