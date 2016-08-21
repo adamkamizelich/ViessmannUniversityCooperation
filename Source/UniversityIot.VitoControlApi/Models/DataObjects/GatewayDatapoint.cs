@@ -30,19 +30,19 @@
         public string HexAdress { get; set; }
 
         /// <summary>
-        /// Gets or sets the type of the data.
-        /// </summary>
-        /// <value>
-        /// The type of the data.
-        /// </value>
-        public int DataType { get; set; }
-
-        /// <summary>
         /// Gets or sets the value.
         /// </summary>
         /// <value>
         /// The value.
         /// </value>
         public string Value { get; set; }
+
+        /// <summary>
+        /// Gets or sets a value indicating whether this instance is read only.
+        /// </summary>
+        /// <value>
+        /// <c>true</c> if this instance is read only; otherwise, <c>false</c>.
+        /// </value>
+        public bool IsReadOnly { get; set; }
     }
 }
