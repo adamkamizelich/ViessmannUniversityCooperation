@@ -3,7 +3,7 @@
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using MediatR;
+    using UniversityIot.VitoControlApi.Handlers.Gateways;
     using UniversityIot.VitoControlApi.Http.Attributes;
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
@@ -13,56 +13,93 @@
     public class GatewaysController : ApiControllerBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="GatewaysController"/> class.
+        /// The get by identifier handler
         /// </summary>
-        /// <param name="mediator">The mediator.</param>
+        private readonly IGetByIdHandler getByIdHandler;
+
+        /// <summary>
+        /// The get datapoints handler
+        /// </summary>
+        private readonly IGetDatapointsHandler getDatapointsHandler;
+
+        /// <summary>
+        /// The post datapoint handler
+        /// </summary>
+        private readonly IPostDatapointHandler postDatapointHandler;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="GatewaysController" /> class.
+        /// </summary>
+        /// <param name="getByIdHandler">The get by identifier handler.</param>
+        /// <param name="getDatapointsHandler">The get datapoints handler.</param>
+        /// <param name="postDatapointHandler">The post datapoint handler.</param>
         [CLSCompliant(false)]
-        public GatewaysController(IMediator mediator) : base(mediator)
+        public GatewaysController(IGetByIdHandler getByIdHandler, IGetDatapointsHandler getDatapointsHandler, IPostDatapointHandler postDatapointHandler)
         {
+            this.getByIdHandler = getByIdHandler;
+            this.getDatapointsHandler = getDatapointsHandler;
+            this.postDatapointHandler = postDatapointHandler;
         }
 
         /// <summary>
         /// Gets the user
         /// </summary>
-        /// <param name="gateway">The gateway.</param>
+        /// <param name="id">The identifier.</param>
         /// <returns>
         /// User model
         /// </returns>
         [Route("{id:int}")]
-        public async Task<IHttpActionResult> Get([FromUri]GetGatewayRequest gateway)
+        public async Task<IHttpActionResult> Get([FromUri]int id)
         {
-            GetGatewayResponse responseModel = await this.HandleRequestAsync<GetGatewayRequest, GetGatewayResponse>(gateway);
+            var request = new GetGatewayRequest()
+            {
+                Id = id
+            };
+
+            var responseModel = await this.getByIdHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
 
         /// <summary>
         /// Gets the user
         /// </summary>
-        /// <param name="gatewayDatapoints">The gateway datapoints.</param>
+        /// <param name="id">The identifier.</param>
         /// <returns>
         /// User model
         /// </returns>
         [Route("{id:int}/datapoints")]
-        public async Task<IHttpActionResult> GetDatapoints([FromUri]GetGatewayDatapointsRequest gatewayDatapoints)
+        public async Task<IHttpActionResult> GetDatapoints([FromUri]int id)
         {
-            GetGatewayDatapointsResponse responseModel = await this.HandleRequestAsync<GetGatewayDatapointsRequest, GetGatewayDatapointsResponse>(gatewayDatapoints);
+            var request = new GetGatewayDatapointsRequest()
+            {
+                Id = id
+            };
+
+            var responseModel = await this.getDatapointsHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
 
         /// <summary>
         /// Gets the user
         /// </summary>
-        /// <param name="gatewayDatapoint">The gateway setting.</param>
+        /// <param name="id">The identifier.</param>
+        /// <param name="datapointId">The datapoint identifier.</param>
         /// <param name="body">The body.</param>
         /// <returns>
         /// User model
         /// </returns>
-        [Route("{id:int}/datapoints/{datapointId}")]
+        [Route("{id:int}/datapoints/{datapointId:int}")]
         [HttpPost]
-        public async Task<IHttpActionResult> PostDatapoint(PostGatewayDatapointRequest gatewayDatapoint, [FromBody] PostGatewayDatapointBody body)
+        public async Task<IHttpActionResult> PostDatapoint([FromUri]int id, [FromUri] int datapointId, [FromBody] PostGatewayDatapointBody body)
         {
-            gatewayDatapoint.Value = body.Value;
-            PostGatewayDatapointResponse responseModel = await this.HandleRequestAsync<PostGatewayDatapointRequest, PostGatewayDatapointResponse>(gatewayDatapoint);
+            var request = new PostGatewayDatapointRequest()
+            {
+                Id = id,
+                DatapointId = datapointId,
+                Value = body.Value
+            };
+
+            var responseModel = await this.postDatapointHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
     }

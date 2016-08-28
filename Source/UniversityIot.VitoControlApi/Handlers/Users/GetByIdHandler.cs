@@ -13,7 +13,7 @@
     /// <summary>
     /// Get user by id
     /// </summary>
-    public class GetByIdHandler : AsyncBaseHandler<GetUserRequest, GetUserResponse>
+    public class GetByIdHandler : IGetByIdHandler
     {
         /// <summary>
         /// Internals of handling message
@@ -22,7 +22,7 @@
         /// <returns>
         /// Response model
         /// </returns>
-        protected override async Task<GetUserResponse> InternalHandle(GetUserRequest message)
+        public async Task<GetUserResponse> Handle(GetUserRequest message)
         {
             var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Users"])
             {
@@ -30,7 +30,7 @@
             };
 
             var userRequest = new RestRequest("users/{id}", Method.GET);
-            userRequest.AddUrlSegment("id", message.Id);
+            userRequest.AddUrlSegment("id", message.Id.ToString());
 
             var userResponse = await restClient.ExecuteTaskAsync<Messages.User>(userRequest);
             if (userResponse.StatusCode == HttpStatusCode.NotFound)

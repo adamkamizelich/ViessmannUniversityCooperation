@@ -1,13 +1,18 @@
 ﻿namespace UniversityIot.VitoControlApi.Models
 {
     using System.Web.Http.ModelBinding;
-    using UniversityIot.VitoControlApi.Http.Binders;
 
     /// <summary>
     /// User gateways request model
     /// </summary>
-    [ModelBinder(typeof(CustomModelBinder<GetUserGatewaysRequest, GetUserGatewaysResponse>))]
-    public class GetUserGatewaysRequest : IdAsyncRequestBase<GetUserGatewaysResponse>
+    public class GetUserGatewaysRequest
     {
+        /// <summary>
+        /// Gets or sets the identifier.
+        /// </summary>
+        /// <value>
+        /// The identifier.
+        /// </value>
+        public int Id { get; set; }
     }
 }

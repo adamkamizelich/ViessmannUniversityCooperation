@@ -12,9 +12,9 @@
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
 
-    public class PostDatapointHandler : AsyncBaseHandler<PostGatewayDatapointRequest, PostGatewayDatapointResponse>
+    public class PostDatapointHandler : IPostDatapointHandler
     {
-        protected override async Task<PostGatewayDatapointResponse> InternalHandle(PostGatewayDatapointRequest message)
+        public async Task<PostGatewayDatapointResponse> Handle(PostGatewayDatapointRequest message)
         {
             var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
             {
@@ -22,7 +22,7 @@
             };
 
             var gatewayRequest = new RestRequest("gateways/{id}", Method.GET);
-            gatewayRequest.AddUrlSegment("id", message.Id);
+            gatewayRequest.AddUrlSegment("id", message.Id.ToString());
 
             var gatewayResponse = await restClient.ExecuteTaskAsync<Messages.Gateway>(gatewayRequest);
             if (gatewayResponse.StatusCode == HttpStatusCode.NotFound)
@@ -34,7 +34,7 @@
             }
 
             var gatewaySettingsRequest = new RestRequest("gateways/settings", Method.GET);
-            gatewaySettingsRequest.AddUrlSegment("id", message.Id);
+            gatewaySettingsRequest.AddUrlSegment("id", message.Id.ToString());
 
             var gatewaySettingsResponse = await restClient.ExecuteTaskAsync<List<Messages.GatewaySetting>>(gatewaySettingsRequest);
             if (gatewaySettingsResponse.StatusCode == HttpStatusCode.NotFound)
@@ -46,7 +46,7 @@
             }
 
             var gatewaySettings = Mapper.Map<IEnumerable<GatewayDatapoint>>(gatewaySettingsResponse.Data).ToList();
-            if (gatewaySettings.All(x => x.Id.ToString() != message.DatapointId))
+            if (gatewaySettings.All(x => x.Id != message.DatapointId))
             {
                 return new PostGatewayDatapointResponse()
                 {

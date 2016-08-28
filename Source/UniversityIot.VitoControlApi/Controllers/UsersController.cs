@@ -3,8 +3,8 @@
     using System;
     using System.Threading.Tasks;
     using System.Web.Http;
-    using MediatR;
     using UniversityIot.VitoControlApi.Enums;
+    using UniversityIot.VitoControlApi.Handlers.Users;
     using UniversityIot.VitoControlApi.Http;
     using UniversityIot.VitoControlApi.Http.Attributes;
     using UniversityIot.VitoControlApi.Models;
@@ -17,75 +17,94 @@
     public class UsersController : ApiControllerBase
     {
         /// <summary>
-        /// Initializes a new instance of the <see cref="UsersController"/> class.
+        /// The get by identifier handler
         /// </summary>
-        /// <param name="mediator">The mediator.</param>       
+        private readonly IGetByIdHandler getByIdHandler;
+
+        /// <summary>
+        /// The get gateways handler
+        /// </summary>
+        private readonly IGetGatewaysHandler getGatewaysHandler;
+
+        /// <summary>
+        /// Initializes a new instance of the <see cref="UsersController" /> class.
+        /// </summary>
+        /// <param name="getByIdHandler">The get by identifier handler.</param>
+        /// <param name="getGatewaysHandler">The get gateways handler.</param>
         [CLSCompliant(false)]
-        public UsersController(IMediator mediator)
-            : base(mediator)
+        public UsersController(IGetByIdHandler getByIdHandler, IGetGatewaysHandler getGatewaysHandler)
         {
+            this.getByIdHandler = getByIdHandler;
+            this.getGatewaysHandler = getGatewaysHandler;
         }
 
         /// <summary>
         /// Gets the user
         /// </summary>
-        /// <param name="user">The identifier.</param>
         /// <returns>
         /// User model
         /// </returns>
         [Route("me")]
-        public async Task<IHttpActionResult> GetMe([FromUri]GetUserRequest user)
+        public async Task<IHttpActionResult> GetMe()
         {
             var idPrincipal = this.RequestContext.Principal as IdPrincipal;
-            var userRequest = new GetUserRequest
-            {
-                Id = idPrincipal.UserId.ToString()
-            };
 
-            return await this.Get(userRequest);
+            return await this.Get(idPrincipal.UserId);
         }
 
         /// <summary>
         /// Gets the user
         /// </summary>
-        /// <param name="user">The identifier.</param>
+        /// <param name="id">The identifier.</param>
         /// <returns>
         /// User model
         /// </returns>
         [Route("{id:int}")]
-        public async Task<IHttpActionResult> Get([FromUri]GetUserRequest user)
+        public async Task<IHttpActionResult> Get([FromUri]int id)
         {
             var idPrincipal = this.RequestContext.Principal as IdPrincipal;
-            if (idPrincipal.UserId.ToString() != user.Id)
+            if (idPrincipal.UserId != id)
             {
                 return this.CreateHttpActionResult(new GetUserResponse()
                 {
                     ErrorModel = new ErrorModel(ErrorType.Unauthorized)
                 });
             }
-            GetUserResponse responseModel = await this.HandleRequestAsync<GetUserRequest, GetUserResponse>(user);
+
+            var request = new GetUserRequest()
+            {
+                Id = id
+            };
+
+            var responseModel = await this.getByIdHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
 
         /// <summary>
         /// Gets the user gateways
         /// </summary>
-        /// <param name="user">The identifier.</param>
+        /// <param name="id">The identifier.</param>
         /// <returns>
         /// User gateways model
         /// </returns>
         [Route("{id:int}/gateways")]
-        public async Task<IHttpActionResult> Get([FromUri]GetUserGatewaysRequest user)
+        public async Task<IHttpActionResult> GetGateways([FromUri]int id)
         {
             var idPrincipal = this.RequestContext.Principal as IdPrincipal;
-            if (idPrincipal.UserId.ToString() != user.Id)
+            if (idPrincipal.UserId != id)
             {
                 return this.CreateHttpActionResult(new GetUserResponse()
                 {
                     ErrorModel = new ErrorModel(ErrorType.Unauthorized)
                 });
             }
-            GetUserGatewaysResponse responseModel = await this.HandleRequestAsync<GetUserGatewaysRequest, GetUserGatewaysResponse>(user);
+
+            var request = new GetUserGatewaysRequest()
+            {
+                Id = id
+            };
+
+            var responseModel = await this.getGatewaysHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
     }

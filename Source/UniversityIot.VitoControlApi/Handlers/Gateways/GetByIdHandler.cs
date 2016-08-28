@@ -14,9 +14,9 @@
     /// Get by id handler
     /// </summary>
     /// <seealso cref="UniversityIot.VitoControlApi.Handlers.AsyncBaseHandler{UniversityIot.VitoControlApi.Models.GetGatewayRequest, UniversityIot.VitoControlApi.Models.GetGatewayResponse}" />
-    public class GetByIdHandler : AsyncBaseHandler<GetGatewayRequest, GetGatewayResponse>
+    public class GetByIdHandler : IGetByIdHandler
     {
-        protected override async Task<GetGatewayResponse> InternalHandle(GetGatewayRequest message)
+        public async Task<GetGatewayResponse> Handle(GetGatewayRequest message)
         {
             var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
             {
@@ -24,7 +24,7 @@
             };
 
             var gatewayRequest = new RestRequest("gateways/{id}", Method.GET);
-            gatewayRequest.AddUrlSegment("id", message.Id);
+            gatewayRequest.AddUrlSegment("id", message.Id.ToString());
 
             var gatewayResponse = await restClient.ExecuteTaskAsync<Messages.Gateway>(gatewayRequest);
             if (gatewayResponse.StatusCode == HttpStatusCode.NotFound)

@@ -13,9 +13,9 @@
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
 
-    public class GetDatapointsHandler : AsyncBaseHandler<GetGatewayDatapointsRequest, GetGatewayDatapointsResponse>
+    public class GetDatapointsHandler : IGetDatapointsHandler
     {
-        protected override async Task<GetGatewayDatapointsResponse> InternalHandle(GetGatewayDatapointsRequest message)
+        public async Task<GetGatewayDatapointsResponse> Handle(GetGatewayDatapointsRequest message)
         {
             var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
             {
@@ -23,7 +23,7 @@
             };
 
             var gatewayRequest = new RestRequest("gateways/{id}", Method.GET);
-            gatewayRequest.AddUrlSegment("id", message.Id);
+            gatewayRequest.AddUrlSegment("id", message.Id.ToString());
 
             var gatewayResponse = await restClient.ExecuteTaskAsync<Messages.Gateway>(gatewayRequest);
             if (gatewayResponse.StatusCode == HttpStatusCode.NotFound)
@@ -35,7 +35,7 @@
             }
 
             var gatewaySettingsRequest = new RestRequest("gateways/settings", Method.GET);
-            gatewaySettingsRequest.AddUrlSegment("id", message.Id);
+            gatewaySettingsRequest.AddUrlSegment("id", message.Id.ToString());
 
             var gatewaySettingsResponse = await restClient.ExecuteTaskAsync<List<Messages.GatewaySetting>>(gatewaySettingsRequest);
             if (gatewaySettingsResponse.StatusCode == HttpStatusCode.NotFound)

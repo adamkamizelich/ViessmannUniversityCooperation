@@ -14,16 +14,14 @@ namespace UniversityIot.VitoControlApi.Handlers.Users
     /// <summary>
     /// Get user gateways
     /// </summary>
-    public class GetGatewaysHandler : AsyncBaseHandler<GetUserGatewaysRequest, GetUserGatewaysResponse>
+    public class GetGatewaysHandler : IGetGatewaysHandler
     {
         /// <summary>
         /// Internals of handling message
         /// </summary>
         /// <param name="message">The message.</param>
-        /// <returns>
-        /// Response model
-        /// </returns>
-        protected override async Task<GetUserGatewaysResponse> InternalHandle(GetUserGatewaysRequest message)
+        /// <returns>User gateways model</returns>
+        public async Task<GetUserGatewaysResponse> Handle(GetUserGatewaysRequest message)
         {
             var userInstallationsResponse = await GetUserInstallations(message);
             if (userInstallationsResponse.StatusCode == HttpStatusCode.NotFound)
@@ -55,7 +53,7 @@ namespace UniversityIot.VitoControlApi.Handlers.Users
         /// <returns>User installations</returns>
         private static async Task<IRestResponse<List<Messages.Gateway>>> GetGatewaysDetails(List<int> userInstallations)
         {
-            var restClient2 = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
+            var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
             {
                 Authenticator = new HttpBasicAuthenticator(ConfigurationManager.AppSettings["ServiceEndpoints:Username"], ConfigurationManager.AppSettings["ServiceEndpoints:Password"])
             };
@@ -66,7 +64,7 @@ namespace UniversityIot.VitoControlApi.Handlers.Users
                 gatewaysRequest.AddQueryParameter("ids", userInstallation.ToString());
             }
 
-            var gatewaysResponse = await restClient2.ExecuteTaskAsync<List<Messages.Gateway>>(gatewaysRequest);
+            var gatewaysResponse = await restClient.ExecuteTaskAsync<List<Messages.Gateway>>(gatewaysRequest);
             return gatewaysResponse;
         }
 
@@ -83,7 +81,7 @@ namespace UniversityIot.VitoControlApi.Handlers.Users
             };
 
             var userInstallationsRequest = new RestRequest("users/{id}/installations", Method.GET);
-            userInstallationsRequest.AddUrlSegment("id", message.Id);
+            userInstallationsRequest.AddUrlSegment("id", message.Id.ToString());
 
             var userInstallationsResponse = await restClient.ExecuteTaskAsync<List<int>>(userInstallationsRequest);
             return userInstallationsResponse;
