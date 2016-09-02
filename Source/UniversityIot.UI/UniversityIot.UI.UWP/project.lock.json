@@ -255,6 +255,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "4.0.0",
@@ -1788,6 +1801,25 @@
           }
         }
       },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.1.114": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -2047,6 +2079,19 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -3442,6 +3487,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.1.114": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -3687,6 +3751,19 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -5058,6 +5135,25 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/2.3.1.114": {
@@ -5327,6 +5423,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "4.0.0",
@@ -6720,6 +6829,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.1.114": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -6965,6 +7093,19 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -8336,6 +8477,25 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/2.3.1.114": {
@@ -8605,6 +8765,19 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        }
+      },
       "System.AppContext/4.0.0": {
         "dependencies": {
           "System.Collections": "4.0.0",
@@ -9998,6 +10171,25 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        }
+      },
       "Xamarin.Forms/2.3.1.114": {
         "compile": {
           "lib/uap10.0/Xamarin.Forms.Core.dll": {},
@@ -10243,6 +10435,19 @@
         },
         "runtime": {
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
+        }
+      },
+      "PCLCrypto/0.1.0-alpha": {
+        "dependencies": {
+          "Validation": "(, )"
+        },
+        "compile": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
+        },
+        "runtime": {
+          "lib/win81/PCLCrypto.Abstractions.dll": {},
+          "lib/win81/PCLCrypto.dll": {}
         }
       },
       "System.AppContext/4.0.0": {
@@ -11614,6 +11819,25 @@
         },
         "runtime": {
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
+        }
+      },
+      "Validation/1.0.0.12259": {
+        "compile": {
+          "lib/winrt45/Validation.dll": {}
+        },
+        "runtime": {
+          "lib/winrt45/Validation.dll": {}
+        }
+      },
+      "Xamarin.Auth/1.3.1.1": {
+        "dependencies": {
+          "PCLCrypto": "(, )"
+        },
+        "compile": {
+          "lib/win81/Xamarin.Auth.dll": {}
+        },
+        "runtime": {
+          "lib/win81/Xamarin.Auth.dll": {}
         }
       },
       "Xamarin.Forms/2.3.1.114": {
@@ -12252,6 +12476,42 @@
         "ref/net46/Microsoft.Win32.Primitives.dll",
         "ref/xamarinios10/_._",
         "ref/xamarinmac20/_._"
+      ]
+    },
+    "PCLCrypto/0.1.0-alpha": {
+      "sha512": "FFXNNTG8/Fn0ZbCdrcRXWAeaXE5faFgFI6dswx2+Sn5sG4ylxwX3EBnx2lFWV/7IdiuhvE3PV1cZPuV7Xx1swA==",
+      "type": "package",
+      "files": [
+        "PCLCrypto.0.1.0-alpha.nupkg.sha512",
+        "PCLCrypto.nuspec",
+        "lib/monoandroid/PCLCrypto.Abstractions.dll",
+        "lib/monoandroid/PCLCrypto.Abstractions.xml",
+        "lib/monoandroid/PCLCrypto.dll",
+        "lib/monoandroid/PCLCrypto.xml",
+        "lib/monotouch/PCLCrypto.Abstractions.dll",
+        "lib/monotouch/PCLCrypto.Abstractions.xml",
+        "lib/monotouch/PCLCrypto.dll",
+        "lib/monotouch/PCLCrypto.xml",
+        "lib/net45/PCLCrypto.Abstractions.dll",
+        "lib/net45/PCLCrypto.Abstractions.xml",
+        "lib/net45/PCLCrypto.dll",
+        "lib/net45/PCLCrypto.xml",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.Abstractions.dll",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.Abstractions.xml",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.dll",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.xml",
+        "lib/sl5/PCLCrypto.Abstractions.dll",
+        "lib/sl5/PCLCrypto.Abstractions.xml",
+        "lib/sl5/PCLCrypto.dll",
+        "lib/sl5/PCLCrypto.xml",
+        "lib/win81/PCLCrypto.Abstractions.dll",
+        "lib/win81/PCLCrypto.Abstractions.xml",
+        "lib/win81/PCLCrypto.dll",
+        "lib/win81/PCLCrypto.xml",
+        "lib/wp8/PCLCrypto.Abstractions.dll",
+        "lib/wp8/PCLCrypto.Abstractions.xml",
+        "lib/wp8/PCLCrypto.dll",
+        "lib/wp8/PCLCrypto.xml"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -14769,6 +15029,35 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
+    "Validation/1.0.0.12259": {
+      "sha512": "WX4QGiWqqIJxkAEVTDv8fkgfbrT0YajosYm5VE7c9GE0D9SnIl8RJ9dtYwb8yueawvtILu0GuSeitLFOdyOEOQ==",
+      "type": "package",
+      "files": [
+        "Validation.1.0.0.12259.nupkg.sha512",
+        "Validation.nuspec",
+        "lib/net35-client/Validation.dll",
+        "lib/net35-client/Validation.xml",
+        "lib/net40-client/Validation.dll",
+        "lib/net40-client/Validation.xml",
+        "lib/winrt45/Validation.dll",
+        "lib/winrt45/Validation.xml"
+      ]
+    },
+    "Xamarin.Auth/1.3.1.1": {
+      "sha512": "uDiDxg+iFioMYBhyc1Z02aTvUTrxu3QflndiyGF6yZ2ohte4Zf0u4v2d9jfWqsyRFlPE/NkmFItHdJR1JstVbg==",
+      "type": "package",
+      "files": [
+        "Xamarin.Auth.1.3.1.1.nupkg.sha512",
+        "Xamarin.Auth.nuspec",
+        "lib/MonoAndroid10/Xamarin.Auth.dll",
+        "lib/MonoTouch10/Xamarin.Auth.dll",
+        "lib/Xamarin.iOS10/Xamarin.Auth.dll",
+        "lib/portable-net45+wp8+wpa81+win8+MonoAndroid10+MonoTouch10+XamarinIOS10/Xamarin.Auth.dll",
+        "lib/win81/Xamarin.Auth.dll",
+        "lib/wp8/Xamarin.Auth.dll",
+        "lib/wpa81/Xamarin.Auth.dll"
+      ]
+    },
     "Xamarin.Forms/2.3.1.114": {
       "sha512": "gEUGBCLHSylRQfpzAwUzI9EuJ3UVlwo+BFXGUdeL+XW9HrAPB8FtcDZMK7/HBdywMxGDhEFwXCCSClyEsdrFvw==",
       "type": "package",
@@ -14976,6 +15265,7 @@
   "projectFileDependencyGroups": {
     "": [
       "Microsoft.NETCore.UniversalWindowsPlatform >= 5.0.0",
+      "Xamarin.Auth >= 1.3.1.1",
       "Xamarin.Forms >= 2.3.1.114"
     ],
     "UAP,Version=v10.0": []

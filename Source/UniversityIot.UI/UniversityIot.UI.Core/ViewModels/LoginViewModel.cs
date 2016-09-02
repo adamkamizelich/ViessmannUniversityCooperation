@@ -13,10 +13,12 @@ namespace UniversityIot.UI.Core.ViewModels
     class LoginViewModel :BaseViewModel
     {
         private readonly UserManagementService userManagementService;
+        private readonly ICredentialsService credentialsService;
 
-        public LoginViewModel(UserManagementService userManagementService)
+        public LoginViewModel(UserManagementService userManagementService, ICredentialsService credentialsService)
         {
             this.userManagementService = userManagementService;
+            this.credentialsService = credentialsService;
         }
 
         private string _password;
@@ -71,6 +73,8 @@ namespace UniversityIot.UI.Core.ViewModels
                     }
 
                     ErrorMessage = string.Empty;
+
+                    credentialsService.SaveCredentials(this.UserName, this.Password);
 
                     ErrorMessage = "Logged";
 

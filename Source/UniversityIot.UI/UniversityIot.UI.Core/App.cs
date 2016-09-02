@@ -11,6 +11,8 @@ namespace UniversityIot.UI.Core
             MainPage = new NavigationPage(new LoginPage());
         }
 
+        public static string AppName => "Com.Viessmann.UniversityIot.UI";
+
         protected override void OnStart()
         {
             // Handle when your app starts
