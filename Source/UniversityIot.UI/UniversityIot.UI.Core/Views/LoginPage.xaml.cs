@@ -10,7 +10,7 @@ namespace UniversityIot.UI.Core.Views
         {
             InitializeComponent();
 
-            var credentialsService = new CredentialsService();
+            var credentialsService = DependencyService.Get<ICredentialsService>();
 
             BindingContext = new LoginViewModel(new UserManagementService(), credentialsService);
         }

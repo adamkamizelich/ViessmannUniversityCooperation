@@ -1,8 +1,14 @@
 ﻿using System;
 using System.Linq;
+using UniversityIot.UI.Core;
+using UniversityIot.UI.Core.Services;
+using UniversityIot.UI.Droid.Services;
 using Xamarin.Auth;
+using Xamarin.Forms;
 
-namespace UniversityIot.UI.Core.Services
+[assembly: Dependency(typeof(CredentialsService))]
+
+namespace UniversityIot.UI.Droid.Services
 {
     internal class CredentialsService : ICredentialsService
     {

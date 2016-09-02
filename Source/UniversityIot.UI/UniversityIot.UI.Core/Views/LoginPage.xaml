@@ -2,14 +2,25 @@
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UniversityIot.UI.Core.Views.LoginPage">
+             x:Class="UniversityIot.UI.Core.Views.LoginPage"
+             BackgroundColor="White">
 
-    <StackLayout Orientation="Vertical">
+    <StackLayout Orientation="Vertical"
+                 Padding="20">
 
-        <Label Text="{Binding ErrorMessage}" TextColor="Red" />
+        <Label Text="{Binding ErrorMessage}" 
+               TextColor="Red" />
 
-        <Entry Text="{Binding UserName, Mode=TwoWay}" />
-        <Entry Text="{Binding Password, Mode=OneWayToSource}" />
+        <Entry Placeholder="User"
+               PlaceholderColor="Gray"
+               Text="{Binding UserName, Mode=TwoWay}"
+               TextColor="Black" />
+      
+        <Entry Placeholder="Password"
+               PlaceholderColor="Gray"
+               Text="{Binding Password, Mode=OneWayToSource}"
+               TextColor="Black"
+               IsPassword="True" />
 
         <Button Command="{Binding LoginCommand}" Text="Login" />
 
