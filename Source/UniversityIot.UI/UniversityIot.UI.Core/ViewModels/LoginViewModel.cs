@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UniversityIot.UI.Core.DataAccess;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
@@ -15,13 +16,16 @@ namespace UniversityIot.UI.Core.ViewModels
     public class LoginViewModel : BaseViewModel
     {
         private readonly UserManagementService userManagementService;
+        private readonly IInstallationsRepository installationsRepository;
         private readonly ICredentialsService credentialsService;
 
         public LoginViewModel(
             UserManagementService userManagementService, 
+            IInstallationsRepository installationsRepository,
             ICredentialsService credentialsService)
         {
             this.userManagementService = userManagementService;
+            this.installationsRepository = installationsRepository;
             this.credentialsService = credentialsService;
         }
 
@@ -82,15 +86,11 @@ namespace UniversityIot.UI.Core.ViewModels
 
                     ErrorMessage = "Logged";
 
-                    // TODO 
-                    var installationModel = new InstallationModel
-                    {
-                        Id = 1,
-                        Description = "test installation",
-                        SerialNumber = "9023840923789084723"
-                    };
-
+                    // TODO
+                    const long installationId = 1;
+                    InstallationModel installationModel = this.installationsRepository.GetInstallationById(installationId);
                     var installationViewModel = new InstallationViewModel(installationModel, DraftContainer.DatapointsRepository);
+
                     await this.NavigationService.Push(installationViewModel);
                 });
             }
