@@ -13,6 +13,7 @@ namespace UniversityIot.UI.Core.Views
 
             var credentialsService = DependencyService.Get<ICredentialsService>();
 
+            // TODO remove from here
             BindingContext = new LoginViewModel(new UserManagementService(), credentialsService);
         }
     }

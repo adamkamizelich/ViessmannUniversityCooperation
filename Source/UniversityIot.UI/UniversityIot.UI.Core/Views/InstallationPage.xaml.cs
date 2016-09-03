@@ -15,8 +15,6 @@ namespace UniversityIot.UI.Core.Views
         public InstallationPage()
         {
             InitializeComponent();
-
-            BindingContext = new InstallationViewModel();
         }
     }
 }

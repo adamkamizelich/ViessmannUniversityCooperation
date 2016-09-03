@@ -1,6 +1,6 @@
 ﻿using UniversityIot.UI.Core.MVVM;
 
-namespace UniversityIot.UI.Core.ViewModels
+namespace UniversityIot.UI.Core.Models
 {
     public class DatapointModel : BaseViewModel
     {

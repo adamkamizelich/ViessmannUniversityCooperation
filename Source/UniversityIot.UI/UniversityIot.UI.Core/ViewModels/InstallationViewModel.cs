@@ -1,4 +1,5 @@
-﻿using UniversityIot.UI.Core.MVVM;
+﻿using UniversityIot.UI.Core.Models;
+using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
 
 namespace UniversityIot.UI.Core.ViewModels
@@ -11,8 +12,20 @@ namespace UniversityIot.UI.Core.ViewModels
     public class InstallationViewModel : BaseViewModel
     {
         private string installationName;
+        private string _description;
 
         public ObservableCollection<DatapointModel> Datapoints { get; set; }
+
+        public string Description
+        {
+            get { return _description; }
+            set
+            {
+                if (value == _description) return;
+                _description = value;
+                OnPropertyChanged();
+            }
+        }
 
         public string InstallationName
         {
@@ -25,8 +38,11 @@ namespace UniversityIot.UI.Core.ViewModels
             }
         }
 
-        public InstallationViewModel()
+        public InstallationViewModel(InstallationModel installationModel)
         {
+            this.InstallationName = installationModel.SerialNumber;
+            this.Description = installationModel.Description;
+
             // TODO
             this.Datapoints = new ObservableCollection<DatapointModel>(new List<DatapointModel>
             {

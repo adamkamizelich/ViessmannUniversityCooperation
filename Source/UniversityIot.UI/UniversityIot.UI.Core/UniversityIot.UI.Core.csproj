@@ -37,6 +37,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="DraftContainer.cs" />
+    <Compile Include="Models\DatapointModel.cs" />
+    <Compile Include="Models\InstallationModel.cs" />
+    <Compile Include="MVVM\BaseModel.cs" />
     <Compile Include="MVVM\BaseViewModel.cs" />
     <Compile Include="MVVM\INavigationService.cs" />
     <Compile Include="MVVM\NavigationService.cs" />
@@ -45,7 +48,6 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ICredentialsService.cs" />
     <Compile Include="Services\UserManagementService.cs" />
-    <Compile Include="ViewModels\DatapointModel.cs" />
     <Compile Include="ViewModels\InstallationViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\InstallationPage.xaml.cs">

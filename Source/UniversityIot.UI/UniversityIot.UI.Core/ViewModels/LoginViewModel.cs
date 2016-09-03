@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
 using Xamarin.Forms;
@@ -81,7 +82,15 @@ namespace UniversityIot.UI.Core.ViewModels
 
                     ErrorMessage = "Logged";
 
-                    await this.NavigationService.Push(new InstallationViewModel());
+                    // TODO 
+                    var installationModel = new InstallationModel
+                    {
+                        Id = 1,
+                        Description = "test installation",
+                        SerialNumber = "9023840923789084723"
+                    };
+
+                    await this.NavigationService.Push(new InstallationViewModel(installationModel));
                 });
             }
         }

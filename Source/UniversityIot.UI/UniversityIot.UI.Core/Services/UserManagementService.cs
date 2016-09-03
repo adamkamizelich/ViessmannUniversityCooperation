@@ -10,6 +10,9 @@ namespace UniversityIot.UI.Core.Services
     {
         public bool Login(string userName, string password)
         {
+            // TODO
+            return true;
+
             return String.Equals(userName, "admin", StringComparison.Ordinal) 
                 && String.Equals(password, "admin", StringComparison.Ordinal);
         }
