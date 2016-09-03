@@ -1,8 +1,10 @@
 ﻿using UniversityIot.UI.Core.DataAccess;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
+using UniversityIot.UI.Core.Services;
 using UniversityIot.UI.Core.ViewModels;
 using UniversityIot.UI.Core.Views;
+using Xamarin.Forms;
 
 namespace UniversityIot.UI.Core
 {
@@ -10,14 +12,19 @@ namespace UniversityIot.UI.Core
     {
         public static NavigationService NavigationService { get; private set; }
         public static IDatapointsRepository DatapointsRepository { get; private set; }
+        public static UserManagementService UserManagementService { get; private set; }
+        public static InstallationRepository InstallationsRepository { get; private set; }
+        public static ViewViewModelRegister ViewViewModelRegister { get; private set; }
 
         static DraftContainer()
         {
-            var viewViewModelRegister = new ViewViewModelRegister();
-            NavigationService = new NavigationService(App.Current.MainPage.Navigation, viewViewModelRegister);
+            ViewViewModelRegister = new ViewViewModelRegister();
+            NavigationService = new NavigationService(ViewViewModelRegister);
             DatapointsRepository = new DatapointsRepository();
+            UserManagementService = new UserManagementService();
+            InstallationsRepository = new InstallationRepository();
 
-            RegisterViewModels(viewViewModelRegister);
+            RegisterViewModels(ViewViewModelRegister);
         }
 
         private static void RegisterViewModels(ViewViewModelRegister viewViewModelRegister)

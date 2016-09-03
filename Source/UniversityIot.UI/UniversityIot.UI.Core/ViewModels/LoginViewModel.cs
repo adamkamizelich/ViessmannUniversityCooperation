@@ -21,8 +21,8 @@ namespace UniversityIot.UI.Core.ViewModels
 
         public LoginViewModel(
             UserManagementService userManagementService, 
-            IInstallationsRepository installationsRepository,
-            ICredentialsService credentialsService)
+            ICredentialsService credentialsService,
+            IInstallationsRepository installationsRepository)
         {
             this.userManagementService = userManagementService;
             this.installationsRepository = installationsRepository;
