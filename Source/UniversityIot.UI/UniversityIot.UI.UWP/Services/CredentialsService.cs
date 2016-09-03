@@ -33,6 +33,8 @@ namespace UniversityIot.UI.UWP.Services
 
         public void SaveCredentials(string userName, string md5Password)
         {
+            return; 
+
             if (string.IsNullOrWhiteSpace(userName))
             {
                 throw new ArgumentException("", nameof(userName));

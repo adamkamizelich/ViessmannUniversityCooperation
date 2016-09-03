@@ -5,6 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
 using Xamarin.Forms;
 
@@ -15,7 +16,9 @@ namespace UniversityIot.UI.Core.ViewModels
         private readonly UserManagementService userManagementService;
         private readonly ICredentialsService credentialsService;
 
-        public LoginViewModel(UserManagementService userManagementService, ICredentialsService credentialsService)
+        public LoginViewModel(
+            UserManagementService userManagementService, 
+            ICredentialsService credentialsService)
         {
             this.userManagementService = userManagementService;
             this.credentialsService = credentialsService;
@@ -62,7 +65,7 @@ namespace UniversityIot.UI.Core.ViewModels
         {
             get
             {
-                return new Command(() =>
+                return new Command(async () =>
                 {
                     var isLogged = userManagementService.Login(this.UserName, this.Password);
 
@@ -78,6 +81,7 @@ namespace UniversityIot.UI.Core.ViewModels
 
                     ErrorMessage = "Logged";
 
+                    await this.NavigationService.Push(new InstallationViewModel());
                 });
             }
         }

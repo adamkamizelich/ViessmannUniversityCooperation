@@ -1,4 +1,7 @@
-﻿namespace UniversityIot.UI.Core.ViewModels
+﻿using UniversityIot.UI.Core.MVVM;
+using UniversityIot.UI.Core.Services;
+
+namespace UniversityIot.UI.Core.ViewModels
 {
     using System.Windows.Input;
     using Xamarin.Forms;
