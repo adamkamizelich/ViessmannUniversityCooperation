@@ -10,7 +10,7 @@ using Xamarin.Forms;
 
 namespace UniversityIot.UI.Core.ViewModels
 {
-    class LoginViewModel :BaseViewModel
+    public class LoginViewModel : BaseViewModel
     {
         private readonly UserManagementService userManagementService;
         private readonly ICredentialsService credentialsService;

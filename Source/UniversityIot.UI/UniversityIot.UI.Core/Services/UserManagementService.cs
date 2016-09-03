@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace UniversityIot.UI.Core.Services
 {
-    class UserManagementService
+    public class UserManagementService
     {
         public bool Login(string userName, string password)
         {

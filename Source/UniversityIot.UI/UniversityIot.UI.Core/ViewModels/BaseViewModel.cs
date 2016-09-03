@@ -9,7 +9,7 @@ using UniversityIot.UI.Core.Annotations;
 
 namespace UniversityIot.UI.Core.ViewModels
 {
-    class BaseViewModel : INotifyPropertyChanged
+    public class BaseViewModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
 
