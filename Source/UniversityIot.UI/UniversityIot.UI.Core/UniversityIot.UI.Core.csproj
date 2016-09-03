@@ -36,6 +36,8 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DataAccess\DatapointsRepository.cs" />
+    <Compile Include="DataAccess\IDatapointsRepository.cs" />
     <Compile Include="DraftContainer.cs" />
     <Compile Include="Models\DatapointModel.cs" />
     <Compile Include="Models\InstallationModel.cs" />

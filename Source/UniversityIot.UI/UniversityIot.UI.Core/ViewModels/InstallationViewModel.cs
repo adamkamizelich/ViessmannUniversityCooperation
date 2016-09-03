@@ -1,4 +1,5 @@
-﻿using UniversityIot.UI.Core.Models;
+﻿using UniversityIot.UI.Core.DataAccess;
+using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
 
@@ -6,11 +7,11 @@ namespace UniversityIot.UI.Core.ViewModels
 {
     using System.Windows.Input;
     using Xamarin.Forms;
-    using System.Collections.Generic;
     using System.Collections.ObjectModel;
 
     public class InstallationViewModel : BaseViewModel
     {
+        private readonly IDatapointsRepository datapointsRepository;
         private string installationName;
         private string _description;
 
@@ -38,36 +39,18 @@ namespace UniversityIot.UI.Core.ViewModels
             }
         }
 
-        public InstallationViewModel(InstallationModel installationModel)
+        public InstallationViewModel(InstallationModel installationModel, IDatapointsRepository datapointsRepository)
         {
+            this.datapointsRepository = datapointsRepository;
             this.InstallationName = installationModel.SerialNumber;
             this.Description = installationModel.Description;
 
-            // TODO
-            this.Datapoints = new ObservableCollection<DatapointModel>(new List<DatapointModel>
-            {
-                new DatapointModel
-                {
-                    Description = "description",
-                    HexAddress = "0x9999",
-                    Id = 1,
-                    IsReadOnly = false,
-                    Value = 15
-                },
-                new DatapointModel
-                {
-                    Description = "description",
-                    HexAddress = "0x9999",
-                    Id = 1,
-                    IsReadOnly = false,
-                    Value = 15
-                }
-            });
+            var datapoints = this.datapointsRepository.GetByInstallationId(installationModel.Id);
+            this.Datapoints = new ObservableCollection<DatapointModel>(datapoints);
         }
 
         public ICommand Test => new Command(() =>
         {
-
         });
     }
 }

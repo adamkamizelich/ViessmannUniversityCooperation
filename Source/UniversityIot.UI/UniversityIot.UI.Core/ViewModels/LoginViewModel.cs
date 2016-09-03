@@ -90,7 +90,8 @@ namespace UniversityIot.UI.Core.ViewModels
                         SerialNumber = "9023840923789084723"
                     };
 
-                    await this.NavigationService.Push(new InstallationViewModel(installationModel));
+                    var installationViewModel = new InstallationViewModel(installationModel, DraftContainer.DatapointsRepository);
+                    await this.NavigationService.Push(installationViewModel);
                 });
             }
         }
