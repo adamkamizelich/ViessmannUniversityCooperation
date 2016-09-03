@@ -16,7 +16,7 @@ namespace UniversityIot.UI.Core
             var viewModel = new LoginViewModel(
                 DraftContainer.UserManagementService,
                 credentialsService,
-                DraftContainer.InstallationsRepository);
+                DraftContainer.FakeInstallationsRepository);
 
             Page loginView = DraftContainer.ViewViewModelRegister.GetViewFor(viewModel);
 

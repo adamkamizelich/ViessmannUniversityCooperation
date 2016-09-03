@@ -1,4 +1,6 @@
-﻿using UniversityIot.UI.Core.DataAccess;
+﻿using System.Collections.Generic;
+using System.Linq;
+using UniversityIot.UI.Core.DataAccess;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
@@ -13,17 +15,17 @@ namespace UniversityIot.UI.Core.ViewModels
     {
         private readonly IDatapointsRepository datapointsRepository;
         private string installationName;
-        private string _description;
+        private string installationDescription;
 
-        public ObservableCollection<DatapointModel> Datapoints { get; set; }
+        public ObservableCollection<DatapointViewModel> Datapoints { get; set; }
 
-        public string Description
+        public string InstallationDescription
         {
-            get { return _description; }
+            get { return installationDescription; }
             set
             {
-                if (value == _description) return;
-                _description = value;
+                if (value == installationDescription) return;
+                installationDescription = value;
                 OnPropertyChanged();
             }
         }
@@ -43,14 +45,26 @@ namespace UniversityIot.UI.Core.ViewModels
         {
             this.datapointsRepository = datapointsRepository;
             this.InstallationName = installationModel.SerialNumber;
-            this.Description = installationModel.Description;
+            this.InstallationDescription = installationModel.Description;
 
-            var datapoints = this.datapointsRepository.GetByInstallationId(installationModel.Id);
-            this.Datapoints = new ObservableCollection<DatapointModel>(datapoints);
+            this.LoadDatapoints(installationModel);
         }
 
-        public ICommand Test => new Command(() =>
+        private void LoadDatapoints(InstallationModel installationModel)
         {
-        });
+            // Get model from data provider
+            List<DatapointModel> datapoints = this.datapointsRepository.GetByInstallationId(installationModel.Id);
+
+            // Map models to ViewModels
+            var datapointViewModels = datapoints.Select(dp => new DatapointViewModel
+            {
+                DatapointId = dp.Id,
+                Description = dp.Description,
+                HexAddress = dp.HexAddress
+            });
+
+            // Populate ListView source
+            this.Datapoints = new ObservableCollection<DatapointViewModel>(datapointViewModels);
+        }
     }
 }

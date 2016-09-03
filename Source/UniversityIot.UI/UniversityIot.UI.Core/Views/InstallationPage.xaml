@@ -19,7 +19,8 @@
         <ListView.ItemTemplate>
             <DataTemplate>
                 <TextCell Text="{Binding Description}" 
-                          Detail="{Binding HexAddress}"/>
+                          Detail="{Binding HexAddress}"
+                          Command="{Binding ShowDatapointEditorCommand}"/>
             </DataTemplate>
         </ListView.ItemTemplate>
     </ListView>

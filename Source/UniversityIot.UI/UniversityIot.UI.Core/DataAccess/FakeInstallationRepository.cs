@@ -2,7 +2,7 @@
 
 namespace UniversityIot.UI.Core.DataAccess
 {
-    public class InstallationRepository : IInstallationsRepository
+    public class FakeInstallationRepository : IInstallationsRepository
     {
         public InstallationModel GetInstallationById(long installationId)
         {
