@@ -24,8 +24,11 @@ namespace UniversityIot.UI.Core.MVVM
         public Page GetViewFor<TViewModel>(TViewModel viewModel)
             where TViewModel : BaseViewModel
         {
-            Type view = this.viewModelByView[viewModel.GetType()];
-            return (Page)Activator.CreateInstance(view);
+            Type viewType = this.viewModelByView[viewModel.GetType()];
+            Page view = (Page)Activator.CreateInstance(viewType);
+            view.BindingContext = viewModel;
+
+            return view;
         }
     }
 }
