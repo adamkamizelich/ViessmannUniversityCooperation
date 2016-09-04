@@ -2,13 +2,13 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="UniversityIot.UI.Core.Views.DatapointEditorPage">
-  <StackLayout>
-    <Label Text="Description" HorizontalTextAlignment="Start" />
-    <Label Text="{Binding DatapointModel.Description}" HorizontalTextAlignment="Start" />
-    <Label Text="Hex address" HorizontalTextAlignment="Start" />
-    <Label Text="{Binding DatapointModel.HexAddress}" HorizontalTextAlignment="Start" />
-    <Label Text="Value" HorizontalTextAlignment="Start" />
-    <Label Text="{Binding DatapointModel.DatapointValue}" HorizontalTextAlignment="Start" />
-    <Button Text="Save"/>
+  <StackLayout Margin="20">
+    <Label Text="Description" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+    <Label Text="{Binding DatapointModel.Description}" />
+    <Label Text="Hex address" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+    <Label Text="{Binding DatapointModel.HexAddress}" />
+    <Label Text="Value" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+    <Editor Text="{Binding DatapointModel.DatapointValue}" />
+    <Button Text="Save" Command="{Binding SaveChangesCommand}" Margin="0,30,0,0"/>
   </StackLayout>
 </ContentPage>

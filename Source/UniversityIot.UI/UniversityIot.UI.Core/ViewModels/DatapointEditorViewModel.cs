@@ -20,8 +20,7 @@ namespace UniversityIot.UI.Core.ViewModels
 
         public ICommand SaveChangesCommand => new Command(() =>
         {
-            // TODO
-            this.datapointsRepository.SaveChanges(DatapointModel);
+            this.datapointsRepository.SaveChanges(this.DatapointModel);
         });
     }
 }

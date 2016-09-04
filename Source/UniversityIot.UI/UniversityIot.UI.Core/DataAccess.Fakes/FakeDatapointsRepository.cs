@@ -38,7 +38,8 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
 
         public void SaveChanges(DatapointModel datapointModel)
         {
-            throw new System.NotImplementedException();
+            DatapointModel oldDatapointModel = this.datapoints.Single(dp => dp.Id == datapointModel.Id);
+            oldDatapointModel.DatapointValue = datapointModel.DatapointValue;
         }
     }
 }
