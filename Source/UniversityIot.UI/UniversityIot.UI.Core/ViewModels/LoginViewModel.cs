@@ -29,71 +29,61 @@ namespace UniversityIot.UI.Core.ViewModels
             this.credentialsService = credentialsService;
         }
 
-        private string _password;
-        private string _userName;
-        private string _errorMessage;
+        private string password;
+        private string userName;
+        private string errorMessage;
 
         public string UserName
         {
-            get { return _userName; }
+            get { return userName; }
             set
             {
-                if (value == _userName) return;
-                _userName = value;
+                if (value == userName) return;
+                userName = value;
                 OnPropertyChanged();
             }
         }
 
         public string Password
         {
-            get { return _password; }
+            get { return password; }
             set
             {
-                if (value == _password) return;
-                _password = value;
+                if (value == password) return;
+                password = value;
                 OnPropertyChanged();
             }
         }
 
         public string ErrorMessage
         {
-            get { return _errorMessage; }
+            get { return errorMessage; }
             set
             {
-                if (value == _errorMessage) return;
-                _errorMessage = value;
+                if (value == errorMessage) return;
+                errorMessage = value;
                 OnPropertyChanged();
             }
         }
 
-        public ICommand LoginCommand
+        public ICommand LoginCommand => new Command(async () =>
         {
-            get
+            var isLogged = userManagementService.Login(this.UserName, this.Password);
+
+            if (!isLogged)
             {
-                return new Command(async () =>
-                {
-                    var isLogged = userManagementService.Login(this.UserName, this.Password);
-
-                    if (!isLogged)
-                    {
-                        ErrorMessage = "User name or password is invalid";
-                        return;
-                    }
-
-                    ErrorMessage = string.Empty;
-
-                    credentialsService.SaveCredentials(this.UserName, this.Password);
-
-                    ErrorMessage = "Logged";
-
-                    // TODO
-                    const long installationId = 1;
-                    InstallationModel installationModel = this.installationsRepository.GetInstallationById(installationId);
-                    var installationViewModel = new InstallationViewModel(installationModel, DraftContainer.DatapointsRepository);
-
-                    await this.NavigationService.Push(installationViewModel);
-                });
+                ErrorMessage = "User name or password is invalid";
+                return;
             }
-        }
+
+            ErrorMessage = string.Empty;
+            credentialsService.SaveCredentials(this.UserName, this.Password);
+
+            // TODO
+            const long userId = 1;
+            List<InstallationModel> installationModels = this.installationsRepository.GetAllByUserId(userId);
+            var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);
+            await this.NavigationService.Push(userInstallationsViewModel);
+        });
     }
 }

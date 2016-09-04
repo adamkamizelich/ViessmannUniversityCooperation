@@ -2,7 +2,7 @@
 using System.Linq;
 using UniversityIot.UI.Core.Models;
 
-namespace UniversityIot.UI.Core.DataAccess
+namespace UniversityIot.UI.Core.DataAccess.Fakes
 {
     public class FakeDatapointsRepository : IDatapointsRepository
     {

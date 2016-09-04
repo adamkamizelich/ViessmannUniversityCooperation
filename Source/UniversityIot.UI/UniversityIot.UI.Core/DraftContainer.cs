@@ -1,4 +1,5 @@
 ﻿using UniversityIot.UI.Core.DataAccess;
+using UniversityIot.UI.Core.DataAccess.Fakes;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
@@ -13,8 +14,8 @@ namespace UniversityIot.UI.Core
         public static NavigationService NavigationService { get; private set; }
         public static IDatapointsRepository DatapointsRepository { get; private set; }
         public static UserManagementService UserManagementService { get; private set; }
-        public static FakeInstallationRepository FakeInstallationsRepository { get; private set; }
-        public static ViewViewModelRegister ViewViewModelRegister { get; private set; }
+        public static FakeInstallationRepository InstallationsRepository { get; private set; }
+        public static ViewViewModelRegister ViewViewModelRegister { get; }
 
         static DraftContainer()
         {
@@ -22,16 +23,17 @@ namespace UniversityIot.UI.Core
             NavigationService = new NavigationService(ViewViewModelRegister);
             DatapointsRepository = new FakeDatapointsRepository();
             UserManagementService = new UserManagementService();
-            FakeInstallationsRepository = new FakeInstallationRepository();
+            InstallationsRepository = new FakeInstallationRepository();
 
             RegisterViewModels(ViewViewModelRegister);
         }
 
         private static void RegisterViewModels(ViewViewModelRegister viewViewModelRegister)
         {
-            viewViewModelRegister.Register<InstallationPage, InstallationViewModel>();
+            viewViewModelRegister.Register<InstallationDetailsPage, InstallationDetailsViewModel>();
             viewViewModelRegister.Register<LoginPage, LoginViewModel>();
             viewViewModelRegister.Register<DatapointEditorPage, DatapointEditorViewModel>();
+            viewViewModelRegister.Register<UserInstallationsPage, UserInstallationsViewModel>();
         }
     }
 }

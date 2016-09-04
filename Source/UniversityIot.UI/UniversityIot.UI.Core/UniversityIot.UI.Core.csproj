@@ -36,10 +36,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
-    <Compile Include="DataAccess\FakeDatapointsRepository.cs" />
+    <Compile Include="DataAccess.Fakes\FakeDatapointsRepository.cs" />
+    <Compile Include="DataAccess.Fakes\FakeInstallationRepository.cs" />
     <Compile Include="DataAccess\IDatapointsRepository.cs" />
     <Compile Include="DataAccess\IInstallationsRepository.cs" />
-    <Compile Include="DataAccess\FakeInstallationRepository.cs" />
     <Compile Include="DraftContainer.cs" />
     <Compile Include="Models\DatapointModel.cs" />
     <Compile Include="Models\InstallationModel.cs" />
@@ -54,16 +54,21 @@
     <Compile Include="Services\UserManagementService.cs" />
     <Compile Include="ViewModels\DatapointEditorViewModel.cs" />
     <Compile Include="ViewModels\DatapointViewModel.cs" />
+    <Compile Include="ViewModels\InstallationDetailsViewModel.cs" />
+    <Compile Include="ViewModels\UserInstallationsViewModel.cs" />
     <Compile Include="ViewModels\InstallationViewModel.cs" />
     <Compile Include="ViewModels\LoginViewModel.cs" />
     <Compile Include="Views\DatapointEditorPage.xaml.cs">
       <DependentUpon>DatapointEditorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Views\InstallationPage.xaml.cs">
-      <DependentUpon>InstallationPage.xaml</DependentUpon>
+    <Compile Include="Views\InstallationDetailsPage.xaml.cs">
+      <DependentUpon>InstallationDetailsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="Views\LoginPage.xaml.cs">
       <DependentUpon>LoginPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\UserInstallationsPage.xaml.cs">
+      <DependentUpon>UserInstallationsPage.xaml</DependentUpon>
     </Compile>
   </ItemGroup>
   <ItemGroup>
@@ -85,7 +90,7 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Views\InstallationPage.xaml">
+    <EmbeddedResource Include="Views\InstallationDetailsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>
@@ -98,6 +103,12 @@
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="Views\DatapointEditorPage.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Views\UserInstallationsPage.xaml">
       <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
       <SubType>Designer</SubType>
     </EmbeddedResource>

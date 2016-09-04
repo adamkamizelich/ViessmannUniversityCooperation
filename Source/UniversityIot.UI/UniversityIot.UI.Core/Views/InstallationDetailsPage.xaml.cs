@@ -10,9 +10,9 @@ using Xamarin.Forms;
 
 namespace UniversityIot.UI.Core.Views
 {
-    public partial class InstallationPage : ContentPage
+    public partial class InstallationDetailsPage : ContentPage
     {
-        public InstallationPage()
+        public InstallationDetailsPage()
         {
             InitializeComponent();
         }
