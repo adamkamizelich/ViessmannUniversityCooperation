@@ -36,10 +36,14 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DataAccess.DTO\DatapointDTO.cs" />
+    <Compile Include="DataAccess.DTO\DatapointsDTO.cs" />
     <Compile Include="DataAccess.DTO\InstallationDTO.cs" />
     <Compile Include="DataAccess.DTO\InstallationsDTO.cs" />
     <Compile Include="DataAccess.Fakes\FakeDatapointsRepository.cs" />
     <Compile Include="DataAccess.Fakes\FakeInstallationRepository.cs" />
+    <Compile Include="DataAccess\BaseUniversityIotRestService.cs" />
+    <Compile Include="DataAccess\DatapointsRestService.cs" />
     <Compile Include="DataAccess\IDatapointsRepository.cs" />
     <Compile Include="DataAccess\IInstallationsRepository.cs" />
     <Compile Include="DataAccess\InstallationsRestService.cs" />

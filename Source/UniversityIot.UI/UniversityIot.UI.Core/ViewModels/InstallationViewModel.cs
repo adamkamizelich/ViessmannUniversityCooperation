@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using System.Windows.Input;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
@@ -13,14 +15,24 @@ namespace UniversityIot.UI.Core.ViewModels
 
         public ICommand ShowInstallationDetails => new Command(async () =>
         {
-            // TODO
-            InstallationModel installationModel = 
-                await DraftContainer.InstallationsRepository.GetInstallationById(this.InstallationId);
+            try
+            {
+                // TODO
+                InstallationModel installationModel = 
+                    await DraftContainer.InstallationsRepository.GetInstallationById(this.InstallationId);
 
-            var installationDetailsViewModel = new InstallationDetailsViewModel(
-                installationModel, DraftContainer.DatapointsRepository);
+                var installationDetailsViewModel = new InstallationDetailsViewModel(
+                    installationModel, DraftContainer.DatapointsRepository);
 
-            await this.NavigationService.Push(installationDetailsViewModel);
+                // TODO temporary
+                await installationDetailsViewModel.LoadDatapointsForInstallation(installationModel.Id);
+
+                await this.NavigationService.Push(installationDetailsViewModel);
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error when showing installation details", ex);
+            }
         });
     }
 }

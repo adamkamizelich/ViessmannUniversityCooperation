@@ -21,7 +21,7 @@ namespace UniversityIot.UI.Core
         {
             ViewViewModelRegister = new ViewViewModelRegister();
             NavigationService = new NavigationService(ViewViewModelRegister);
-            DatapointsRepository = new FakeDatapointsRepository();
+            DatapointsRepository = new DatapointsRestService();
             UserManagementService = new UserManagementService();
             InstallationsRepository = new InstallationsRestService();
 

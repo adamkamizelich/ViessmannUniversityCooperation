@@ -13,12 +13,12 @@ namespace UniversityIot.UI.Core
 
             var credentialsService = DependencyService.Get<ICredentialsService>();
 
-            var viewModel = new LoginViewModel(
+            var loginViewModel = new LoginViewModel(
                 DraftContainer.UserManagementService,
                 credentialsService,
                 DraftContainer.InstallationsRepository);
 
-            Page loginView = DraftContainer.ViewViewModelRegister.GetViewFor(viewModel);
+            Page loginView = DraftContainer.ViewViewModelRegister.GetViewFor(loginViewModel);
 
             MainPage = new NavigationPage(loginView);
         }

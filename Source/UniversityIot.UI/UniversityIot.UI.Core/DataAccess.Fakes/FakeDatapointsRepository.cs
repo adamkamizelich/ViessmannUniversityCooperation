@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UniversityIot.UI.Core.Models;
 
 namespace UniversityIot.UI.Core.DataAccess.Fakes
@@ -14,7 +15,7 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
                 HexAddress = "0x9999",
                 Id = 1,
                 IsReadOnly = false,
-                DatapointValue = 15
+                DatapointValue = 15.ToString()
             },
             new DatapointModel
             {
@@ -22,18 +23,19 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
                 HexAddress = "0x2222",
                 Id = 2,
                 IsReadOnly = false,
-                DatapointValue = 11 
+                DatapointValue = 11.ToString()
             }
         };
 
-        public List<DatapointModel> GetByInstallationId(long installationId)
+        public Task<List<DatapointModel>> GetByInstallationId(long installationId)
         {
-            return this.datapoints;
+            return Task.FromResult(this.datapoints);
         }
 
-        public DatapointModel GetByDatapointId(long datapointId)
+        public Task<DatapointModel> GetByDatapointId(long datapointId)
         {
-            return this.datapoints.FirstOrDefault(dp => dp.Id == datapointId);
+            DatapointModel datapointModel = this.datapoints.FirstOrDefault(dp => dp.Id == datapointId);
+            return Task.FromResult(datapointModel);
         }
 
         public void SaveChanges(DatapointModel datapointModel)

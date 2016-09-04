@@ -1,3 +1,5 @@
+using System;
+using System.Diagnostics;
 using System.Windows.Input;
 using UniversityIot.UI.Core.DataAccess;
 using UniversityIot.UI.Core.Models;
@@ -20,9 +22,16 @@ namespace UniversityIot.UI.Core.ViewModels
 
         public ICommand SaveChangesCommand => new Command(async () =>
         {
-            // TODO saving error -> message
-            this.datapointsRepository.SaveChanges(this.DatapointModel);
-            await this.NavigationService.Pop();
+            try
+            {
+                // TODO saving error -> message
+                this.datapointsRepository.SaveChanges(this.DatapointModel);
+                await this.NavigationService.Pop();
+            }
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error while saving datapoint changes", ex);
+            }
         });
     }
 }

@@ -1,4 +1,5 @@
-﻿using UniversityIot.UI.Core.MVVM;
+﻿using Newtonsoft.Json;
+using UniversityIot.UI.Core.MVVM;
 
 namespace UniversityIot.UI.Core.Models
 {
@@ -7,7 +8,7 @@ namespace UniversityIot.UI.Core.Models
         private long id;
         private string description;
         private string hexAddress;
-        private object datapointValue;
+        private string datapointValue;
         private bool isReadOnly;
 
         public long Id
@@ -32,6 +33,7 @@ namespace UniversityIot.UI.Core.Models
             }
         }
 
+        [JsonProperty("hexAdress")]
         public string HexAddress
         {
             get { return hexAddress; }
@@ -43,7 +45,8 @@ namespace UniversityIot.UI.Core.Models
             }
         }
 
-        public object DatapointValue
+        [JsonProperty("value")]
+        public string DatapointValue
         {
             get { return datapointValue; }
             set

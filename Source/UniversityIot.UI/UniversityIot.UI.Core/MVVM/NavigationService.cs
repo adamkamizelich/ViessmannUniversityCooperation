@@ -10,7 +10,7 @@ namespace UniversityIot.UI.Core.MVVM
         private INavigation Navigation => this.navigation ?? (this.navigation = App.Current.MainPage.Navigation);
         private readonly ViewViewModelRegister viewViewModelRegister;
 
-        public NavigationService( ViewViewModelRegister viewViewModelRegister)
+        public NavigationService(ViewViewModelRegister viewViewModelRegister)
         {
             this.viewViewModelRegister = viewViewModelRegister;
         }

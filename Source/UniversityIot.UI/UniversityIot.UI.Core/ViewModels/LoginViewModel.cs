@@ -68,22 +68,29 @@ namespace UniversityIot.UI.Core.ViewModels
 
         public ICommand LoginCommand => new Command(async () =>
         {
-            var isLogged = userManagementService.Login(this.UserName, this.Password);
-
-            if (!isLogged)
+            try
             {
-                ErrorMessage = "User name or password is invalid";
-                return;
+                var isLogged = userManagementService.Login(this.UserName, this.Password);
+
+                if (!isLogged)
+                {
+                    ErrorMessage = "User name or password is invalid";
+                    return;
+                }
+
+                ErrorMessage = string.Empty;
+                credentialsService.SaveCredentials(this.UserName, this.Password);
+
+                // TODO
+                const long userId = 1;
+                List<InstallationModel> installationModels = await this.installationsRepository.GetAllByUserId(userId);
+                var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);
+                await this.NavigationService.Push(userInstallationsViewModel);
             }
-
-            ErrorMessage = string.Empty;
-            credentialsService.SaveCredentials(this.UserName, this.Password);
-
-            // TODO
-            const long userId = 1;
-            List<InstallationModel> installationModels = await this.installationsRepository.GetAllByUserId(userId);
-            var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);
-            await this.NavigationService.Push(userInstallationsViewModel);
+            catch (Exception ex)
+            {
+                Debug.WriteLine("Error while authenticating", ex);
+            }
         });
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UniversityIot.UI.Core.DataAccess;
 using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
@@ -44,14 +45,12 @@ namespace UniversityIot.UI.Core.ViewModels
             this.datapointsRepository = datapointsRepository;
             this.InstallationName = installationModel.SerialNumber;
             this.InstallationDescription = installationModel.Description;
-
-            this.LoadDatapointsForInstallation(installationModel.Id);
         }
 
-        private void LoadDatapointsForInstallation(long installationModelId)
+        public async Task LoadDatapointsForInstallation(long installationModelId)
         {
             // Get model from data provider
-            List<DatapointModel> datapoints = this.datapointsRepository.GetByInstallationId(installationModelId);
+            List<DatapointModel> datapoints = await this.datapointsRepository.GetByInstallationId(installationModelId);
 
             // Map models to ViewModels
             var datapointViewModels = datapoints.Select(dp => new DatapointViewModel
