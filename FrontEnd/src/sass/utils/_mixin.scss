@@ -1,0 +1,90 @@
+@mixin transition($props: all, $speed: 0.3s) {
+  -webkit-transition: $props $speed;
+  -moz-transition: $props $speed;
+  -ms-transition: $props $speed;
+  -o-transition: $props $speed;
+  transition: $props $speed;
+}
+
+@mixin scale($scale) {
+  transform: scale($scale) ;
+  -webkit-transform: scale($scale);
+  -moz-transform: scale($scale) ;
+  -o-transform: scale($scale) ;
+  -ms-transform: scale($scale) ;
+}
+
+//Gradient
+@mixin gradient {background: #969696; /* Old browsers */
+background: -moz-linear-gradient(left, #969696 0%, #e5e5e5 100%); /* FF3.6-15 */
+background: -webkit-linear-gradient(left, #969696 0%,#e5e5e5 100%); /* Chrome10-25,Safari5.1-6 */
+background: linear-gradient(to right, #969696 0%,#e5e5e5 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#969696', endColorstr='#e5e5e5',GradientType=1 ); /* IE6-9 */
+}
+
+//Shadow
+@mixin box-shadow {
+  -webkit-box-shadow: 0px 0px 70px 10px rgba(0,0,0,0.50);
+  -moz-box-shadow: 0px 0px 70px 10px rgba(0,0,0,0.50);
+  box-shadow: 0px 0px 70px 10px rgba(0,0,0,0.50);
+}
+
+@mixin news-shadow {
+  -webkit-box-shadow: 3px 5px 4px 4px rgba(227,230,237,1);
+  -moz-box-shadow: 3px 5px 4px 4px rgba(227,230,237,1);
+  box-shadow: 3px 5px 4px 4px rgba(227,230,237,1);
+}
+
+// FONTS
+
+@mixin font-bold($size) {
+  font-family: Gotham, sans-serif;
+  font-weight: bold;
+  font-size:$size;
+}
+
+@mixin font-normal($size) {
+  font-family: Gotham, sans-serif;
+  font-weight: normal;
+  font-size:$size;
+}
+
+@mixin font-book($size) {
+  font-family: Gotham Book, sans-serif;
+  font-weight: normal;
+  font-size:$size;
+}
+
+@mixin text-shadow {
+  text-shadow: 2px 2px 1px rgba(0, 0, 0, 0.5);
+}
+
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  filter: alpha(opacity=$opacity*100);
+}
+
+// ANIMATION
+
+@mixin animate-scroll {
+  -webkit-animation: bounce 2s infinite;
+  -o-animation: bounce 2s infinite;
+  animation: bounce 2s infinite;
+  -webkit-backface-visibility: hidden;
+  -moz-backface-visibility: hidden;
+  backface-visibility: hidden;
+  transform-origin: 50% 50%;
+  -webkit-transform-origin: 50% 50%;
+  -moz-transform-origin: 50% 50%;
+  -o-transform-origin: 50% 50%;
+  -ms-transform-origin: 50% 50%;
+}
+
+// Center
+
+@mixin center-element {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
