@@ -7,7 +7,7 @@ namespace UniversityIot.UI.Core.DataAccess
 {
     public interface IInstallationsRepository
     {
-        InstallationModel GetInstallationById(long installationId);
+        Task<InstallationModel> GetInstallationById(long installationId);
         Task<List<InstallationModel>> GetAllByUserId(long userId);
     }
 }

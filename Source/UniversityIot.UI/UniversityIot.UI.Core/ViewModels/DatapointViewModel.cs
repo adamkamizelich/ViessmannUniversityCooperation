@@ -9,7 +9,7 @@ namespace UniversityIot.UI.Core.ViewModels
     {
         public long DatapointId { get; set; }
         public string Description { get; set; }
-        public string HexAddress { get; set; }
+        public object DatapointValue { get; set; }
 
         public ICommand ShowDatapointEditorCommand => new Command(() =>
         {

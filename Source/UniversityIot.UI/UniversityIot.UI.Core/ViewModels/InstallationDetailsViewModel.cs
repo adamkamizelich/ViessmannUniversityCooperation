@@ -58,7 +58,7 @@ namespace UniversityIot.UI.Core.ViewModels
             {
                 DatapointId = dp.Id,
                 Description = dp.Description,
-                HexAddress = dp.HexAddress
+                DatapointValue = dp.DatapointValue
             });
 
             // Populate ListView source

@@ -11,15 +11,16 @@ namespace UniversityIot.UI.Core.ViewModels
         public string SerialNumber { get; set; }
         public string Description { get; set; }
 
-        public ICommand ShowInstallationDetails => new Command(() =>
+        public ICommand ShowInstallationDetails => new Command(async () =>
         {
             // TODO
-            var installationModel = DraftContainer.InstallationsRepository.GetInstallationById(this.InstallationId);
+            InstallationModel installationModel = 
+                await DraftContainer.InstallationsRepository.GetInstallationById(this.InstallationId);
 
             var installationDetailsViewModel = new InstallationDetailsViewModel(
                 installationModel, DraftContainer.DatapointsRepository);
 
-            this.NavigationService.Push(installationDetailsViewModel);
+            await this.NavigationService.Push(installationDetailsViewModel);
         });
     }
 }

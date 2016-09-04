@@ -17,9 +17,12 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
             }
         };
 
-        public InstallationModel GetInstallationById(long installationId)
+        public Task<InstallationModel> GetInstallationById(long installationId)
         {
-            return this.installations.FirstOrDefault(installation => installation.Id == installationId);
+            InstallationModel installationModel = 
+                this.installations.FirstOrDefault(installation => installation.Id == installationId);
+
+            return Task.FromResult(installationModel);
         }
 
         public Task<List<InstallationModel>> GetAllByUserId(long userId)
