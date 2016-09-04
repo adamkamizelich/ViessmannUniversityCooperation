@@ -81,7 +81,7 @@ namespace UniversityIot.UI.Core.ViewModels
 
             // TODO
             const long userId = 1;
-            List<InstallationModel> installationModels = this.installationsRepository.GetAllByUserId(userId);
+            List<InstallationModel> installationModels = await this.installationsRepository.GetAllByUserId(userId);
             var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);
             await this.NavigationService.Push(userInstallationsViewModel);
         });

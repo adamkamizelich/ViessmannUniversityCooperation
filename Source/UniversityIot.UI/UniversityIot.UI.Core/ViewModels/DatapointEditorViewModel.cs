@@ -18,9 +18,11 @@ namespace UniversityIot.UI.Core.ViewModels
             this.datapointsRepository = datapointsRepository;
         }
 
-        public ICommand SaveChangesCommand => new Command(() =>
+        public ICommand SaveChangesCommand => new Command(async () =>
         {
+            // TODO saving error -> message
             this.datapointsRepository.SaveChanges(this.DatapointModel);
+            await this.NavigationService.Pop();
         });
     }
 }

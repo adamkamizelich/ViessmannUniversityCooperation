@@ -1,4 +1,6 @@
 ﻿using System.Collections.Generic;
+using System.Threading.Tasks;
+using Microsoft.VisualBasic;
 using UniversityIot.UI.Core.Models;
 
 namespace UniversityIot.UI.Core.DataAccess
@@ -6,6 +8,6 @@ namespace UniversityIot.UI.Core.DataAccess
     public interface IInstallationsRepository
     {
         InstallationModel GetInstallationById(long installationId);
-        List<InstallationModel> GetAllByUserId(long userId);
+        Task<List<InstallationModel>> GetAllByUserId(long userId);
     }
 }

@@ -1,5 +1,6 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using UniversityIot.UI.Core.Models;
 
 namespace UniversityIot.UI.Core.DataAccess.Fakes
@@ -21,9 +22,9 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
             return this.installations.FirstOrDefault(installation => installation.Id == installationId);
         }
 
-        public List<InstallationModel> GetAllByUserId(long userId)
+        public Task<List<InstallationModel>> GetAllByUserId(long userId)
         {
-            return this.installations;
+            return Task.FromResult(this.installations);
         }
     }
 }

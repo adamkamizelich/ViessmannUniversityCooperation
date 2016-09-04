@@ -21,11 +21,17 @@ namespace UniversityIot.UI.Core.MVVM
             await this.Navigation.PushAsync(view);
         }
 
+        // TODO remove ?
         public async Task<TViewModel> Pop<TViewModel>()
             where TViewModel : BaseViewModel
         {
             Page view = await this.Navigation.PopAsync();
             return view.BindingContext as TViewModel;
+        }
+
+        public async Task Pop()
+        {
+            await this.Navigation.PopAsync();
         }
 
         public async Task PopToRootAsync()

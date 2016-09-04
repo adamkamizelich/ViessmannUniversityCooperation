@@ -10,5 +10,6 @@ namespace UniversityIot.UI.Core.MVVM
             where TViewModel : BaseViewModel;
 
         Task PopToRootAsync();
+        Task Pop();
     }
 }

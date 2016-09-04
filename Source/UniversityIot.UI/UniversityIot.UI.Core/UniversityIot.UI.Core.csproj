@@ -36,10 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="DataAccess.DTO\InstallationsDTO.cs" />
     <Compile Include="DataAccess.Fakes\FakeDatapointsRepository.cs" />
     <Compile Include="DataAccess.Fakes\FakeInstallationRepository.cs" />
     <Compile Include="DataAccess\IDatapointsRepository.cs" />
     <Compile Include="DataAccess\IInstallationsRepository.cs" />
+    <Compile Include="DataAccess\InstallationsRestService.cs" />
     <Compile Include="DraftContainer.cs" />
     <Compile Include="Models\DatapointModel.cs" />
     <Compile Include="Models\InstallationModel.cs" />
@@ -72,6 +74,10 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
+    <Reference Include="Newtonsoft.Json, Version=9.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\..\..\packages\Newtonsoft.Json.9.0.1\lib\portable-net45+wp80+win8+wpa81\Newtonsoft.Json.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="Xamarin.Forms.Core, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <HintPath>..\..\..\packages\Xamarin.Forms.2.3.1.114\lib\portable-win+net45+wp80+win81+wpa81+MonoAndroid10+MonoTouch10+Xamarin.iOS10\Xamarin.Forms.Core.dll</HintPath>
       <Private>True</Private>

@@ -14,7 +14,7 @@ namespace UniversityIot.UI.Core
         public static NavigationService NavigationService { get; private set; }
         public static IDatapointsRepository DatapointsRepository { get; private set; }
         public static UserManagementService UserManagementService { get; private set; }
-        public static FakeInstallationRepository InstallationsRepository { get; private set; }
+        public static IInstallationsRepository InstallationsRepository { get; private set; }
         public static ViewViewModelRegister ViewViewModelRegister { get; }
 
         static DraftContainer()
@@ -23,7 +23,7 @@ namespace UniversityIot.UI.Core
             NavigationService = new NavigationService(ViewViewModelRegister);
             DatapointsRepository = new FakeDatapointsRepository();
             UserManagementService = new UserManagementService();
-            InstallationsRepository = new FakeInstallationRepository();
+            InstallationsRepository = new InstallationsRestService();
 
             RegisterViewModels(ViewViewModelRegister);
         }
