@@ -18,7 +18,7 @@ Copyright (C) Sayed Ibrahim Hashimi, Chuck England 2011-2013. All rights reserve
     <sc-MSBuildLibPathLocal Condition=" '$(sc-MSBuildLibPathLocal)'=='' ">$(LocalAppData)\Microsoft\MSBuild\SlowCheetah\v2.5.11\</sc-MSBuildLibPathLocal>
 
     <!-- this property should be defined in the .csproj to point to the packages path -->
-    <SlowCheetahToolsPath Condition=" '$(SlowCheetahToolsPath)'=='' ">$(.\packages\SlowCheetah.2.5.15\tools\)</SlowCheetahToolsPath>
+    <SlowCheetahToolsPath Condition=" '$(SlowCheetahToolsPath)'=='' ">$(MSBuildThisFileDirectory)</SlowCheetahToolsPath>
 
     <!-- if building in VS then we should try and use from app data if the files are there -->
     <SlowCheetahTaskPath Condition=" '$(SlowCheetahTaskPath)'=='' and '$(BuildingInsideVisualStudio)'=='true' and Exists('$(sc-MSBuildLibPathLocal)SlowCheetah.Xdt.dll')">$(sc-MSBuildLibPathLocal)</SlowCheetahTaskPath>
