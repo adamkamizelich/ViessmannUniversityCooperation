@@ -29,7 +29,7 @@
         public static void Register(HttpConfiguration config, IWindsorContainer container)
         {
             EnableCors(config);
-            MapRoutes(config);            
+            MapRoutes(config);
             RegisterControllerActivator(container);
             RegisterExceptionHandling(config, container);
             RegisterFormatters(config);
@@ -43,7 +43,7 @@
         /// <param name="config">The configuration.</param>
         private static void EnableCors(HttpConfiguration config)
         {
-            var cors = new EnableCorsAttribute("*", "*", "*");
+            var cors = new EnableCorsAttribute("*", "*", "*", "*");
             config.EnableCors(cors);
         }
 
@@ -52,7 +52,7 @@
         /// </summary>
         /// <param name="config">The configuration.</param>
         private static void MapRoutes(HttpConfiguration config)
-        {            
+        {
             config.MapHttpAttributeRoutes();
 
             config.Routes.MapHttpRoute(

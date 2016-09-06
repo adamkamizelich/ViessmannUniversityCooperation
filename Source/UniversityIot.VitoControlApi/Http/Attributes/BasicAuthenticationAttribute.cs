@@ -44,6 +44,7 @@
                 throw new ArgumentNullException("context");
             }
 
+
             var req = context.Request;
 
             if (req.Headers.Authorization != null
