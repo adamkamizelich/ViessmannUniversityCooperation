@@ -95,18 +95,24 @@
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Net.Http">
     </Reference>
-    <Reference Include="Viessmann.Estrella.Components.KolibriApi">
-      <HintPath>..\..\viessmann-estrella\Source\Viessmann.Estrella.Components.KolibriApi\bin\Debug\Viessmann.Estrella.Components.KolibriApi.dll</HintPath>
+    <Reference Include="Viessmann.Estrella.Components.KolibriApi, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Estrella dependenties\Viessmann.Estrella.Components.KolibriApi.dll</HintPath>
     </Reference>
     <Reference Include="Viessmann.Estrella.Components.Logger, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
-      <HintPath>..\..\viessmann-estrella\Source\Viessmann.Estrella.Components.Logger\bin\Debug\Viessmann.Estrella.Components.Logger.dll</HintPath>
+      <HintPath>..\Estrella dependenties\Viessmann.Estrella.Components.Logger.dll</HintPath>
     </Reference>
-    <Reference Include="Viessmann.Estrella.Components.Scheduling">
-      <HintPath>..\..\viessmann-estrella\Source\Viessmann.Estrella.Components.KolibriApi\bin\Debug\Viessmann.Estrella.Components.Scheduling.dll</HintPath>
+    <Reference Include="Viessmann.Estrella.Components.Scheduling, Version=2.0.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\Estrella dependenties\Viessmann.Estrella.Components.Scheduling.dll</HintPath>
     </Reference>
     <Reference Include="WebActivatorEx, Version=2.0.0.0, Culture=neutral, PublicKeyToken=7b26dc2a43f6a0d4, processorArchitecture=MSIL">
       <HintPath>..\packages\WebActivatorEx.2.0\lib\net40\WebActivatorEx.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="websocket-sharp, Version=1.0.2.59611, Culture=neutral, PublicKeyToken=5660b08a1845a91e, processorArchitecture=MSIL">
+      <HintPath>..\packages\WebSocketSharp.1.0.3-rc11\lib\websocket-sharp.dll</HintPath>
       <Private>True</Private>
     </Reference>
   </ItemGroup>
@@ -116,9 +122,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Http\AddChallengeOnUnauthorizedResult.cs" />
-    <Compile Include="Http\Attributes\BasicAuthenticationAttribute.cs" />
-    <Compile Include="Http\Attributes\BasicAuthenticationHeaderValue.cs" />
     <Compile Include="Infrastructure\Installers\ApiControllersInstaller.cs" />
     <Compile Include="Infrastructure\Installers\ContainerInstaller.cs" />
     <Compile Include="Infrastructure\Installers\ServicesInstaller.cs" />

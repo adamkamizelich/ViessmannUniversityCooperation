@@ -31,27 +31,27 @@ namespace UniversityIot.GatewaysDataAccess.Migrations
                 {
                     Id = 1,
                     Description = "Outside temperature",
-                    HexAdress = "111",
+                    HexAdress = "5525",
                     DataType = SettingDataType.Div10,
-                    IsReadonly = false
+                    IsReadonly = true
                 });
             context.GatewaySettings.AddOrUpdate(
                 new GatewaySetting()
                 {
                     Id = 2,
                     Description = "Inside temperature",
-                    HexAdress = "222",
+                    HexAdress = "0896",
                     DataType = SettingDataType.Div10,
-                    IsReadonly = false
+                    IsReadonly = true
                 });
             context.GatewaySettings.AddOrUpdate(
                 new GatewaySetting()
                 {
                     Id = 3,
                     Description = "Desired temperature",
-                    HexAdress = "333",
-                    DataType = SettingDataType.Div10,
-                    IsReadonly = true
+                    HexAdress = "2306",
+                    DataType = SettingDataType.NoConversion,
+                    IsReadonly = false
                 });
         }
     }

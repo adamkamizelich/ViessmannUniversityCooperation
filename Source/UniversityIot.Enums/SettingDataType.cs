@@ -2,8 +2,8 @@
 {
     public enum SettingDataType
     {
-        Div10,
+        NoConversion = 0,
 
-        Div100,
+        Div10 = 1,
     }
 }

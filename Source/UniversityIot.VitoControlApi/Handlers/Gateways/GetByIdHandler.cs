@@ -5,7 +5,6 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using RestSharp;
-    using RestSharp.Authenticators;
     using UniversityIot.VitoControlApi.Enums;
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
@@ -13,15 +12,13 @@
     /// <summary>
     /// Get by id handler
     /// </summary>
+    /// <seealso cref="UniversityIot.VitoControlApi.Handlers.Gateways.IGetByIdHandler" />
     /// <seealso cref="UniversityIot.VitoControlApi.Handlers.AsyncBaseHandler{UniversityIot.VitoControlApi.Models.GetGatewayRequest, UniversityIot.VitoControlApi.Models.GetGatewayResponse}" />
     public class GetByIdHandler : IGetByIdHandler
     {
         public async Task<GetGatewayResponse> Handle(GetGatewayRequest message)
         {
-            var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"])
-            {
-                Authenticator = new HttpBasicAuthenticator(ConfigurationManager.AppSettings["ServiceEndpoints:Username"], ConfigurationManager.AppSettings["ServiceEndpoints:Password"])
-            };
+            var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Gateways"]);
 
             var gatewayRequest = new RestRequest("gateways/{id}", Method.GET);
             gatewayRequest.AddUrlSegment("id", message.Id.ToString());

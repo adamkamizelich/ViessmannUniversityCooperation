@@ -5,13 +5,11 @@
     using System.Web.Http;
     using AutoMapper;
     using UniversityIot.GatewaysDataService;
-    using UniversityIot.GatewaysService.Http.Attributes;
 
     /// <summary>
     /// Gateways controller
     /// </summary>
     [RoutePrefix("gateways")]
-    [BasicAuthentication]
     public class GatewaysController : ApiController
     {
         /// <summary>

@@ -147,9 +147,6 @@
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Http\AddChallengeOnUnauthorizedResult.cs" />
-    <Compile Include="Http\Attributes\BasicAuthenticationAttribute.cs" />
-    <Compile Include="Http\Attributes\BasicAuthenticationHeaderValue.cs" />
     <Compile Include="Infrastructure\Installers\ApiControllersInstaller.cs" />
     <Compile Include="Infrastructure\Installers\ContainerInstaller.cs" />
     <Compile Include="Infrastructure\Installers\ServicesInstaller.cs" />

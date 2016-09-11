@@ -9,6 +9,7 @@
     using UniversityIot.VitoControlApi.Controllers;
     using UniversityIot.VitoControlApi.Handlers.Gateways;
     using UniversityIot.VitoControlApi.Handlers.Users;
+    using UniversityIot.VitoControlApi.Helpers;
     using GetByIdHandler = UniversityIot.VitoControlApi.Handlers.Users.GetByIdHandler;
     using IGetByIdHandler = UniversityIot.VitoControlApi.Handlers.Users.IGetByIdHandler;
 
@@ -40,11 +41,12 @@
              .LifestylePerWebRequest());
 
             container.Register(
-                Component.For<IGetByIdHandler>().ImplementedBy<GetByIdHandler>(), 
-                Component.For<IGetGatewaysHandler>().ImplementedBy<GetGatewaysHandler>(), 
-                Component.For<IPostDatapointHandler>().ImplementedBy<PostDatapointHandler>(), 
-                Component.For<IGetDatapointsHandler>().ImplementedBy<GetDatapointsHandler>(), 
-                Component.For<Handlers.Gateways.IGetByIdHandler>().ImplementedBy<Handlers.Gateways.GetByIdHandler>()
+                Component.For<IGetByIdHandler>().ImplementedBy<GetByIdHandler>(),
+                Component.For<IGetGatewaysHandler>().ImplementedBy<GetGatewaysHandler>(),
+                Component.For<IPostDatapointHandler>().ImplementedBy<PostDatapointHandler>(),
+                Component.For<IGetDatapointsHandler>().ImplementedBy<GetDatapointsHandler>(),
+                Component.For<Handlers.Gateways.IGetByIdHandler>().ImplementedBy<Handlers.Gateways.GetByIdHandler>(),
+                Component.For<IValueConverter>().ImplementedBy<ValueConverter>()
                 );
         }
     }

@@ -50,7 +50,7 @@
                     {
                         new WriteRpcRequestNodeParam()
                         {
-                            Value = kolibriValue.Value,
+                            Value = Convert.ToInt32(kolibriValue.Value),
                             Path = this.GetPath(kolibriValue.HexAddress)
                         }
                     })
@@ -115,7 +115,7 @@
 
             if (deviceType.Equals("vitoconnect", StringComparison.InvariantCultureIgnoreCase))
             {
-                return $"/vitoconnect-{deviceSerial}/data/ot/0/vs/{hexAddress}";
+                return $"/vitoconnect-{deviceSerial}/data/ol/0/vs/{hexAddress}";
 
             }
 

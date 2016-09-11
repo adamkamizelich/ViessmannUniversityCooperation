@@ -47,6 +47,12 @@
     <Compile Include="User.cs" />
     <Compile Include="VerifyUser.cs" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Source\UniversityIot.Enums\UniversityIot.Enums.csproj">
+      <Project>{82AA9BFC-B58E-49CA-9416-8296073E96EB}</Project>
+      <Name>UniversityIot.Enums</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.

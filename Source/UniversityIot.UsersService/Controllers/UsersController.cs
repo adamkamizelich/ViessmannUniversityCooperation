@@ -1,18 +1,15 @@
 ﻿namespace UniversityIot.UsersService.Controllers
 {
-    using System.Collections.Generic;
     using System.Threading.Tasks;
     using System.Web.Http;
     using AutoMapper;
     using UniversityIot.Messages;
     using UniversityIot.UsersDataService;
-    using UniversityIot.UsersService.Http.Attributes;
 
     /// <summary>
     /// Users controller
     /// </summary>
     [RoutePrefix("users")]
-    [BasicAuthentication]
     public class UsersController : ApiController
     {
         /// <summary>
@@ -78,6 +75,7 @@
             {
                 return NotFound();
             }
+
             return Ok(installations);
         }
     }

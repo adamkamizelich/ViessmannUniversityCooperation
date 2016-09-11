@@ -172,6 +172,8 @@
     <Compile Include="Handlers\Users\GetGatewaysHandler.cs" />
     <Compile Include="Handlers\Users\IGetByIdHandler.cs" />
     <Compile Include="Handlers\Users\IGetGatewaysHandler.cs" />
+    <Compile Include="Helpers\IValueConverter.cs" />
+    <Compile Include="Helpers\ValueConverter.cs" />
     <Compile Include="Http\AddChallengeOnUnauthorizedResult.cs" />
     <Compile Include="Http\Attributes\BasicAuthenticationAttribute.cs" />
     <Compile Include="Http\Attributes\BasicAuthenticationHeaderValue.cs" />
@@ -230,6 +232,10 @@
     <ProjectReference Include="..\UniversityIot.Configuration\UniversityIot.Configuration.csproj">
       <Project>{10d1b876-ce0f-428b-97ed-0bca80bf97fc}</Project>
       <Name>UniversityIot.Configuration</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\UniversityIot.Enums\UniversityIot.Enums.csproj">
+      <Project>{82AA9BFC-B58E-49CA-9416-8296073E96EB}</Project>
+      <Name>UniversityIot.Enums</Name>
     </ProjectReference>
     <ProjectReference Include="..\UniversityIot.Extensions\UniversityIot.Extensions.csproj">
       <Project>{9ed8a37c-f8d9-45f4-9d53-af83358e802d}</Project>

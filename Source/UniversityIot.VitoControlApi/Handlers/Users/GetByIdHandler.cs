@@ -5,7 +5,6 @@
     using System.Threading.Tasks;
     using AutoMapper;
     using RestSharp;
-    using RestSharp.Authenticators;
     using UniversityIot.VitoControlApi.Enums;
     using UniversityIot.VitoControlApi.Models;
     using UniversityIot.VitoControlApi.Models.DataObjects;
@@ -24,10 +23,7 @@
         /// </returns>
         public async Task<GetUserResponse> Handle(GetUserRequest message)
         {
-            var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Users"])
-            {
-                Authenticator = new HttpBasicAuthenticator(ConfigurationManager.AppSettings["ServiceEndpoints:Username"], ConfigurationManager.AppSettings["ServiceEndpoints:Password"])
-            };
+            var restClient = new RestClient(ConfigurationManager.AppSettings["ServiceEndpoints:Users"]);
 
             var userRequest = new RestRequest("users/{id}", Method.GET);
             userRequest.AddUrlSegment("id", message.Id.ToString());

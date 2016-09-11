@@ -1,5 +1,7 @@
 ﻿namespace UniversityIot.Messages
 {
+    using UniversityIot.Enums;
+
     public class GatewaySetting
     {
         /// <summary>
@@ -32,7 +34,7 @@
         /// <value>
         /// The type of the data.
         /// </value>
-        public int DataType { get; set; }
+        public SettingDataType DataType { get; set; }
 
         /// <summary>
         /// Gets or sets a value indicating whether this instance is read only.
