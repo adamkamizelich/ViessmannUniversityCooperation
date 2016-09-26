@@ -1,29 +1,14 @@
 // Base style
 @import "common";
 
-// Navigation & Header style
+// Header style
+@import "layout/header";
+
+// Navigation
 @import "layout/navigation";
 
-// Video style
-@import "layout/video";
-
-//Production  style
-@import "layout/production";
-
-// Why US Section style
-@import "layout/why-us";
-
-//Cooperate section
-@import "layout/cooperate";
-
-//Contact Section style
-@import "layout/contact";
-
-//Menu left  style
-@import "layout/menu-left";
-
-// //Social media Section style
-// @import "font-awesome/font-awesome";
+// Forms style
+@import "components/forms";
 
 //Footer style
 @import "layout/footer";
