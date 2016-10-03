@@ -1,0 +1,42 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 14
+VisualStudioVersion = 14.0.25123.0
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO", "ADO", "{AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FormsApp", "FormsApp\FormsApp.csproj", "{AD6333FA-A1FB-41A1-ADD5-A4626478E53A}"
+EndProject
+Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{07346228-3DCA-4F76-807B-A61341F16A92}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Debug|Any CPU.Deploy.0 = Debug|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Release|Any CPU.Build.0 = Release|Any CPU
+		{07346228-3DCA-4F76-807B-A61341F16A92}.Release|Any CPU.Deploy.0 = Release|Any CPU
+		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(NestedProjects) = preSolution
+		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A} = {AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}
+		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E} = {AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}
+	EndGlobalSection
+EndGlobal
