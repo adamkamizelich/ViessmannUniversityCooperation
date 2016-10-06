@@ -1,7 +1,7 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
-VisualStudioVersion = 14.0.25123.0
+VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "ADO", "ADO", "{AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}"
 EndProject
@@ -10,6 +10,10 @@ EndProject
 Project("{00D1A9C2-B5F0-4AF3-8072-F6C62B433612}") = "Database", "Database\Database.sqlproj", "{07346228-3DCA-4F76-807B-A61341F16A92}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DataAccessLayer", "DataAccessLayer\DataAccessLayer.csproj", "{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}"
+EndProject
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "EntityFramework", "EntityFramework", "{92A344DA-BA99-406E-95AD-3AF9B6FFB109}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "DomainModel", "DomainModel\DomainModel.csproj", "{694BFDC4-E1CD-4CC6-872A-CC522716C920}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -31,6 +35,10 @@ Global
 		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{694BFDC4-E1CD-4CC6-872A-CC522716C920}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{694BFDC4-E1CD-4CC6-872A-CC522716C920}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{694BFDC4-E1CD-4CC6-872A-CC522716C920}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{694BFDC4-E1CD-4CC6-872A-CC522716C920}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -38,5 +46,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{AD6333FA-A1FB-41A1-ADD5-A4626478E53A} = {AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}
 		{2F8780E3-D160-47E1-AFDA-7D329ED5FB7E} = {AF48E6C9-4A10-4E1A-B95F-5C7D8EFB1E7B}
+		{694BFDC4-E1CD-4CC6-872A-CC522716C920} = {92A344DA-BA99-406E-95AD-3AF9B6FFB109}
 	EndGlobalSection
 EndGlobal
