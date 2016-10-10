@@ -56,9 +56,9 @@
     <Compile Include="Entities\Datapoint.cs" />
     <Compile Include="Entities\Gateway.cs" />
     <Compile Include="Entities\GatewayType.cs" />
-    <Compile Include="Migrations\201610061432051_InitialSchema.cs" />
-    <Compile Include="Migrations\201610061432051_InitialSchema.Designer.cs">
-      <DependentUpon>201610061432051_InitialSchema.cs</DependentUpon>
+    <Compile Include="Migrations\201610100947405_InitialMigration.cs" />
+    <Compile Include="Migrations\201610100947405_InitialMigration.Designer.cs">
+      <DependentUpon>201610100947405_InitialMigration.cs</DependentUpon>
     </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -68,8 +68,8 @@
     <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Migrations\201610061432051_InitialSchema.resx">
-      <DependentUpon>201610061432051_InitialSchema.cs</DependentUpon>
+    <EmbeddedResource Include="Migrations\201610100947405_InitialMigration.resx">
+      <DependentUpon>201610100947405_InitialMigration.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

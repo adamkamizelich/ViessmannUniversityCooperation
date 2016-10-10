@@ -11,9 +11,9 @@
     /// <seealso cref="System.Data.Entity.DbContext" />
     public class DeviceContext : DbContext
     {
-        public DeviceContext() : base("DeviceContext")
+        public DeviceContext() : base("name=DeviceConnectionString")
         {
-            //Database.SetInitializer(new MigrateDatabaseToLatestVersion<DeviceContext, DbMigrationsConfiguration<DeviceContext>>());
+            Database.SetInitializer(new MigrateDatabaseToLatestVersion<DeviceContext, DbMigrationsConfiguration<DeviceContext>>());
             Database.SetInitializer<DeviceContext>(null);
         }
 

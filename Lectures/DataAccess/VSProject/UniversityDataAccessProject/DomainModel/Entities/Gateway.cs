@@ -4,11 +4,15 @@
     using System.Collections.Generic;
     using System.Collections.ObjectModel;
     using System.ComponentModel.DataAnnotations;
-    using System.ComponentModel.DataAnnotations.Schema;
     using System.Linq;
 
     public class Gateway
     {
+        public Gateway()
+        {
+            this.Controllers = new List<Controller>();
+        }
+
         public int GatewayId { get; set; }
 
         [Required, StringLength(20)]
@@ -27,7 +31,7 @@
         [Timestamp]
         public byte[] RowVersion { get; set; }
 
-        internal IList<Controller> Controllers { get; set; }
+        public IList<Controller> Controllers { get; set; }
 
         public bool AddController(Controller controller)
         {

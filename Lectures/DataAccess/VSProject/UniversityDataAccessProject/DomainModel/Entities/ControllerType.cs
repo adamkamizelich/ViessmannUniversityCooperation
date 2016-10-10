@@ -9,6 +9,11 @@
     [Table("ControllerType")]
     public class ControllerType
     {
+        public ControllerType()
+        {
+            this.Datapoints = new List<Datapoint>();
+        }
+
         public int Id { get; set; }
 
         public string Name { get; set; }

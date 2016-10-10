@@ -1,0 +1,338 @@
+2016-08-20 14:02:24,633 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-08-20 14:02:27,668 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not find license file: C:\Users\fakd\AppData\Local\EntityFramework Profiler\license.xml
+2016-08-20 14:04:49,062 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not find this signature node on license:
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <parameters>
+    <!-- folder to which all package files will be stored before zipping-->
+    <param name="ReleasePackageFolder" value="C:\EstrellaRelease\IbmProduction" />
+    <!-- configuration for estrella core compilation -->
+    <param name="BuildConfiguration" value="IbmProduction" />
+    <!-- Verbosity level of msBuild: q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic] -->
+    <param name="BuildVerbosity" value="minimal" />
+  </parameters>
+  <steps>
+    <step name="EstrellaWindowsServicesStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaWindowsServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.ApplicationHosts.StartUpApplication" />
+      <param name="ProjectFile" value="Viessmann.Estrella.ApplicationHosts.StartUpApplication.csproj" />
+      <param name="SkipBuild" value="false" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesStatusCheckPatternFile" value="Tools\Deployment\ServicesStatusCheckPattern.txt" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesDefinitionFileName" value="Estrella.BuildServer.DeployServicesList.txt" />
+      <!--
+      <param name="ReleasePackageFolder" value="C:\Releases\" />
+      <param name="BuildConfiguration" value="IbmIntegration" />
+      <param name="BuildVerbosity" value="m" />
+      -->
+    </step>
+    <step name="EstrellaWebServiceStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebService" />
+      <param name="ProjectName" value="EstrellaWebServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebService" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebService.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaWebApiStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebApi" />
+      <param name="ProjectName" value="EstrellaWebApi" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebApi" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebApi.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaSupportWebStep" enabled="false" build="false">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebSupport" />
+      <param name="ProjectName" value="EstrellaWebSupport" />
+      <param name="SolutionFolder" value="C:\r\viessmann-estrella-frontend-support" />
+      <param name="EstrelSupportGitHash" value="Unknown" />
+      <param name="SkipBuild" value="false" />
+      <param name="RestApiUrl" value="https://api.viessmann4.io/estrella/rest/v1.0/" />
+    </step>
+    <step name="EstrellaDatabaseMigrationsStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaDatabaseMigrations" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectName" value="NOT USED"/>
+      <!--  the idea is to create one step per porject -->
+      <!--
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Alerts" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Ctcs" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Notifications" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.UserManagement" />-->
+    </step>
+    <step name="PackageCompressingStep" enabled="true" build="true">
+      <!-- if value=default then FolderToCompress=<ReleasePackageFolder>-->
+      <param name="FolderToCompress" value="C:\EstrellaRelease\IbmProduction" />
+      <!-- if value=default then ZipFileName="<BuildConfiguration>.zip"-->
+      <param name="ZipFileName" value="IbmProduction.zip" />
+      <param name="FolderToSaveZipFile" value="C:\EstrellaReleaseZip" />
+    </step>
+  </steps>
+</configuration>
+2016-08-20 14:04:49,063 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not validate xml signature of:
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <parameters>
+    <!-- folder to which all package files will be stored before zipping-->
+    <param name="ReleasePackageFolder" value="C:\EstrellaRelease\IbmProduction" />
+    <!-- configuration for estrella core compilation -->
+    <param name="BuildConfiguration" value="IbmProduction" />
+    <!-- Verbosity level of msBuild: q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic] -->
+    <param name="BuildVerbosity" value="minimal" />
+  </parameters>
+  <steps>
+    <step name="EstrellaWindowsServicesStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaWindowsServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.ApplicationHosts.StartUpApplication" />
+      <param name="ProjectFile" value="Viessmann.Estrella.ApplicationHosts.StartUpApplication.csproj" />
+      <param name="SkipBuild" value="false" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesStatusCheckPatternFile" value="Tools\Deployment\ServicesStatusCheckPattern.txt" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesDefinitionFileName" value="Estrella.BuildServer.DeployServicesList.txt" />
+      <!--
+      <param name="ReleasePackageFolder" value="C:\Releases\" />
+      <param name="BuildConfiguration" value="IbmIntegration" />
+      <param name="BuildVerbosity" value="m" />
+      -->
+    </step>
+    <step name="EstrellaWebServiceStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebService" />
+      <param name="ProjectName" value="EstrellaWebServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebService" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebService.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaWebApiStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebApi" />
+      <param name="ProjectName" value="EstrellaWebApi" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebApi" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebApi.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaSupportWebStep" enabled="false" build="false">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebSupport" />
+      <param name="ProjectName" value="EstrellaWebSupport" />
+      <param name="SolutionFolder" value="C:\r\viessmann-estrella-frontend-support" />
+      <param name="EstrelSupportGitHash" value="Unknown" />
+      <param name="SkipBuild" value="false" />
+      <param name="RestApiUrl" value="https://api.viessmann4.io/estrella/rest/v1.0/" />
+    </step>
+    <step name="EstrellaDatabaseMigrationsStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaDatabaseMigrations" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectName" value="NOT USED"/>
+      <!--  the idea is to create one step per porject -->
+      <!--
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Alerts" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Ctcs" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Notifications" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.UserManagement" />-->
+    </step>
+    <step name="PackageCompressingStep" enabled="true" build="true">
+      <!-- if value=default then FolderToCompress=<ReleasePackageFolder>-->
+      <param name="FolderToCompress" value="C:\EstrellaRelease\IbmProduction" />
+      <!-- if value=default then ZipFileName="<BuildConfiguration>.zip"-->
+      <param name="ZipFileName" value="IbmProduction.zip" />
+      <param name="FolderToSaveZipFile" value="C:\EstrellaReleaseZip" />
+    </step>
+  </steps>
+</configuration>
+2016-08-20 14:04:49,063 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Failed validating license:
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <parameters>
+    <!-- folder to which all package files will be stored before zipping-->
+    <param name="ReleasePackageFolder" value="C:\EstrellaRelease\IbmProduction" />
+    <!-- configuration for estrella core compilation -->
+    <param name="BuildConfiguration" value="IbmProduction" />
+    <!-- Verbosity level of msBuild: q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic] -->
+    <param name="BuildVerbosity" value="minimal" />
+  </parameters>
+  <steps>
+    <step name="EstrellaWindowsServicesStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaWindowsServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.ApplicationHosts.StartUpApplication" />
+      <param name="ProjectFile" value="Viessmann.Estrella.ApplicationHosts.StartUpApplication.csproj" />
+      <param name="SkipBuild" value="false" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesStatusCheckPatternFile" value="Tools\Deployment\ServicesStatusCheckPattern.txt" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesDefinitionFileName" value="Estrella.BuildServer.DeployServicesList.txt" />
+      <!--
+      <param name="ReleasePackageFolder" value="C:\Releases\" />
+      <param name="BuildConfiguration" value="IbmIntegration" />
+      <param name="BuildVerbosity" value="m" />
+      -->
+    </step>
+    <step name="EstrellaWebServiceStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebService" />
+      <param name="ProjectName" value="EstrellaWebServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebService" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebService.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaWebApiStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebApi" />
+      <param name="ProjectName" value="EstrellaWebApi" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebApi" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebApi.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaSupportWebStep" enabled="false" build="false">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebSupport" />
+      <param name="ProjectName" value="EstrellaWebSupport" />
+      <param name="SolutionFolder" value="C:\r\viessmann-estrella-frontend-support" />
+      <param name="EstrelSupportGitHash" value="Unknown" />
+      <param name="SkipBuild" value="false" />
+      <param name="RestApiUrl" value="https://api.viessmann4.io/estrella/rest/v1.0/" />
+    </step>
+    <step name="EstrellaDatabaseMigrationsStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaDatabaseMigrations" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectName" value="NOT USED"/>
+      <!--  the idea is to create one step per porject -->
+      <!--
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Alerts" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Ctcs" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Notifications" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.UserManagement" />-->
+    </step>
+    <step name="PackageCompressingStep" enabled="true" build="true">
+      <!-- if value=default then FolderToCompress=<ReleasePackageFolder>-->
+      <param name="FolderToCompress" value="C:\EstrellaRelease\IbmProduction" />
+      <!-- if value=default then ZipFileName="<BuildConfiguration>.zip"-->
+      <param name="ZipFileName" value="IbmProduction.zip" />
+      <param name="FolderToSaveZipFile" value="C:\EstrellaReleaseZip" />
+    </step>
+  </steps>
+</configuration>
+2016-08-20 14:04:49,063 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - Could not validate existing license
+<?xml version="1.0" encoding="utf-8"?>
+<configuration>
+  <parameters>
+    <!-- folder to which all package files will be stored before zipping-->
+    <param name="ReleasePackageFolder" value="C:\EstrellaRelease\IbmProduction" />
+    <!-- configuration for estrella core compilation -->
+    <param name="BuildConfiguration" value="IbmProduction" />
+    <!-- Verbosity level of msBuild: q[uiet], m[inimal], n[ormal], d[etailed], and diag[nostic] -->
+    <param name="BuildVerbosity" value="minimal" />
+  </parameters>
+  <steps>
+    <step name="EstrellaWindowsServicesStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaWindowsServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.ApplicationHosts.StartUpApplication" />
+      <param name="ProjectFile" value="Viessmann.Estrella.ApplicationHosts.StartUpApplication.csproj" />
+      <param name="SkipBuild" value="false" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesStatusCheckPatternFile" value="Tools\Deployment\ServicesStatusCheckPattern.txt" />
+      <!-- path relative to solution folder -->
+      <param name="ServicesDefinitionFileName" value="Estrella.BuildServer.DeployServicesList.txt" />
+      <!--
+      <param name="ReleasePackageFolder" value="C:\Releases\" />
+      <param name="BuildConfiguration" value="IbmIntegration" />
+      <param name="BuildVerbosity" value="m" />
+      -->
+    </step>
+    <step name="EstrellaWebServiceStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebService" />
+      <param name="ProjectName" value="EstrellaWebServices" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebService" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebService.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaWebApiStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebApi" />
+      <param name="ProjectName" value="EstrellaWebApi" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectFolder" value="Source\Viessmann.Estrella.Endpoints.Vitodata.WebApi" />
+      <param name="ProjectFile" value="Viessmann.Estrella.Endpoints.Vitodata.WebApi.csproj" />
+      <param name="SkipBuild" value="false" />
+    </step>
+    <step name="EstrellaSupportWebStep" enabled="false" build="false">
+      <param name="ReleasePackageSubFolder" value="EstrellaEndpoints\EstrellaWebSupport" />
+      <param name="ProjectName" value="EstrellaWebSupport" />
+      <param name="SolutionFolder" value="C:\r\viessmann-estrella-frontend-support" />
+      <param name="EstrelSupportGitHash" value="Unknown" />
+      <param name="SkipBuild" value="false" />
+      <param name="RestApiUrl" value="https://api.viessmann4.io/estrella/rest/v1.0/" />
+    </step>
+    <step name="EstrellaDatabaseMigrationsStep" enabled="true" build="true">
+      <param name="ReleasePackageSubFolder" value="EstrellaDatabaseMigrations" />
+      <param name="SolutionFolder" value="C:\r\Viessmann.Estrella" />
+      <param name="ProjectName" value="NOT USED"/>
+      <!--  the idea is to create one step per porject -->
+      <!--
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Alerts" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Ctcs" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.Notifications" />
+      <param name="ProjectName" value="Viessmann.Estrella.DataAccess.UserManagement" />-->
+    </step>
+    <step name="PackageCompressingStep" enabled="true" build="true">
+      <!-- if value=default then FolderToCompress=<ReleasePackageFolder>-->
+      <param name="FolderToCompress" value="C:\EstrellaRelease\IbmProduction" />
+      <!-- if value=default then ZipFileName="<BuildConfiguration>.zip"-->
+      <param name="ZipFileName" value="IbmProduction.zip" />
+      <param name="FolderToSaveZipFile" value="C:\EstrellaReleaseZip" />
+    </step>
+  </steps>
+</configuration>
+2016-08-20 14:04:52,110 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 09/04/2016 15:02:49
+2016-08-20 14:04:52,225 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for EntityFramework Profiler
+2016-08-20 14:05:01,919 [22] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-08-20 14:17:59,685 [29] FATAL HibernatingRhinos.Profiler.Client.HandleUnhandledExceptions [(null)] - Unhandled exception ruthlessly killed application
+System.Reflection.TargetInvocationException: Obiekt docelowy wywo³ania zg³osi³ wyj¹tek. ---> System.InvalidOperationException: W¹tkiem wywo³uj¹cym musi byæ STA, poniewa¿ wiele sk³adników interfejsów u¿ytkownika go wymaga.
+   w System.Windows.Input.InputManager..ctor()
+   w System.Windows.Input.InputManager.GetCurrentInputManagerImpl()
+   w System.Windows.Input.KeyboardNavigation..ctor()
+   w System.Windows.FrameworkElement.FrameworkServices..ctor()
+   w System.Windows.FrameworkElement.EnsureFrameworkServices()
+   w System.Windows.FrameworkElement..ctor()
+   w System.Windows.Controls.Control..ctor()
+   w HibernatingRhinos.Profiler.Client.Licensing.LicensePromptView..ctor()
+   --- Koniec œladu stosu wyj¹tków wewnêtrznych ---
+   w System.RuntimeTypeHandle.CreateInstance(RuntimeType type, Boolean publicOnly, Boolean noCheck, Boolean& canBeCached, RuntimeMethodHandleInternal& ctor, Boolean& bNeedSecurityCheck)
+   w System.RuntimeType.CreateInstanceSlow(Boolean publicOnly, Boolean skipCheckThis, Boolean fillCache, StackCrawlMark& stackMark)
+   w System.Activator.CreateInstance(Type type, Boolean nonPublic)
+   w System.Activator.CreateInstance(Type type)
+   w Caliburn.Micro.ViewLocator.<.cctor>b__2(Type viewType)
+   w Caliburn.Micro.ViewLocator.<.cctor>b__a(Object model, DependencyObject displayLocation, Object context)
+   w Caliburn.Micro.WindowManager.CreateWindow(Object rootModel, Boolean isDialog, Object context, IDictionary`2 settings)
+   w Caliburn.Micro.WindowManager.ShowDialog(Object rootModel, Object context, IDictionary`2 settings)
+   w HibernatingRhinos.Profiler.Client.Controls.Dialog.Show(Object model, Object context, Boolean windowWithFullLogo)
+   w HibernatingRhinos.Profiler.Client.Licensing.LicenseInformationModel.PromptUserForLicenseFile(String reason, Boolean isCanRequestTrial, Boolean isCanRequestTrialExtend)
+   w HibernatingRhinos.Profiler.Client.Services.InitialTrialService.ValidateThatUserInTrialTime()
+   w System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   w System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+   w System.Threading.TimerQueueTimer.CallCallback()
+   w System.Threading.TimerQueueTimer.Fire()
+   w System.Threading.TimerQueue.FireNextTimers()
+2016-10-10 11:29:29,630 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-10-10 11:29:31,617 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 09/04/2016 15:02:49
+2016-10-10 11:29:41,753 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 09/04/2016 15:02:49
+2016-10-10 11:34:31,622 [13] ERROR Rhino.Licensing.AbstractLicenseValidator [(null)] - The license have expired and can no longer be used
+2016-10-10 11:34:31,622 [13] INFO  HibernatingRhinos.Profiler.Client.Licensing.LicensePromptModel [(null)] - Got invalidation notification TimeExpired
+2016-10-10 11:35:48,200 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-10-10 11:35:49,633 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 09/04/2016 15:02:49
+2016-10-10 11:37:42,159 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-10-10 11:37:43,591 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 09/04/2016 15:02:49
+2016-10-10 11:38:03,182 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 10/25/2016 12:36:25
+2016-10-10 11:38:03,286 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for EntityFramework Profiler
+2016-10-10 11:38:03,555 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for EntityFramework Profiler
+2016-10-10 11:38:03,568 [7] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
+2016-10-10 11:46:12,727 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-10-10 11:46:20,698 [1] DEBUG HibernatingRhinos.Profiler.Client.App [(null)] - Profiler initialized. Build: 3103
+2016-10-10 11:46:22,208 [1] WARN  Rhino.Licensing.AbstractLicenseValidator [(null)] - License expiration date is 10/25/2016 12:36:25
+2016-10-10 11:46:22,311 [1] DEBUG Rhino.Licensing.AbstractLicenseValidator [(null)] - License accepted for EntityFramework Profiler
+2016-10-10 11:46:22,325 [5] INFO  HibernatingRhinos.Profiler.Client.Infrastructure.AutoUpdate.ProfilerAutoUpdate [(null)] - Checking for updates...
