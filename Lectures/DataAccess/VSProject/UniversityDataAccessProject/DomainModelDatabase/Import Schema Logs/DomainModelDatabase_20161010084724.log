@@ -1,0 +1,76 @@
+2016-10-10 10:47:24	This log contains information about the import schema operation into project 'DomainModelDatabase' on computer 'FUE003W1602' by user 'fakd'.
+2016-10-10 10:47:24	Import of database schema has started.
+2016-10-10 10:47:29	Gathering database options
+2016-10-10 10:47:29	Gathering users
+2016-10-10 10:47:29	Gathering roles
+2016-10-10 10:47:29	Gathering application roles
+2016-10-10 10:47:29	Gathering role memberships
+2016-10-10 10:47:29	Gathering filegroups
+2016-10-10 10:47:29	Gathering full-text catalogs
+2016-10-10 10:47:29	Gathering assemblies
+2016-10-10 10:47:29	Gathering certificates
+2016-10-10 10:47:29	Gathering asymmetric keys
+2016-10-10 10:47:29	Gathering symmetric keys
+2016-10-10 10:47:29	Gathering encrypted symmetric keys
+2016-10-10 10:47:29	Gathering schemas
+2016-10-10 10:47:29	Gathering XML schema collections
+2016-10-10 10:47:29	Gathering user-defined data types
+2016-10-10 10:47:29	Gathering user-defined types
+2016-10-10 10:47:29	Gathering table types
+2016-10-10 10:47:29	Gathering unique keys for table types
+2016-10-10 10:47:29	Gathering primary keys for table types
+2016-10-10 10:47:29	Gathering check constraints for table types
+2016-10-10 10:47:29	Gathering default constraints for table types
+2016-10-10 10:47:29	Gathering partition functions
+2016-10-10 10:47:29	Gathering partition schemes
+2016-10-10 10:47:29	Gathering functions
+2016-10-10 10:47:29	Gathering encrypted functions
+2016-10-10 10:47:29	Gathering aggregates
+2016-10-10 10:47:29	Gathering procedures
+2016-10-10 10:47:29	Gathering encrypted procedures
+2016-10-10 10:47:29	Gathering tables
+2016-10-10 10:47:29	Gathering primary keys
+2016-10-10 10:47:29	Gathering unique constraints
+2016-10-10 10:47:29	Gathering foreign keys
+2016-10-10 10:47:30	Gathering default constraints
+2016-10-10 10:47:30	Gathering check constraints
+2016-10-10 10:47:30	Gathering views
+2016-10-10 10:47:30	Gathering encrypted views
+2016-10-10 10:47:30	Gathering indexes
+2016-10-10 10:47:30	Gathering statistics
+2016-10-10 10:47:30	Gathering full-text index stoplists
+2016-10-10 10:47:30	Gathering search property lists
+2016-10-10 10:47:30	Gathering search properties
+2016-10-10 10:47:30	Gathering full-text indexes
+2016-10-10 10:47:30	Gathering column store indexes
+2016-10-10 10:47:30	Gathering spatial indexes
+2016-10-10 10:47:30	Gathering XML indexes
+2016-10-10 10:47:30	Gathering Selective XML indexes
+2016-10-10 10:47:30	Gathering encrypted triggers
+2016-10-10 10:47:30	Gathering triggers
+2016-10-10 10:47:30	Gathering encrypted and clr ddl triggers
+2016-10-10 10:47:30	Gathering ddl triggers
+2016-10-10 10:47:30	Gathering synonyms
+2016-10-10 10:47:30	Gathering defaults
+2016-10-10 10:47:30	Gathering data constraint uddt bindings
+2016-10-10 10:47:30	Gathering rules
+2016-10-10 10:47:30	Gathering data constraint uddt bindings
+2016-10-10 10:47:30	Gathering message types
+2016-10-10 10:47:30	Gathering queues
+2016-10-10 10:47:30	Gathering contracts
+2016-10-10 10:47:30	Gathering services
+2016-10-10 10:47:30	Gathering event notifications
+2016-10-10 10:47:30	Gathering remote service bindings
+2016-10-10 10:47:30	Gathering broker priorities
+2016-10-10 10:47:30	Gathering signatures
+2016-10-10 10:47:30	Gathering data compression options
+2016-10-10 10:47:30	Gathering sequence types
+2016-10-10 10:47:30	Gathering extended properties
+2016-10-10 10:47:30	Gathering credentials
+2016-10-10 10:47:30	Gathering logins
+2016-10-10 10:47:30	Gathering server audits
+2016-10-10 10:47:30	Scanning project for duplicate elements
+2016-10-10 10:47:30	Finished duplicate element processing
+2016-10-10 10:47:30	Finished importing database.
+2016-10-10 10:47:30	A summary of the import was saved to the following location: C:\r\ViessmannUniversityCooperation\Lectures\DataAccess\VSProject\UniversityDataAccessProject\DomainModelDatabase\Import Schema Logs\DomainModelDatabase_20161010084724.log
+2016-10-10 10:47:30	Click Finish to continue...

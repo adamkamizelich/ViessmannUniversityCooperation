@@ -3,15 +3,18 @@
     using System.ComponentModel.DataAnnotations;
     using System.ComponentModel.DataAnnotations.Schema;
 
+
+    [Table("Controller")]
     public class Controller
     {
-        [Key, DatabaseGenerated(DatabaseGeneratedOption.Identity)]
+        [Key]
         public int ControllerKey { get; set; }
 
         [MaxLength(20)]
         public string Serial { get; set; }
 
         // foreign key convention.
+        [Index("IX_GatewayId")]
         public int GatewayId { get; set; }
 
         public Gateway Gateway { get; set; }

@@ -60,6 +60,7 @@
     <Folder Include="Tables" />
     <Folder Include="Scripts" />
     <Folder Include="Views" />
+    <Folder Include="Snapshots" />
   </ItemGroup>
   <ItemGroup>
     <Build Include="Tables\Controller.sql" />
@@ -71,5 +72,8 @@
   </ItemGroup>
   <ItemGroup>
     <PostDeploy Include="Scripts\Script.PostDeployment.sql" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Snapshots\Database_20161010_10-41-26.dacpac" />
   </ItemGroup>
 </Project>

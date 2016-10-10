@@ -1,10 +1,12 @@
 ﻿namespace DomainModel.Entities
 {
     using System.Collections.Generic;
+    using System.ComponentModel.DataAnnotations.Schema;
 
     /// <summary>
     /// Controller Type
     /// </summary>
+    [Table("ControllerType")]
     public class ControllerType
     {
         public int Id { get; set; }
