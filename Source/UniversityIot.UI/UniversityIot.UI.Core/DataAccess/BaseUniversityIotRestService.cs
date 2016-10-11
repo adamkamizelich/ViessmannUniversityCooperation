@@ -9,34 +9,40 @@ namespace UniversityIot.UI.Core.DataAccess
     public abstract class BaseUniversityIotRestService
     {
         protected readonly Uri BaseUri = new Uri("http://universityiotvitocontrolapi.azurewebsites.net");
-        private readonly HttpClient client;
+        protected readonly IAppSession Session;
 
-        protected BaseUniversityIotRestService()
+        protected BaseUniversityIotRestService(IAppSession session)
         {
-            var handler = new HttpClientHandler
-            {
-                // TODO
-                Credentials = new NetworkCredential("john.doe@viessmann.com", "ViessmannJD")
-            };
-
-            this.client = new HttpClient(handler)
-            {
-                MaxResponseContentBufferSize = 256000
-            };
+            Session = session;
         }
+
+        private IUserAuth User => Session.UserAuth;
 
         protected async Task<TDto> GetData<TDto>(string restMethod)
         {
-            var uri = new Uri($"{this.BaseUri}{restMethod}");
+            return await GetData<TDto>(restMethod, User.Name, User.Password);
+        }
 
-            var response = await this.client.GetAsync(uri);
-            if (response.IsSuccessStatusCode)
+        protected async Task<TDto> GetData<TDto>(string restMethod, string user, string pass)
+        {
+            var uri = new Uri($"{BaseUri}{restMethod}");
+
+            var handler = new HttpClientHandler
             {
-                var content = await response.Content.ReadAsStringAsync();
-                return JsonConvert.DeserializeObject<TDto>(content);
-            }
+                Credentials = new NetworkCredential(user, pass)
+            };
 
-            throw new Exception($"Error retreiving {uri}, statusCode: {response.StatusCode}");
+            using (var client = new HttpClient(handler))
+            {
+                var response = await client.GetAsync(uri);
+                if (response.IsSuccessStatusCode)
+                {
+                    var content = await response.Content.ReadAsStringAsync();
+                    return JsonConvert.DeserializeObject<TDto>(content);
+                }
+                Session.ClearUserSession();
+                throw new Exception($"Error retreiving {uri}, statusCode: {response.StatusCode}");
+            }
         }
     }
 }

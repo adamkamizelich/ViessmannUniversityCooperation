@@ -1,8 +1,8 @@
 ﻿using System;
-using System.Linq;
+using System.IO;
+using System.IO.IsolatedStorage;
 using UniversityIot.UI.Core.Services;
 using UniversityIot.UI.UWP.Services;
-using Xamarin.Auth;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(CredentialsService))]
@@ -11,62 +11,75 @@ namespace UniversityIot.UI.UWP.Services
 {
     internal class CredentialsService : ICredentialsService
     {
-        private const string PasswordKey = "Password";
+        private const string AuthUserStoreFile = "Userdata";
+        private const string AuthPassStoreFile = "Passdata";
 
-        public string UserName
+        public string UserName => ReadFromStorage(AuthUserStoreFile);
+
+        public string Password => ReadFromStorage(AuthPassStoreFile);
+
+        public void SaveCredentials(string userName, string password)
         {
-            get
-            {
-                var account = AccountStore.Create().FindAccountsForService(Core.App.AppName).FirstOrDefault();
-                return account?.Username;
-            }
-        }
-
-        public string Md5Password
-        {
-            get
-            {
-                var account = AccountStore.Create().FindAccountsForService(Core.App.AppName).FirstOrDefault();
-                return account?.Properties[PasswordKey];
-            }
-        }
-
-        public void SaveCredentials(string userName, string md5Password)
-        {
-            return; 
-
             if (string.IsNullOrWhiteSpace(userName))
-            {
                 throw new ArgumentException("", nameof(userName));
-            }
 
-            if (string.IsNullOrWhiteSpace(md5Password))
-            {
-                throw new ArgumentException("", nameof(md5Password));
-            }
+            if (string.IsNullOrWhiteSpace(password))
+                throw new ArgumentException("", nameof(password));
 
-            var account = new Account
-            {
-                Username = userName
-            };
-            account.Properties.Add(PasswordKey, md5Password);
-            AccountStore.Create().Save(account, Core.App.AppName);
+            WriteToStorage(AuthUserStoreFile, userName);
+            WriteToStorage(AuthPassStoreFile, password);
         }
 
         public void DeleteCredentials()
         {
-            var account = AccountStore.Create().FindAccountsForService(Core.App.AppName).FirstOrDefault();
-            if (account != null)
-            {
-                AccountStore.Create().Delete(account, Core.App.AppName);
-            }
+            WriteToStorage(AuthUserStoreFile, null);
+            WriteToStorage(AuthPassStoreFile, null);
         }
 
         public bool CredentialsExist()
         {
-            var result = AccountStore.Create().FindAccountsForService(Core.App.AppName).Any();
+            return !string.IsNullOrEmpty(ReadFromStorage(AuthUserStoreFile));
+        }
 
-            return result;
+
+        private string ReadFromStorage(string file)
+        {
+            var store = IsolatedStorageFile.GetUserStoreForApplication();
+
+            if (store.FileExists(file))
+                using (var stream = new IsolatedStorageFileStream(file, FileMode.Open, store))
+                {
+                    using (var reader = new StreamReader(stream))
+                    {
+                        var result = reader.ReadToEnd();
+
+                        if (string.IsNullOrEmpty(result))
+                            return null;
+
+                        return result;
+                    }
+                }
+
+            return null;
+        }
+
+        private void WriteToStorage(string file, string data)
+        {
+            if (data == null)
+            {
+                data = string.Empty;
+            }
+
+            var store = IsolatedStorageFile.GetUserStoreForApplication();
+
+            if (store.FileExists(file))
+                using (var stream = new IsolatedStorageFileStream(file, FileMode.OpenOrCreate, store))
+                {
+                    using (var writer = new StreamWriter(stream))
+                    {
+                        writer.Write(data);
+                    }
+                }
         }
     }
 }

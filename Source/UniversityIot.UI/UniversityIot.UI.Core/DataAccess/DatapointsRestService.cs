@@ -2,11 +2,16 @@ using System.Collections.Generic;
 using System.Threading.Tasks;
 using UniversityIot.UI.Core.DataAccess.DTO;
 using UniversityIot.UI.Core.Models;
+using UniversityIot.UI.Core.Services;
 
 namespace UniversityIot.UI.Core.DataAccess
 {
     public class DatapointsRestService : BaseUniversityIotRestService, IDatapointsRepository
     {
+        public DatapointsRestService(IAppSession session) : base(session)
+        {
+        }
+
         public async Task<List<DatapointModel>> GetByInstallationId(long installationId)
         {
             var rawJson = await this.GetData<DatapointsDTO>($"gateways/{installationId}/datapoints");

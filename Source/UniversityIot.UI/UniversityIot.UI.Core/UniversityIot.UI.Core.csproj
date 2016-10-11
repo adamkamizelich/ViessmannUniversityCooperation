@@ -36,10 +36,12 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="App.cs" />
+    <Compile Include="AppSession.cs" />
     <Compile Include="DataAccess.DTO\DatapointDTO.cs" />
     <Compile Include="DataAccess.DTO\DatapointsDTO.cs" />
     <Compile Include="DataAccess.DTO\InstallationDTO.cs" />
     <Compile Include="DataAccess.DTO\InstallationsDTO.cs" />
+    <Compile Include="DataAccess.DTO\UserDTO.cs" />
     <Compile Include="DataAccess.Fakes\FakeDatapointsRepository.cs" />
     <Compile Include="DataAccess.Fakes\FakeInstallationRepository.cs" />
     <Compile Include="DataAccess\BaseUniversityIotRestService.cs" />
@@ -47,9 +49,14 @@
     <Compile Include="DataAccess\IDatapointsRepository.cs" />
     <Compile Include="DataAccess\IInstallationsRepository.cs" />
     <Compile Include="DataAccess\InstallationsRestService.cs" />
+    <Compile Include="DataAccess\IUsersRepository.cs" />
+    <Compile Include="DataAccess\UserRestService.cs" />
     <Compile Include="DraftContainer.cs" />
+    <Compile Include="IAppSession.cs" />
+    <Compile Include="IUserAuth.cs" />
     <Compile Include="Models\DatapointModel.cs" />
     <Compile Include="Models\InstallationModel.cs" />
+    <Compile Include="Models\UserModel.cs" />
     <Compile Include="MVVM\BaseModel.cs" />
     <Compile Include="MVVM\BaseViewModel.cs" />
     <Compile Include="MVVM\INavigationService.cs" />
@@ -58,7 +65,7 @@
     <Compile Include="Properties\Annotations.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Services\ICredentialsService.cs" />
-    <Compile Include="Services\UserManagementService.cs" />
+    <Compile Include="UserAuth.cs" />
     <Compile Include="ViewModels\DatapointEditorViewModel.cs" />
     <Compile Include="ViewModels\DatapointViewModel.cs" />
     <Compile Include="ViewModels\InstallationDetailsViewModel.cs" />

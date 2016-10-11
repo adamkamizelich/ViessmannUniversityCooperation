@@ -23,7 +23,7 @@ namespace UniversityIot.UI.iOS.Services
             }
         }
 
-        public string Md5Password
+        public string Password
         {
             get
             {
@@ -32,23 +32,23 @@ namespace UniversityIot.UI.iOS.Services
             }
         }
 
-        public void SaveCredentials(string userName, string md5Password)
+        public void SaveCredentials(string userName, string password)
         {
             if (string.IsNullOrWhiteSpace(userName))
             {
                 throw new ArgumentException("", nameof(userName));
             }
 
-            if (string.IsNullOrWhiteSpace(md5Password))
+            if (string.IsNullOrWhiteSpace(password))
             {
-                throw new ArgumentException("", nameof(md5Password));
+                throw new ArgumentException("", nameof(password));
             }
 
             var account = new Account
             {
                 Username = userName
             };
-            account.Properties.Add(PasswordKey, md5Password);
+            account.Properties.Add(PasswordKey, password);
             AccountStore.Create().Save(account, App.AppName);
         }
 

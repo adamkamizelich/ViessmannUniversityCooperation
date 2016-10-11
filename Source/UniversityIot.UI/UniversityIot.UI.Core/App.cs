@@ -11,11 +11,10 @@ namespace UniversityIot.UI.Core
         {
             // The root page of your application
 
-            var credentialsService = DependencyService.Get<ICredentialsService>();
-
             var loginViewModel = new LoginViewModel(
+                DraftContainer.AppSession,
                 DraftContainer.UserManagementService,
-                credentialsService,
+                DraftContainer.CredentialsService,
                 DraftContainer.InstallationsRepository);
 
             Page loginView = DraftContainer.ViewViewModelRegister.GetViewFor(loginViewModel);

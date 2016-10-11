@@ -4,9 +4,9 @@
     {
         string UserName { get; }
 
-        string Md5Password { get; }
+        string Password { get; }
 
-        void SaveCredentials(string userName, string md5Password);
+        void SaveCredentials(string userName, string password);
 
         void DeleteCredentials();
 
