@@ -45,6 +45,7 @@
                 Component.For<IGetGatewaysHandler>().ImplementedBy<GetGatewaysHandler>(),
                 Component.For<IPostDatapointHandler>().ImplementedBy<PostDatapointHandler>(),
                 Component.For<IGetDatapointsHandler>().ImplementedBy<GetDatapointsHandler>(),
+                Component.For<IGetDatapointHandler>().ImplementedBy<GetDatapointHandler>(),
                 Component.For<Handlers.Gateways.IGetByIdHandler>().ImplementedBy<Handlers.Gateways.GetByIdHandler>(),
                 Component.For<IValueConverter>().ImplementedBy<ValueConverter>()
                 );

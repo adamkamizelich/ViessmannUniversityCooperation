@@ -23,6 +23,11 @@
         private readonly IGetDatapointsHandler getDatapointsHandler;
 
         /// <summary>
+        /// The get datapoint handler
+        /// </summary>
+        private readonly IGetDatapointHandler getDatapointHandler;
+
+        /// <summary>
         /// The post datapoint handler
         /// </summary>
         private readonly IPostDatapointHandler postDatapointHandler;
@@ -32,12 +37,18 @@
         /// </summary>
         /// <param name="getByIdHandler">The get by identifier handler.</param>
         /// <param name="getDatapointsHandler">The get datapoints handler.</param>
+        /// <param name="getDatapointHandler">The get datapoint handler.</param>
         /// <param name="postDatapointHandler">The post datapoint handler.</param>
         [CLSCompliant(false)]
-        public GatewaysController(IGetByIdHandler getByIdHandler, IGetDatapointsHandler getDatapointsHandler, IPostDatapointHandler postDatapointHandler)
+        public GatewaysController(
+            IGetByIdHandler getByIdHandler, 
+            IGetDatapointsHandler getDatapointsHandler, 
+            IPostDatapointHandler postDatapointHandler,
+            IGetDatapointHandler getDatapointHandler)
         {
             this.getByIdHandler = getByIdHandler;
             this.getDatapointsHandler = getDatapointsHandler;
+            this.getDatapointHandler = getDatapointHandler;
             this.postDatapointHandler = postDatapointHandler;
         }
 
@@ -76,6 +87,27 @@
             };
 
             var responseModel = await this.getDatapointsHandler.Handle(request);
+            return this.CreateHttpActionResult(responseModel);
+        }
+
+        /// <summary>
+        /// Gets the single datapoint
+        /// </summary>
+        /// <param name="id">The identifier.</param>
+        /// <param name="datapointId">The datapoint identifier.</param>
+        /// <returns>
+        /// Datapoint model
+        /// </returns>
+        [Route("{id:int}/datapoints/{datapointId:int}")]
+        public async Task<IHttpActionResult> GetDatapoint([FromUri]int id, [FromUri] int datapointId)
+        {
+            var request = new GetGatewayDatapointRequest()
+            {
+                GatewayId = id,
+                DatapointId = datapointId
+            };
+
+            var responseModel = await this.getDatapointHandler.Handle(request);
             return this.CreateHttpActionResult(responseModel);
         }
 

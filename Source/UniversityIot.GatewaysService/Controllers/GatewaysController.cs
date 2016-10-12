@@ -70,5 +70,18 @@
             var mappedSettings = Mapper.Map<IEnumerable<Messages.GatewaySetting>>(settings);
             return Ok(mappedSettings);
         }
+
+        /// <summary>
+        /// Gets the specified identifier.
+        /// </summary>
+        /// <returns>Single setting</returns>
+        [Route("settings/{id}")]
+        public async Task<IHttpActionResult> GetSettings(int id)
+        {
+            var setting = await this.gatewaysDataService.GetSetting(id);
+
+            var mappedSettings = Mapper.Map<Messages.GatewaySetting>(setting);
+            return Ok(mappedSettings);
+        }
     }
 }

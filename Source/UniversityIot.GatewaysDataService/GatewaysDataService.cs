@@ -27,7 +27,6 @@
                     gatewaysQuery = gatewaysQuery.Where(x => ids.Contains(x.Id));
                 }
                 
-
                 var gateways = await gatewaysQuery.ToArrayAsync();
                 return gateways;
             }
@@ -47,6 +46,15 @@
             using (var context = this.contextLocator())
             {
                 var gatewaySettings = await context.GatewaySettings.ToListAsync();
+                return gatewaySettings;
+            }
+        }
+
+        public async Task<GatewaySetting> GetSetting(int id)
+        {
+            using (var context = this.contextLocator())
+            {
+                var gatewaySettings = await context.GatewaySettings.FirstOrDefaultAsync(s => s.Id == id);
                 return gatewaySettings;
             }
         }

@@ -163,8 +163,10 @@
     </Compile>
     <Compile Include="GlobalSuppressions.cs" />
     <Compile Include="Handlers\Gateways\GetByIdHandler.cs" />
+    <Compile Include="Handlers\Gateways\GetDatapointHandler.cs" />
     <Compile Include="Handlers\Gateways\GetDatapointsHandler.cs" />
     <Compile Include="Handlers\Gateways\IGetByIdHandler.cs" />
+    <Compile Include="Handlers\Gateways\IGetDatapointHandler.cs" />
     <Compile Include="Handlers\Gateways\IGetDatapointsHandler.cs" />
     <Compile Include="Handlers\Gateways\IPostDatapointHandler.cs" />
     <Compile Include="Handlers\Gateways\PostDatapointHandler.cs" />
@@ -205,6 +207,8 @@
     <Compile Include="Models\ErrorCollectionModel.cs" />
     <Compile Include="Models\ErrorModel.cs" />
     <Compile Include="Models\GetCurrentUserRequest.cs" />
+    <Compile Include="Models\GetGatewayDatapointRequest.cs" />
+    <Compile Include="Models\GetGatewayDatapointResponse.cs" />
     <Compile Include="Models\GetGatewayRequest.cs" />
     <Compile Include="Models\GetGatewayResponse.cs" />
     <Compile Include="Models\GetGatewayDatapointsRequest.cs" />

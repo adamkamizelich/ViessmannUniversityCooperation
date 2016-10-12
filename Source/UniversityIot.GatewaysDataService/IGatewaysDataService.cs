@@ -11,5 +11,7 @@
         Task<IEnumerable<Gateway>> GetGateways(IEnumerable<int> ids);
 
         Task<IEnumerable<GatewaySetting>> GetSettings();
+
+        Task<GatewaySetting> GetSetting(int id);
     }
 }
