@@ -91,6 +91,10 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="UsersDataServiceTests\AddUserAsyncTests.cs" />
+    <Compile Include="UsersDataServiceTests\DeleteUserAsyncTests.cs" />
+    <Compile Include="UsersDataServiceTests\GetUserAsyncTests.cs" />
+    <Compile Include="UsersDataServiceTests\UpdateUserAsyncTests.cs" />
     <Compile Include="UsersDataServiceTests\UserDataServiceTestsBase.cs" />
   </ItemGroup>
   <ItemGroup>
