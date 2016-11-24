@@ -75,6 +75,10 @@
     <Compile Include="Migrations\201608171212413_ExtendingGatewaySettings.Designer.cs">
       <DependentUpon>201608171212413_ExtendingGatewaySettings.cs</DependentUpon>
     </Compile>
+    <Compile Include="Migrations\201611240824294_DatapointTable.cs" />
+    <Compile Include="Migrations\201611240824294_DatapointTable.Designer.cs">
+      <DependentUpon>201611240824294_DatapointTable.cs</DependentUpon>
+    </Compile>
     <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Gateway.cs" />
     <Compile Include="Models\Datapoint.cs" />
@@ -93,6 +97,9 @@
   <ItemGroup>
     <EmbeddedResource Include="Migrations\201608171212413_ExtendingGatewaySettings.resx">
       <DependentUpon>201608171212413_ExtendingGatewaySettings.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611240824294_DatapointTable.resx">
+      <DependentUpon>201611240824294_DatapointTable.cs</DependentUpon>
     </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />

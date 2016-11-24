@@ -2,7 +2,6 @@
 {
     using System.Threading.Tasks;
     using NUnit.Framework;
-    using UniversityIot.Tests.Common.DataAccessMocks;
     using UniversityIot.UsersDataAccess;
     using UniversityIot.UsersDataAccess.Models;
 
@@ -47,7 +46,7 @@
         {
             //using (var context = this.CreateContext())
             //{
-            //    context.Database.ExecuteSqlCommand("delete from UserInstallations");
+            //    context.Database.ExecuteSqlCommand("delete from UserGateways");
             //    context.Database.ExecuteSqlCommand("delete from Users");
             //}
         }

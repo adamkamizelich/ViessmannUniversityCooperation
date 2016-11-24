@@ -5,7 +5,6 @@
     using UniversityIot.Enums;
     using UniversityIot.GatewaysDataAccess;
     using UniversityIot.GatewaysDataAccess.Models;
-    using UniversityIot.Tests.Common.DataAccessMocks;
 
     public class GatewaysDataServiceTestsBase
     {
@@ -70,7 +69,7 @@
             using (var context = this.CreateContext())
             {
                 context.Database.ExecuteSqlCommand("delete from Gateways");
-                context.Database.ExecuteSqlCommand("delete from GatewaySettings");
+                context.Database.ExecuteSqlCommand("delete from Datapoints");
             }
         }
     }

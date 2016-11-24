@@ -37,8 +37,6 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.GatewaysDataS
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Enums", "Source\UniversityIot.Enums\UniversityIot.Enums.csproj", "{82AA9BFC-B58E-49CA-9416-8296073E96EB}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UniversityIot.Tests.Common", "Source\UniversityIot.Tests.Common\UniversityIot.Tests.Common.csproj", "{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}"
-EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -175,14 +173,6 @@ Global
 		{82AA9BFC-B58E-49CA-9416-8296073E96EB}.Release|Any CPU.Build.0 = Release|Any CPU
 		{82AA9BFC-B58E-49CA-9416-8296073E96EB}.Staging|Any CPU.ActiveCfg = Staging|Any CPU
 		{82AA9BFC-B58E-49CA-9416-8296073E96EB}.Staging|Any CPU.Build.0 = Staging|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Production|Any CPU.ActiveCfg = Release|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Production|Any CPU.Build.0 = Release|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Release|Any CPU.Build.0 = Release|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Staging|Any CPU.ActiveCfg = Release|Any CPU
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1}.Staging|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -193,6 +183,5 @@ Global
 		{CEB7F576-B2EB-48DE-B7A5-2922FE7D3DEA} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{8026CD9F-D2A2-44F8-94F0-5F18C98008BE} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 		{F8024FCD-9FAE-431A-A965-481C7EC838C1} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
-		{0C4D29E1-0CEE-44A8-8406-E5F5FFFBEFD1} = {857CC5BA-9A35-4E4F-BC84-FC724081B820}
 	EndGlobalSection
 EndGlobal

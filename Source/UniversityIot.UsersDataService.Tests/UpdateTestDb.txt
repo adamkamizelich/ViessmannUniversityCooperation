@@ -1,0 +1,1 @@
+﻿Update-Database -ProjectName UniversityIot.UsersDataAccess -StartUpProjectName UniversityIot.UsersDataService.Tests -ConnectionStringName UsersContextMock
