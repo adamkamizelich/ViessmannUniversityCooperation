@@ -82,7 +82,6 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="GatewaysContextMock.cs" />
     <Compile Include="GatewaysDataServiceTests\GatewaysDataServiceTestsBase.cs" />
     <Compile Include="GatewaysDataServiceTests\GetGatewayTests.cs" />
     <Compile Include="GatewaysDataServiceTests\GetSettingsTests.cs" />

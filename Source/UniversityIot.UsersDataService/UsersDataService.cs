@@ -7,18 +7,6 @@
 
     public class UsersDataService : IUsersDataService
     {
-        private readonly Func<UsersContext> contextLocator;
-
-        public UsersDataService()
-        {
-            contextLocator = () => new UsersContext();
-        }
-
-        public UsersDataService(Func<UsersContext> contextLocator)
-        {
-            this.contextLocator = contextLocator;
-        }
-
         public Task<User> AddUserAsync(User user)
         {
             throw new NotImplementedException();

@@ -1,1 +1,1 @@
-﻿Update-Database -ProjectName UniversityIot.GatewaysDataAccess -StartUpProjectName UniversityIot.GatewaysDataService.Tests -ConnectionStringName GatewaysContextMock
+﻿Update-Database -ProjectName UniversityIot.GatewaysDataAccess -StartUpProjectName UniversityIot.GatewaysDataService.Tests -ConnectionStringName GatewaysContext

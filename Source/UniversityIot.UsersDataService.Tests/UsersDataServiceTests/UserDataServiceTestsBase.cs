@@ -7,11 +7,6 @@
 
     public class UserDataServiceTestsBase
     {
-        public virtual UsersContext CreateContext()
-        {
-            return new UserContextMock();
-        }
-
         public virtual async Task<User> CreateFakeUser()
         {
             var user = new User
@@ -31,7 +26,7 @@
 
         public virtual UsersDataService GetService()
         {
-            var service = new UsersDataService(() => CreateContext());
+            var service = new UsersDataService();
             return service;
         }
 
