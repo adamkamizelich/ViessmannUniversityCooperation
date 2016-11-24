@@ -51,6 +51,14 @@
     <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\..\packages\EntityFramework.6.1.3\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
@@ -62,6 +70,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Migrations\201611241001479_Initial.cs" />
+    <Compile Include="Migrations\201611241001479_Initial.Designer.cs">
+      <DependentUpon>201611241001479_Initial.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241002486_Constraints.cs" />
+    <Compile Include="Migrations\201611241002486_Constraints.Designer.cs">
+      <DependentUpon>201611241002486_Constraints.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\201611241003400_UserGateways.cs" />
+    <Compile Include="Migrations\201611241003400_UserGateways.Designer.cs">
+      <DependentUpon>201611241003400_UserGateways.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\User.cs" />
     <Compile Include="Models\UserGateway.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -69,12 +90,24 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="packages.config" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\UniversityIot.Enums\UniversityIot.Enums.csproj">
       <Project>{82AA9BFC-B58E-49CA-9416-8296073E96EB}</Project>
       <Name>UniversityIot.Enums</Name>
     </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <EmbeddedResource Include="Migrations\201611241001479_Initial.resx">
+      <DependentUpon>201611241001479_Initial.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241002486_Constraints.resx">
+      <DependentUpon>201611241002486_Constraints.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Migrations\201611241003400_UserGateways.resx">
+      <DependentUpon>201611241003400_UserGateways.cs</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="..\..\packages\Visual-StyleCop.MSBuild.4.7.59.0\build\Visual-StyleCop.MSBuild.Targets" Condition="Exists('..\..\packages\Visual-StyleCop.MSBuild.4.7.59.0\build\Visual-StyleCop.MSBuild.Targets') And '$(Configuration)' == 'Debug'" />
