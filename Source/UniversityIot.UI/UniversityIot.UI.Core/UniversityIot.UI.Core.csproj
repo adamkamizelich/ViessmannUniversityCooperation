@@ -37,6 +37,9 @@
   <ItemGroup>
     <Compile Include="App.cs" />
     <Compile Include="AppSession.cs" />
+    <Compile Include="BindableBahavior.cs" />
+    <Compile Include="Controls\RoundedFrame.cs" />
+    <Compile Include="Converters\ItemTappedEventArgsConverter.cs" />
     <Compile Include="DataAccess.DTO\DatapointDTO.cs" />
     <Compile Include="DataAccess.DTO\DatapointsDTO.cs" />
     <Compile Include="DataAccess.DTO\InstallationDTO.cs" />

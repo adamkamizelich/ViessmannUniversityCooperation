@@ -91,6 +91,7 @@
     <Compile Include="Main.cs" />
     <Compile Include="AppDelegate.cs" />
     <Compile Include="Renderers\LowercaseEntryRenderer.cs" />
+    <Compile Include="Renderers\RoundedFrameRenderer.cs" />
     <Compile Include="Services\CredentialsService.cs" />
     <None Include="app.config" />
     <None Include="Entitlements.plist" />
