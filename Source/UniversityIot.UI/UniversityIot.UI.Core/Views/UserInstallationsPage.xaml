@@ -1,29 +1,44 @@
 ﻿<?xml version="1.0" encoding="utf-8" ?>
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
-             x:Class="UniversityIot.UI.Core.Views.UserInstallationsPage">
+             xmlns:core="clr-namespace:UniversityIot.UI.Core;assembly=UniversityIot.UI.Core"
+             xmlns:converters="clr-namespace:UniversityIot.UI.Core.Converters;assembly=UniversityIot.UI.Core"
+             x:Class="UniversityIot.UI.Core.Views.UserInstallationsPage"
+             Title="Instalations">
 
-  <Grid Margin="20">
+  <ContentPage.Resources>
+    <ResourceDictionary>
+      <converters:ItemTappedEventArgsConverter x:Key="ItemTappedConverter"></converters:ItemTappedEventArgsConverter>
+    </ResourceDictionary>
+  </ContentPage.Resources>
+  
+  <StackLayout >
 
-    <Grid.RowDefinitions>
-      <RowDefinition Height="30"/>
-      <RowDefinition Height="*"/>
-    </Grid.RowDefinitions>
-
-    <StackLayout Grid.Row="0">
-      <Label Text="Installations" FontSize="20" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
-    </StackLayout>
-
-    <ListView Grid.Row="1" ItemsSource="{Binding Installations}">
+    <ListView  ItemsSource="{Binding Installations}">
       <ListView.ItemTemplate>
         <DataTemplate>
-          <TextCell Text="{Binding Description}"
+          <ViewCell>
+            <StackLayout Orientation="Vertical" Padding="20, 10, 20, 10">
+              <Label FontSize="40" Text="{Binding Description}"></Label>
+              <Label FontSize="27" Text="{Binding SerialNumber}"></Label>
+            </StackLayout>
+          </ViewCell>
+      <!--    <TextCell
+                    Text="{Binding Description}"
                     Detail="{Binding SerialNumber}"
-                    Command="{Binding ShowInstallationDetails}"/>
+                    Command="{Binding ShowInstallationDetails}"/>-->
         </DataTemplate>
       </ListView.ItemTemplate>
+      <ListView.Behaviors>
+        <core:EventToCommandBehavior EventName="ItemTapped"
+                                              Command="{Binding ItemTappedCommand}"
+                                              EventArgsConverter="{StaticResource ItemTappedConverter}" />
+      </ListView.Behaviors>
+      <ListView.Footer>
+        <Label />
+      </ListView.Footer>
     </ListView>
 
-  </Grid>
+  </StackLayout>
 
 </ContentPage>

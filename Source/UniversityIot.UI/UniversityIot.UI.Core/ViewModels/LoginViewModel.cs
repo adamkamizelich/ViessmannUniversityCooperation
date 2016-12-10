@@ -2,8 +2,10 @@
 using System.Diagnostics;
 using System.Windows.Input;
 using UniversityIot.UI.Core.DataAccess;
+using UniversityIot.UI.Core.Models;
 using UniversityIot.UI.Core.MVVM;
 using UniversityIot.UI.Core.Services;
+using UniversityIot.UI.Core.Views;
 using Xamarin.Forms;
 
 namespace UniversityIot.UI.Core.ViewModels
@@ -25,6 +27,9 @@ namespace UniversityIot.UI.Core.ViewModels
             this.usersRepository = usersRepository;
             this.installationsRepository = installationsRepository;
             this.credentialsService = credentialsService;
+
+            UserName = "john.doe@viessmann.com";
+            Password = "ViessmannJD";
 
             if (this.credentialsService.CredentialsExist())
             {
@@ -78,6 +83,16 @@ namespace UniversityIot.UI.Core.ViewModels
             {
                 var user = await usersRepository.GetUser(UserName, Password);
 
+
+                appSession.InitUserSession(new UserAuth(1, UserName, Password));
+
+              /*  UserModel user = new UserModel()
+                {
+                    CustomerNumber = 1,
+                    Id = 1,
+                    Name = UserName
+                };*/
+
                 if (user == null || user.Name != UserName)
                 {
                     ErrorMessage = "User name or password is invalid";
@@ -88,10 +103,15 @@ namespace UniversityIot.UI.Core.ViewModels
 
                 credentialsService.SaveCredentials(UserName, Password);
                 ErrorMessage = string.Empty;
-              
+              /*
                 var installationModels = await installationsRepository.GetAllByUserId(user.Id);
-                var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);
-                await NavigationService.Push(userInstallationsViewModel);
+                var userInstallationsViewModel = new UserInstallationsViewModel(installationModels);*/
+
+                var masterDetailViewModel = new InstalationsMasterDetailViewModel();
+
+                await this.NavigationService.Push(masterDetailViewModel);
+
+                //await NavigationService.Push(userInstallationsViewModel);
             }
             catch (Exception ex)
             {

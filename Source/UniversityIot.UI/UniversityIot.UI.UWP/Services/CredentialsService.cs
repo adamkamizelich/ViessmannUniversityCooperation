@@ -72,14 +72,13 @@ namespace UniversityIot.UI.UWP.Services
 
             var store = IsolatedStorageFile.GetUserStoreForApplication();
 
-            if (store.FileExists(file))
-                using (var stream = new IsolatedStorageFileStream(file, FileMode.OpenOrCreate, store))
+            using (var stream = new IsolatedStorageFileStream(file, FileMode.OpenOrCreate, store))
+            {
+                using (var writer = new StreamWriter(stream))
                 {
-                    using (var writer = new StreamWriter(stream))
-                    {
-                        writer.Write(data);
-                    }
+                    writer.Write(data);
                 }
+            }
         }
     }
 }

@@ -15,9 +15,10 @@ namespace UniversityIot.UI.Core.MVVM
             this.viewViewModelRegister = viewViewModelRegister;
         }
 
-        public async Task Push(BaseViewModel viewModel)
+        public async Task Push(BaseViewModel viewModel, bool hasNavigationBar = false)
         {
             Page view = this.viewViewModelRegister.GetViewFor(viewModel);
+            NavigationPage.SetHasNavigationBar(view, hasNavigationBar);
             await this.Navigation.PushAsync(view);
         }
 

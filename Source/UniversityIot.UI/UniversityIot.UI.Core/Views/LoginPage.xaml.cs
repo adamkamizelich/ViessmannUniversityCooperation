@@ -10,6 +10,8 @@ namespace UniversityIot.UI.Core.Views
         public LoginPage()
         {
             InitializeComponent();
+
+            NavigationPage.SetHasNavigationBar(this, false);
         }
     }
 }

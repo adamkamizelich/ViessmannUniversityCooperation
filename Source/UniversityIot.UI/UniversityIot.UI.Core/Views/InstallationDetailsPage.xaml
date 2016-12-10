@@ -6,11 +6,11 @@
   <Grid Margin="20">
 
    <Grid.RowDefinitions>
-    <RowDefinition Height="70"/>
+    <RowDefinition Height="70"/> 
     <RowDefinition Height="*"/>
    </Grid.RowDefinitions>
 
-    <StackLayout Grid.Row="0">
+    <StackLayout Grid.Row="0"> 
       <Label Text="Installation" HorizontalTextAlignment="Start"/>
       <Label Text="{Binding InstallationName}" FontAttributes="Bold" HorizontalTextAlignment="Start"/>
     </StackLayout>
