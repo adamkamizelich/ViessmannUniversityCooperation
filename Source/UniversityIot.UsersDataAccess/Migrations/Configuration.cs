@@ -9,7 +9,6 @@ namespace UniversityIot.UsersDataAccess.Migrations
         public Configuration()
         {
             AutomaticMigrationsEnabled = false;
-            ContextKey = "UniversityIot.UsersDataAccess.UsersContext";
         }
 
         private static UserInstallation InstallationLink(int installationId)

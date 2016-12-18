@@ -121,6 +121,7 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\UniversityIotGatewaysService - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\UniversityIotGatewaysService20161218085644 - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\UniversityIotVitoControlApi - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>

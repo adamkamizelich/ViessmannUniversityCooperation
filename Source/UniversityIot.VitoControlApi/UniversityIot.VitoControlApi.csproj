@@ -136,6 +136,7 @@
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\UniversityIotVitoControlApi - Web Deploy.pubxml" />
     <None Include="Properties\PublishProfiles\UniversityIotVitoControlApi20160822090406 - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\UniversityIotVitoControlApi20161218091002 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

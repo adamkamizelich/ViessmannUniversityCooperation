@@ -128,6 +128,7 @@
     <Content Include="Global.asax" />
     <Content Include="packages.config" />
     <None Include="Properties\PublishProfiles\UniversityIotUsersService - Web Deploy.pubxml" />
+    <None Include="Properties\PublishProfiles\UniversityIotUsersService20161218090441 - Web Deploy.pubxml" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
