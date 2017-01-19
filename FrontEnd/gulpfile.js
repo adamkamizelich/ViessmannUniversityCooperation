@@ -7,6 +7,7 @@ var gulp = require("gulp"),
       useref = require("gulp-useref"),
       uglify = require("gulp-uglify"),
       gulpIf = require("gulp-if"),
+	  concat = require("gulp-concat"),
       runSequence = require('run-sequence'),
        Promise = require('es6-promise').Promise;
 
@@ -30,10 +31,20 @@ gulp.task("css", function() {
 
 });
 
+gulp.task("js", function() {
+
+return gulp.src(["src/js/app.js", "src/js/route.js", "src/js/authentication/controller.js" ])
+	.pipe(concat('main.js'))
+	// .pipe(uglify())
+	.pipe(gulp.dest("src/js"));
+});
+
+
 gulp.task("watch", function() {
 
 	gulp.watch("src/sass/**/*.scss",  ["css"]);
-	gulp.watch(["src/*.html", "src/**/*.js" ], browserSync.reload);
+	gulp.watch("src/js/**/*.js",  ["js"]);
+	gulp.watch(["src/*.html", "src/**/*.js", ["js"] ], browserSync.reload);
 
 });
 
@@ -76,4 +87,4 @@ gulp.task("build:server",  ["build"], function() {
 
 });
 
-gulp.task("default", ["css", "server", "watch"])
+gulp.task("default", ["css", "js", "server", "watch"])

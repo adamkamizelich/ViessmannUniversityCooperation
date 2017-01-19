@@ -8,10 +8,11 @@
         <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
         <title></title>
         <meta name="University Cooperation" content="">
-        <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+        <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.6.1/angular.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/angular-ui-router/1.0.0-alpha0/angular-ui-router.js"></script>
         <link rel="stylesheet" href="css/main.css">
     </head>
-    <body>
+    <body ng-app="app">
         <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -20,30 +21,22 @@
         <div class="container">
             <div class="logo">
                 <img src="img/Viessmann-logo.svg" alt="Viessmann Sp. z o.o.">
+                 <h1>University Cooperation</h1>
             </div>
-            <h1>University Cooperation</h1>
+           
         </div>
     </header>
-    <div class="container login-container">
-        <form action="submit" class="login center">
-            <div class="input-group">
-                <label for="login">Login</label>
-                <input id="login" type="text" name="login">
-            </div>
-            <div class="input-group">
-                <label for="password">Password</label>
-                <input id="password" type="password" name="password">
-            </div>
+    
 
-            <input type="submit" class="button" value="Login">
+    <ui-View> </ui-View>
 
-        </form>
 
-    </div>
     <footer>
         <div class="container">
             <p>© Viessmann Sp. z o.o.</p>
         </div>
     </footer>
+
+    <script src="js/main.js"></script>
     </body>
 </html>

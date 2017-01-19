@@ -16,42 +16,28 @@ body {
   -ms-transform: translate(-50%, -50%);
   transform: translate(-50%, -50%); }
 
-header {
-  margin-top: 40px;
+.logo {
   position: relative; }
-  header h1 {
-    font-family: Arial, Helvetica, sans-serif;
-    color: #777;
-    position: absolute;
-    left: 160px;
-    top: 30px; }
-  header .logo img {
-    vertical-align: middle;
+  .logo img {
     height: 70px; }
+  .logo h1 {
+    position: absolute;
+    top: 30px;
+    left: 180px; }
 
-form label {
-  color: #777;
-  margin: 10px 0 0 0; }
-
-form input {
-  width: 500px;
-  height: 25px;
-  margin-bottom: 25px;
-  border: 0;
-  border-bottom: 1px solid #777;
-  font-size: 16px;
-  margin: 10px; }
-  form input.button {
-    font-size: 18px;
+.input-group {
+  display: block; }
+  .input-group input {
+    border: none;
     background: none;
-    width: 70px;
-    height: 35px;
-    border: 1px solid #777;
-    border-radius: 5px;
-    float: right; }
-    form input.button:hover {
-      opacity: 0.6;
-      cursor: pointer; }
+    width: 100%;
+    margin: 10px 0 20px;
+    border-bottom: 2px dotted gray;
+    font-size: 16px; }
+    .input-group input:focus {
+      -webkit-transition: all 0.3s;
+      transition: all 0.3s;
+      margin: 20px 0 20px; }
 
 footer {
   position: fixed;
