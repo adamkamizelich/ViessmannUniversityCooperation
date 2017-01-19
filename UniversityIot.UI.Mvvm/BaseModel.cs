@@ -1,9 +1,9 @@
-﻿using System.ComponentModel;
-using System.Runtime.CompilerServices;
-using UniversityIot.UI.Core.Annotations;
-
-namespace UniversityIot.UI.Core.MVVM
+﻿namespace UniversityIot.UI.Mvvm
 {
+    using System.ComponentModel;
+    using System.Runtime.CompilerServices;
+    using UniversityIot.UI.Core.Annotations;
+
     public class BaseModel : INotifyPropertyChanged
     {
         public event PropertyChangedEventHandler PropertyChanged;
@@ -11,7 +11,7 @@ namespace UniversityIot.UI.Core.MVVM
         [NotifyPropertyChangedInvocator]
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
         }
     }
 }

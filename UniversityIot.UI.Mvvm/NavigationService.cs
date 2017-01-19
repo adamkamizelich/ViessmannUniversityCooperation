@@ -1,14 +1,15 @@
-﻿using System.Threading.Tasks;
-using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.MVVM
+﻿namespace UniversityIot.UI.Mvvm
 {
+    using System.Threading.Tasks;
+    using Xamarin.Forms;
+
     public class NavigationService : INavigationService
     {
+        private readonly ViewViewModelRegister viewViewModelRegister;
+
         // TODO
         private INavigation navigation;
-        private INavigation Navigation => this.navigation ?? (this.navigation = App.Current.MainPage.Navigation);
-        private readonly ViewViewModelRegister viewViewModelRegister;
+        private INavigation Navigation => this.navigation ?? (this.navigation = Application.Current.MainPage.Navigation);
 
         public NavigationService(ViewViewModelRegister viewViewModelRegister)
         {

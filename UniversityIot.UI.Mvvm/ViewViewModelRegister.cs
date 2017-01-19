@@ -1,10 +1,9 @@
-using System;
-using System.Collections.Generic;
-using UniversityIot.UI.Core.ViewModels;
-using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.MVVM
+namespace UniversityIot.UI.Mvvm
 {
+    using System;
+    using System.Collections.Generic;
+    using Xamarin.Forms;
+
     /// <summary>
     /// Container for View - ViewModel mappings. Very simple version.
     /// </summary>
@@ -25,7 +24,7 @@ namespace UniversityIot.UI.Core.MVVM
             where TViewModel : BaseViewModel
         {
             Type viewType = this.viewModelByView[viewModel.GetType()];
-            Page view = (Page)Activator.CreateInstance(viewType);
+            var view = (Page)Activator.CreateInstance(viewType);
             view.BindingContext = viewModel;
 
             return view;

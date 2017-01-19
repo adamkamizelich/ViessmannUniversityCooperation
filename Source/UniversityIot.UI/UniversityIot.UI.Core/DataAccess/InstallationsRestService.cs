@@ -1,14 +1,14 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UniversityIot.UI.Core.DataAccess.DTO;
-using UniversityIot.UI.Core.Models;
-using UniversityIot.UI.Core.Services;
-
 namespace UniversityIot.UI.Core.DataAccess
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using UniversityIot.UI.Core.DataAccess.DTO;
+    using UniversityIot.UI.Core.Models;
+
     public class InstallationsRestService : BaseUniversityIotRestService, IInstallationsRepository
     {
-        public InstallationsRestService(IAppSession session) : base(session)
+        public InstallationsRestService(IAppSession session)
+            : base(session)
         {
         }
 

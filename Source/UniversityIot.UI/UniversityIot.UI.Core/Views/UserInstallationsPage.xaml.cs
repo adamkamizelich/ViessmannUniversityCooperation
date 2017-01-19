@@ -1,24 +1,27 @@
-﻿using UniversityIot.UI.Core.ViewModels;
-using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.Views
+﻿namespace UniversityIot.UI.Core.Views
 {
+    using System.Collections.Generic;
+    using UniversityIot.UI.Core.DataAccess;
+    using UniversityIot.UI.Core.Models;
+    using UniversityIot.UI.Core.ViewModels;
+    using Xamarin.Forms;
+
     public partial class UserInstallationsPage : ContentPage
     {
         public UserInstallationsPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
 
         protected override async void OnAppearing()
         {
-            NavigationPage.SetHasNavigationBar(this,false);
+            NavigationPage.SetHasNavigationBar(this, false);
 
-            var installationsRepository = DraftContainer.InstallationsRepository;
+            IInstallationsRepository installationsRepository = DraftContainer.InstallationsRepository;
 
-            var userId = DraftContainer.AppSession.UserAuth.Id;
+            int userId = DraftContainer.AppSession.UserAuth.Id;
 
-            var installationModels = await installationsRepository.GetAllByUserId(userId);
+            List<InstallationModel> installationModels = await installationsRepository.GetAllByUserId(userId);
 
             this.BindingContext = new UserInstallationsViewModel(installationModels);
 

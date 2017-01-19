@@ -1,7 +1,7 @@
-﻿using UniversityIot.UI.Core.MVVM;
-
-namespace UniversityIot.UI.Core.Models
+﻿namespace UniversityIot.UI.Core.Models
 {
+    using UniversityIot.UI.Mvvm;
+
     public class InstallationModel : BaseModel
     {
         public long Id { get; set; }

@@ -1,18 +1,15 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Globalization;
-using System.Linq;
-using System.Linq.Expressions;
-using System.Reflection;
-using System.Text;
-using System.Threading.Tasks;
-using System.Windows.Input;
-using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core
+﻿namespace UniversityIot.UI.Core
 {
+    using System;
+    using System.Globalization;
+    using System.Linq;
+    using System.Linq.Expressions;
+    using System.Reflection;
+    using System.Windows.Input;
+    using Xamarin.Forms;
+
     public class BindableBehavior<T> : Behavior<T>
-          where T : BindableObject
+        where T : BindableObject
     {
         public T AssociatedObject { get; private set; }
 
@@ -167,10 +164,11 @@ namespace UniversityIot.UI.Core
                                             .GetRuntimeMethods().First(m => m.Name == "Invoke");
 
             this._handler = Expression.Lambda(
-                eventInfo.EventHandlerType,
-                Expression.Call(Expression.Constant(action), actionInvoke, eventParameters[0], eventParameters[1]),
-                eventParameters
-                )
+                                          eventInfo.EventHandlerType,
+                                          Expression.Call(Expression.Constant(action), actionInvoke, eventParameters[0],
+                                                          eventParameters[1]),
+                                          eventParameters
+                                      )
                                       .Compile();
 
             eventInfo.AddEventHandler(item, this._handler);

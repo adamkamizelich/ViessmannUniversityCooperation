@@ -1,20 +1,20 @@
-using System.Collections.Generic;
-using System.Threading.Tasks;
-using UniversityIot.UI.Core.DataAccess.DTO;
-using UniversityIot.UI.Core.Models;
-using UniversityIot.UI.Core.Services;
-
 namespace UniversityIot.UI.Core.DataAccess
 {
+    using System.Collections.Generic;
+    using System.Threading.Tasks;
+    using UniversityIot.UI.Core.DataAccess.DTO;
+    using UniversityIot.UI.Core.Models;
+
     public class DatapointsRestService : BaseUniversityIotRestService, IDatapointsRepository
     {
-        public DatapointsRestService(IAppSession session) : base(session)
+        public DatapointsRestService(IAppSession session)
+            : base(session)
         {
         }
 
         public async Task<List<DatapointModel>> GetByInstallationId(long installationId)
         {
-            var rawJson = await this.GetData<DatapointsDTO>($"gateways/{installationId}/datapoints");
+            DatapointsDTO rawJson = await this.GetData<DatapointsDTO>($"gateways/{installationId}/datapoints");
             return rawJson.Data;
         }
 
@@ -41,7 +41,7 @@ namespace UniversityIot.UI.Core.DataAccess
 
         public async Task<DatapointModel> GetByDatapointId(long datapointId)
         {
-            var rawJson = await this.GetData<DatapointDTO>($"datapoints/{datapointId}");
+            DatapointDTO rawJson = await this.GetData<DatapointDTO>($"datapoints/{datapointId}");
             return rawJson.Data;
         }
     }

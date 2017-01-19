@@ -1,15 +1,16 @@
-﻿using System;
-using System.Linq;
-using UniversityIot.UI.Core;
-using UniversityIot.UI.Core.Services;
-using UniversityIot.UI.Droid.Services;
-using Xamarin.Auth;
+﻿using UniversityIot.UI.Droid.Services;
 using Xamarin.Forms;
 
 [assembly: Dependency(typeof(CredentialsService))]
 
 namespace UniversityIot.UI.Droid.Services
 {
+    using System;
+    using System.Linq;
+    using UniversityIot.UI.Core;
+    using UniversityIot.UI.Core.Services;
+    using Xamarin.Auth;
+
     internal class CredentialsService : ICredentialsService
     {
         private const string PasswordKey = "Password";
@@ -18,7 +19,7 @@ namespace UniversityIot.UI.Droid.Services
         {
             get
             {
-                var account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
+                Account account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
                 return account?.Username;
             }
         }
@@ -27,7 +28,7 @@ namespace UniversityIot.UI.Droid.Services
         {
             get
             {
-                var account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
+                Account account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
                 return account?.Properties[PasswordKey];
             }
         }
@@ -54,7 +55,7 @@ namespace UniversityIot.UI.Droid.Services
 
         public void DeleteCredentials()
         {
-            var account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
+            Account account = AccountStore.Create().FindAccountsForService(App.AppName).FirstOrDefault();
             if (account != null)
             {
                 AccountStore.Create().Delete(account, App.AppName);
@@ -63,7 +64,7 @@ namespace UniversityIot.UI.Droid.Services
 
         public bool CredentialsExist()
         {
-            var result = AccountStore.Create().FindAccountsForService(App.AppName).Any();
+            bool result = AccountStore.Create().FindAccountsForService(App.AppName).Any();
 
             return result;
         }

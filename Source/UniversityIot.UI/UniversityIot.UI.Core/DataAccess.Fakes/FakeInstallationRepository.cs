@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UniversityIot.UI.Core.Models;
-
-namespace UniversityIot.UI.Core.DataAccess.Fakes
+﻿namespace UniversityIot.UI.Core.DataAccess.Fakes
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using UniversityIot.UI.Core.Models;
+
     public class FakeInstallationRepository : IInstallationsRepository
     {
         private readonly List<InstallationModel> installations = new List<InstallationModel>
@@ -43,7 +43,7 @@ namespace UniversityIot.UI.Core.DataAccess.Fakes
 
         public Task<InstallationModel> GetInstallationById(long installationId)
         {
-            InstallationModel installationModel = 
+            InstallationModel installationModel =
                 this.installations.FirstOrDefault(installation => installation.Id == installationId);
 
             return Task.FromResult(installationModel);

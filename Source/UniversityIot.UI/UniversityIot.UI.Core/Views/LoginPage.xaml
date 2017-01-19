@@ -1,4 +1,6 @@
-﻿<?xml version="1.0" encoding="utf-8"?>
+﻿<?xml
+    version="1.0"
+    encoding="utf-8"?>
 
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
@@ -10,14 +12,14 @@
     <StackLayout Orientation="Vertical"
                  Padding="20">
 
-        <Label Text="{Binding ErrorMessage}" 
+        <Label Text="{Binding ErrorMessage}"
                TextColor="Red" />
 
         <Entry Placeholder="User"
                PlaceholderColor="Gray"
                Text="{Binding UserName, Mode=TwoWay}"
                TextColor="Black" />
-      
+
         <Entry Placeholder="Password"
                PlaceholderColor="Gray"
                Text="{Binding Password, Mode=OneWayToSource}"

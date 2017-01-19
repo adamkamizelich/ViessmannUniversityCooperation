@@ -1,70 +1,105 @@
-﻿using Newtonsoft.Json;
-using UniversityIot.UI.Core.MVVM;
-
-namespace UniversityIot.UI.Core.Models
+﻿namespace UniversityIot.UI.Core.Models
 {
+    using Newtonsoft.Json;
+    using UniversityIot.UI.Mvvm;
+
     public class DatapointModel : BaseModel
     {
-        private long id;
+        private string datapointValue;
         private string description;
         private string hexAddress;
-        private string datapointValue;
+        private long id;
         private bool isReadOnly;
 
         public long Id
         {
-            get { return id; }
+            get
+            {
+                return this.id;
+            }
             set
             {
-                if (value == id) return;
-                id = value;
-                OnPropertyChanged();
+                if (value == this.id)
+                {
+                    return;
+                }
+
+                this.id = value;
+                this.OnPropertyChanged();
             }
         }
 
         public string Description
         {
-            get { return description; }
+            get
+            {
+                return this.description;
+            }
             set
             {
-                if (value == description) return;
-                description = value;
-                OnPropertyChanged();
+                if (value == this.description)
+                {
+                    return;
+                }
+
+                this.description = value;
+                this.OnPropertyChanged();
             }
         }
 
         [JsonProperty("hexAdress")]
         public string HexAddress
         {
-            get { return hexAddress; }
+            get
+            {
+                return this.hexAddress;
+            }
             set
             {
-                if (value == hexAddress) return;
-                hexAddress = value;
-                OnPropertyChanged();
+                if (value == this.hexAddress)
+                {
+                    return;
+                }
+
+                this.hexAddress = value;
+                this.OnPropertyChanged();
             }
         }
 
         [JsonProperty("value")]
         public string DatapointValue
         {
-            get { return datapointValue; }
+            get
+            {
+                return this.datapointValue;
+            }
             set
             {
-                if (Equals(value, datapointValue)) return;
-                datapointValue = value;
-                OnPropertyChanged();
+                if (Equals(value, this.datapointValue))
+                {
+                    return;
+                }
+
+                this.datapointValue = value;
+                this.OnPropertyChanged();
             }
         }
 
         public bool IsReadOnly
         {
-            get { return isReadOnly; }
+            get
+            {
+                return this.isReadOnly;
+            }
             set
             {
-                if (value == isReadOnly) return;
-                isReadOnly = value;
-                OnPropertyChanged();
+                if (value == this.isReadOnly)
+                {
+                    return;
+                }
+
+                this.isReadOnly = value;
+                this.OnPropertyChanged();
             }
         }
     }

@@ -1,10 +1,10 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UniversityIot.UI.Core.Models;
-
-namespace UniversityIot.UI.Core.DataAccess.Fakes
+﻿namespace UniversityIot.UI.Core.DataAccess.Fakes
 {
+    using System.Collections.Generic;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using UniversityIot.UI.Core.Models;
+
     public class FakeDatapointsRepository : IDatapointsRepository
     {
         private readonly List<DatapointModel> datapoints = new List<DatapointModel>

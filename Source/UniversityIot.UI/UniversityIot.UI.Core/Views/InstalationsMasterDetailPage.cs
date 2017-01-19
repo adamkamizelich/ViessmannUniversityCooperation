@@ -1,16 +1,15 @@
-﻿using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.Views
+﻿namespace UniversityIot.UI.Core.Views
 {
+    using Xamarin.Forms;
+
     public class InstalationsMasterDetailPage : MasterDetailPage
     {
         public InstalationsMasterDetailPage()
         {
             this.MasterBehavior = MasterBehavior.Popover;
 
-            Master = new HamburgerMenuPage();
-            Detail = new NavigationPage(new UserInstallationsPage());
-
+            this.Master = new HamburgerMenuPage();
+            this.Detail = new NavigationPage(new UserInstallationsPage());
         }
     }
 }

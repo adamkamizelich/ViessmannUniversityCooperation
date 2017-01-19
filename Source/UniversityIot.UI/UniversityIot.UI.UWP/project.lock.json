@@ -255,9 +255,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -1801,12 +1801,12 @@
           }
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -2081,9 +2081,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -3487,12 +3487,12 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -3753,9 +3753,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -5137,12 +5137,12 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -5423,9 +5423,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -6829,12 +6829,12 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -7095,9 +7095,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -8479,12 +8479,12 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -8765,9 +8765,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -10171,12 +10171,12 @@
           "lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -10437,9 +10437,9 @@
           "lib/dotnet/Microsoft.Win32.Primitives.dll": {}
         }
       },
-      "PCLCrypto/0.5.0.14108": {
+      "PCLCrypto/0.1.0-alpha": {
         "dependencies": {
-          "Validation": "[2.0.4, 3.0.0)"
+          "Validation": "(, )"
         },
         "compile": {
           "lib/win81/PCLCrypto.Abstractions.dll": {},
@@ -11821,12 +11821,12 @@
           "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Validation/2.0.4.14103": {
+      "Validation/1.0.0.12259": {
         "compile": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         },
         "runtime": {
-          "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll": {}
+          "lib/winrt45/Validation.dll": {}
         }
       },
       "Xamarin.Auth/1.3.1.1": {
@@ -12003,7 +12003,7 @@
       ]
     },
     "Microsoft.NETCore.Runtime.CoreCLR-arm/1.0.0": {
-      "sha512": "hoJfIl981eXwn9Tz8onO/J1xaYApIfp/YrhjSh9rRhml1U5Wj80LBgyp/6n+KI3VlvcAraThhnHnCTp+M3Uh+w==",
+      "sha512": "vUQyaKbHCa7BJAAzdfCP2FfBYOSt0YnDw7VMJLmD1/k68HIJgw1QO7GAfHhqoa39zkkvimC47QBH27wG4C5OGQ==",
       "type": "package",
       "files": [
         "Microsoft.NETCore.Runtime.CoreCLR-arm.1.0.0.nupkg.sha512",
@@ -12478,12 +12478,11 @@
         "ref/xamarinmac20/_._"
       ]
     },
-    "PCLCrypto/0.5.0.14108": {
-      "sha512": "i+tYDjHlw4CwfmnvCZtYIAICBlrvuss/lcx2vMDO54u+O9jXTsn7S2syEZdXVMpWkkATQGAERuXcu3gjD1131g==",
+    "PCLCrypto/0.1.0-alpha": {
+      "sha512": "FFXNNTG8/Fn0ZbCdrcRXWAeaXE5faFgFI6dswx2+Sn5sG4ylxwX3EBnx2lFWV/7IdiuhvE3PV1cZPuV7Xx1swA==",
       "type": "package",
-      "path": "PCLCrypto/0.5.0.14108",
       "files": [
-        "PCLCrypto.0.5.0.14108.nupkg.sha512",
+        "PCLCrypto.0.1.0-alpha.nupkg.sha512",
         "PCLCrypto.nuspec",
         "lib/monoandroid/PCLCrypto.Abstractions.dll",
         "lib/monoandroid/PCLCrypto.Abstractions.xml",
@@ -12493,14 +12492,14 @@
         "lib/monotouch/PCLCrypto.Abstractions.xml",
         "lib/monotouch/PCLCrypto.dll",
         "lib/monotouch/PCLCrypto.xml",
-        "lib/net40-Client/PCLCrypto.Abstractions.dll",
-        "lib/net40-Client/PCLCrypto.Abstractions.xml",
-        "lib/net40-Client/PCLCrypto.dll",
-        "lib/net40-Client/PCLCrypto.xml",
-        "lib/portable-net40+sl50+win+wpa81+wp80/PCLCrypto.Abstractions.dll",
-        "lib/portable-net40+sl50+win+wpa81+wp80/PCLCrypto.Abstractions.xml",
-        "lib/portable-net40+sl50+win+wpa81+wp80/PCLCrypto.dll",
-        "lib/portable-net40+sl50+win+wpa81+wp80/PCLCrypto.xml",
+        "lib/net45/PCLCrypto.Abstractions.dll",
+        "lib/net45/PCLCrypto.Abstractions.xml",
+        "lib/net45/PCLCrypto.dll",
+        "lib/net45/PCLCrypto.xml",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.Abstractions.dll",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.Abstractions.xml",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.dll",
+        "lib/portable-net403+sl50+wp80+win+MonoAndroid10+MonoTouch10/PCLCrypto.xml",
         "lib/sl5/PCLCrypto.Abstractions.dll",
         "lib/sl5/PCLCrypto.Abstractions.xml",
         "lib/sl5/PCLCrypto.dll",
@@ -12508,17 +12507,11 @@
         "lib/win81/PCLCrypto.Abstractions.dll",
         "lib/win81/PCLCrypto.Abstractions.xml",
         "lib/win81/PCLCrypto.dll",
-        "lib/win81/PCLCrypto.pri",
         "lib/win81/PCLCrypto.xml",
         "lib/wp8/PCLCrypto.Abstractions.dll",
         "lib/wp8/PCLCrypto.Abstractions.xml",
         "lib/wp8/PCLCrypto.dll",
-        "lib/wp8/PCLCrypto.xml",
-        "lib/wpa81/PCLCrypto.Abstractions.dll",
-        "lib/wpa81/PCLCrypto.Abstractions.xml",
-        "lib/wpa81/PCLCrypto.dll",
-        "lib/wpa81/PCLCrypto.pri",
-        "lib/wpa81/PCLCrypto.xml"
+        "lib/wp8/PCLCrypto.xml"
       ]
     },
     "System.AppContext/4.0.0": {
@@ -15036,15 +15029,18 @@
         "runtimes/win8-aot/lib/netcore50/System.Xml.XmlSerializer.dll"
       ]
     },
-    "Validation/2.0.4.14103": {
-      "sha512": "Tt+kltcujXiBm8KCMDjGxmZ0Nn2f5JuS50Nd2TWoDgdlIm/seuI+aWogkjI/F/gGLQnY1LE0lE92WJ1ZKo0m8g==",
+    "Validation/1.0.0.12259": {
+      "sha512": "WX4QGiWqqIJxkAEVTDv8fkgfbrT0YajosYm5VE7c9GE0D9SnIl8RJ9dtYwb8yueawvtILu0GuSeitLFOdyOEOQ==",
       "type": "package",
-      "path": "Validation/2.0.4.14103",
       "files": [
-        "Validation.2.0.4.14103.nupkg.sha512",
+        "Validation.1.0.0.12259.nupkg.sha512",
         "Validation.nuspec",
-        "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.dll",
-        "lib/portable-windows8+net40+sl5+wp8+wpa81+wp81+MonoAndroid+MonoTouch/Validation.xml"
+        "lib/net35-client/Validation.dll",
+        "lib/net35-client/Validation.xml",
+        "lib/net40-client/Validation.dll",
+        "lib/net40-client/Validation.xml",
+        "lib/winrt45/Validation.dll",
+        "lib/winrt45/Validation.xml"
       ]
     },
     "Xamarin.Auth/1.3.1.1": {

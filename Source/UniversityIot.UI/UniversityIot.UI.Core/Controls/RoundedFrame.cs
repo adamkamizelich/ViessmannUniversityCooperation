@@ -1,7 +1,7 @@
-﻿using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.Controls
+﻿namespace UniversityIot.UI.Core.Controls
 {
+    using Xamarin.Forms;
+
     public class RoundedFrame : Frame
     {
         public static readonly BindableProperty CornerRadiusProperty =
@@ -9,8 +9,14 @@ namespace UniversityIot.UI.Core.Controls
 
         public double CornerRadius
         {
-            get { return (double) GetValue(CornerRadiusProperty); }
-            set { SetValue(CornerRadiusProperty, value); }
+            get
+            {
+                return (double)this.GetValue(CornerRadiusProperty);
+            }
+            set
+            {
+                this.SetValue(CornerRadiusProperty, value);
+            }
         }
     }
 }

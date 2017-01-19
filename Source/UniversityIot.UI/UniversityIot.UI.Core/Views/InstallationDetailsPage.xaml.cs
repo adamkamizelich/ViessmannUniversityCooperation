@@ -1,12 +1,12 @@
-﻿using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core.Views
+﻿namespace UniversityIot.UI.Core.Views
 {
+    using Xamarin.Forms;
+
     public partial class InstallationDetailsPage : ContentPage
     {
         public InstallationDetailsPage()
         {
-            InitializeComponent();
+            this.InitializeComponent();
         }
     }
 }

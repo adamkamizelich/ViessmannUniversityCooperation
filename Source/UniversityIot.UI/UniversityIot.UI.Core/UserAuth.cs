@@ -2,15 +2,15 @@
 {
     public class UserAuth : IUserAuth
     {
+        public int Id { get; }
+        public string Name { get; }
+        public string Password { get; }
+
         public UserAuth(int id, string name, string password)
         {
-            Id = id;
-            Name = name;
-            Password = password;
+            this.Id = id;
+            this.Name = name;
+            this.Password = password;
         }
-
-        public int Id { get; private set; }
-        public string Name { get; private set; }
-        public string Password { get; private set; }
     }
 }

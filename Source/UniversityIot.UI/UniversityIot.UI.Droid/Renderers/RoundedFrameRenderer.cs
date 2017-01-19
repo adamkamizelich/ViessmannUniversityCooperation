@@ -15,7 +15,7 @@ namespace UniversityIot.UI.Droid.Renderers
         {
             base.Draw(canvas);
 
-            RoundedFrame frame = (RoundedFrame)this.Element;
+            var frame = (RoundedFrame)this.Element;
             int width = (int)frame.Width;
             int height = (int)frame.Height;
 

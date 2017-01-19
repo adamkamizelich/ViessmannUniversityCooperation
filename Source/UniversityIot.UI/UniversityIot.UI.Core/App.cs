@@ -1,12 +1,12 @@
-﻿using UniversityIot.UI.Core.Services;
-using UniversityIot.UI.Core.ViewModels;
-using UniversityIot.UI.Core.Views;
-using Xamarin.Forms;
-
-namespace UniversityIot.UI.Core
+﻿namespace UniversityIot.UI.Core
 {
+    using UniversityIot.UI.Core.ViewModels;
+    using Xamarin.Forms;
+
     public class App : Application
     {
+        public static string AppName => "Com.Viessmann.UniversityIot.UI";
+
         public App()
         {
             // The root page of your application
@@ -15,14 +15,12 @@ namespace UniversityIot.UI.Core
                 DraftContainer.AppSession,
                 DraftContainer.UserManagementService,
                 DraftContainer.CredentialsService,
-                DraftContainer.InstallationsRepository);
+                DraftContainer.NavigationService);
 
             Page loginView = DraftContainer.ViewViewModelRegister.GetViewFor(loginViewModel);
 
-            MainPage = new NavigationPage(loginView);
+            this.MainPage = new NavigationPage(loginView);
         }
-
-        public static string AppName => "Com.Viessmann.UniversityIot.UI";
 
         protected override void OnStart()
         {

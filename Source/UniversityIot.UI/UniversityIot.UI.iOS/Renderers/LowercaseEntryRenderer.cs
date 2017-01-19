@@ -1,21 +1,23 @@
-using UIKit;
 using UniversityIot.UI.iOS.Renderers;
 using Xamarin.Forms;
-using Xamarin.Forms.Platform.iOS;
 
 [assembly: ExportRenderer(typeof(Entry), typeof(LowercaseEntryRenderer))]
 
 namespace UniversityIot.UI.iOS.Renderers
 {
+    using UIKit;
+    using Xamarin.Forms;
+    using Xamarin.Forms.Platform.iOS;
+
     internal class LowercaseEntryRenderer : EntryRenderer
     {
         protected override void OnElementChanged(ElementChangedEventArgs<Entry> e)
         {
             base.OnElementChanged(e);
 
-            if (Control != null)
+            if (this.Control != null)
             {
-                Control.AutocapitalizationType = UITextAutocapitalizationType.None;
+                this.Control.AutocapitalizationType = UITextAutocapitalizationType.None;
             }
         }
     }

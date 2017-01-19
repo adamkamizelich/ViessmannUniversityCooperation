@@ -1,42 +1,53 @@
-﻿using System.Collections.Generic;
-using System.Linq;
-using System.Threading.Tasks;
-using UniversityIot.UI.Core.DataAccess;
-using UniversityIot.UI.Core.Models;
-using UniversityIot.UI.Core.MVVM;
-using UniversityIot.UI.Core.Services;
-
-namespace UniversityIot.UI.Core.ViewModels
+﻿namespace UniversityIot.UI.Core.ViewModels
 {
+    using System.Collections.Generic;
     using System.Collections.ObjectModel;
+    using System.Linq;
+    using System.Threading.Tasks;
+    using UniversityIot.UI.Core.DataAccess;
+    using UniversityIot.UI.Core.Models;
+    using UniversityIot.UI.Mvvm;
 
     public class InstallationDetailsViewModel : BaseViewModel
     {
         private readonly IDatapointsRepository datapointsRepository;
-        private string installationName;
         private string installationDescription;
-
+        private string installationName;
         public ObservableCollection<DatapointViewModel> Datapoints { get; set; }
 
         public string InstallationDescription
         {
-            get { return installationDescription; }
+            get
+            {
+                return this.installationDescription;
+            }
             set
             {
-                if (value == installationDescription) return;
-                installationDescription = value;
-                OnPropertyChanged();
+                if (value == this.installationDescription)
+                {
+                    return;
+                }
+
+                this.installationDescription = value;
+                this.OnPropertyChanged();
             }
         }
 
         public string InstallationName
         {
-            get { return installationName; }
+            get
+            {
+                return this.installationName;
+            }
             set
             {
-                if (value == installationName) return;
-                installationName = value;
-                OnPropertyChanged();
+                if (value == this.installationName)
+                {
+                    return;
+                }
+
+                this.installationName = value;
+                this.OnPropertyChanged();
             }
         }
 
@@ -53,12 +64,13 @@ namespace UniversityIot.UI.Core.ViewModels
             List<DatapointModel> datapoints = await this.datapointsRepository.GetByInstallationId(installationModelId);
 
             // Map models to ViewModels
-            var datapointViewModels = datapoints.Select(dp => new DatapointViewModel
-            {
-                DatapointId = dp.Id,
-                Description = dp.Description,
-                DatapointValue = dp.DatapointValue
-            });
+            IEnumerable<DatapointViewModel> datapointViewModels = datapoints.Select(
+                dp => new DatapointViewModel(DraftContainer.NavigationService)
+                {
+                    DatapointId = dp.Id,
+                    Description = dp.Description,
+                    DatapointValue = dp.DatapointValue
+                });
 
             // Populate ListView source
             this.Datapoints = new ObservableCollection<DatapointViewModel>(datapointViewModels);
