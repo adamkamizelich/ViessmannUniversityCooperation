@@ -1,0 +1,46 @@
+﻿<?xml
+    version="1.0"
+    encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:converters="clr-namespace:UniversityIot.UI.Core.Converters;assembly=UniversityIot.UI.Core"
+             xmlns:mvvm="clr-namespace:UniversityIot.UI.Mvvm;assembly=UniversityIot.UI.Mvvm"
+             x:Class="UniversityIot.UI.Core.Views.UserInstallationsPage"
+             Title="Instalations">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <converters:ItemTappedEventArgsConverter x:Key="ItemTappedConverter" />
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout>
+
+        <ListView ItemsSource="{Binding Installations}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <ViewCell>
+                        <StackLayout Orientation="Vertical" Padding="20, 10, 20, 10">
+                            <Label FontSize="40" Text="{Binding Description}" />
+                            <Label FontSize="27" Text="{Binding SerialNumber}" />
+                        </StackLayout>
+                    </ViewCell>
+                    <!--    <TextCell
+                    Text="{Binding Description}"
+                    Detail="{Binding SerialNumber}"
+                    Command="{Binding ShowInstallationDetails}"/>-->
+                </DataTemplate>
+            </ListView.ItemTemplate>
+            <ListView.Behaviors>
+                <mvvm:EventToCommandBehavior EventName="ItemTapped"
+                                             Command="{Binding ItemTappedCommand}"
+                                             EventArgsConverter="{StaticResource ItemTappedConverter}" />
+            </ListView.Behaviors>
+            <ListView.Footer>
+                <Label />
+            </ListView.Footer>
+        </ListView>
+
+    </StackLayout>
+
+</ContentPage>

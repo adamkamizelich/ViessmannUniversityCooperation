@@ -1,0 +1,33 @@
+﻿<?xml
+    version="1.0"
+    encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityIot.UI.Core.Views.InstallationDetailsPage">
+
+    <Grid Margin="20">
+
+        <Grid.RowDefinitions>
+            <RowDefinition Height="70" />
+            <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <StackLayout Grid.Row="0">
+            <Label Text="Installation" HorizontalTextAlignment="Start" />
+            <Label Text="{Binding InstallationName}" FontAttributes="Bold" HorizontalTextAlignment="Start" />
+        </StackLayout>
+
+        <ListView Grid.Row="1" ItemsSource="{Binding Datapoints}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <TextCell Text="{Binding Description}"
+                              Detail="{Binding DatapointValue}"
+                              Command="{Binding ShowDatapointEditorCommand}" />
+                </DataTemplate>
+            </ListView.ItemTemplate>
+        </ListView>
+
+    </Grid>
+
+
+</ContentPage>

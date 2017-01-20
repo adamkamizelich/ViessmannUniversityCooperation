@@ -1,0 +1,44 @@
+﻿<?xml
+    version="1.0"
+    encoding="utf-8"?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="UniversityIot.UI.Core.Views.HamburgerMenuPage"
+             Title="Menu"
+             Icon="menu.png"
+             WidthRequest="50"
+             BackgroundColor="Silver">
+
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style x:Key="textStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="26" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+
+    <StackLayout Orientation="Vertical"
+                 Spacing="0"
+                 Padding="20,20, 20, 80">
+
+
+        <StackLayout Orientation="Vertical" VerticalOptions="StartAndExpand"
+                     Spacing="10">
+            <Label Style="{StaticResource textStyle}"
+                   Text="My installations" />
+            <Label Style="{StaticResource textStyle}"
+                   Text="Profile" />
+            <Label Style="{StaticResource textStyle}"
+                   Text="Settings" />
+        </StackLayout>
+
+        <StackLayout Orientation="Vertical" VerticalOptions="End"
+                     Spacing="10">
+            <Label Style="{StaticResource textStyle}"
+                   Text="Logout" />
+            <Label Style="{StaticResource textStyle}"
+                   Text="About" />
+        </StackLayout>
+
+    </StackLayout>
+</ContentPage>
