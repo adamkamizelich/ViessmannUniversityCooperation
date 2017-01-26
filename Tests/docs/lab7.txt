@@ -1,0 +1,21 @@
+LAB 7 zadanie
+
+Przygotowanie środowiska:
+1. Pobierz kod z brancha lab.7
+2. Skompiluj solucję University.Tests.sln.
+3. Uruchom przykładowy test.
+
+Ćwiczenie do wyboru:
+
+1. Stwórz kolekcję w Postmanie zawierającą testy API
+
+2. Stwórz test automatyczny wspierając się materiałami:
+http://testingplus.me/2016/07/30/selenium-czesc-1/
+http://learnseleniumtesting.com/basic-webdriver-and-c-sharp-script-for-beginners/
+http://toolsqa.wpengine.com/selenium-webdriver/c-sharp/findelement-and-findelements-commands-in-c/
+
+3. Stwórz test wydajnościowy w aplikacji jMeter wspierając się materiałami:
+https://www.blazemeter.com/blog/getting-started-jmeter-basic-tutorial
+
+Zaliczenie ćwiczeń:
+-umieść kod klasy testowej/kolekcję w repozytorium
