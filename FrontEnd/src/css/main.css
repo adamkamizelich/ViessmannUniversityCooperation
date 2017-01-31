@@ -23,6 +23,7 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     color: #777;
     position: absolute;
+<<<<<<< Updated upstream
     left: 160px;
     top: 30px; }
   header .logo img {
@@ -64,3 +65,7 @@ footer {
     padding: 20px 0;
     color: #cacaca;
     font-size: 16px; }
+=======
+    top: 30px;
+    left: 180px; }
+>>>>>>> Stashed changes
