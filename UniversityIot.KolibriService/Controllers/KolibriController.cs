@@ -8,6 +8,7 @@
     using System.Threading.Tasks;
     using System.Web.Http;
     using UniversityIot.Messages;
+    using Viessmann.Estrella.Common.Enums;
     using Viessmann.Estrella.Components.KolibriApi;
     using Viessmann.Estrella.Components.KolibriApi.Exceptions;
     using Viessmann.Estrella.Components.KolibriApi.Interfaces;
@@ -51,7 +52,8 @@
                         new WriteRpcRequestNodeParam()
                         {
                             Value = Convert.ToInt32(kolibriValue.Value),
-                            Path = this.GetPath(kolibriValue.HexAddress)
+                            Path = this.GetPath(kolibriValue.HexAddress),
+                            Quality = KolibriPointQuality.Valid
                         }
                     })
                 }
